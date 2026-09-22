@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SSHLibrary
 Library     String
+Library     Collections
 Library     RequestsLibrary
 Library     OperatingSystem
 Library     DateTime
@@ -62,7 +63,7 @@ Download Specific Artifacts
 Download OS Upgrade Artifact
     [Documentation]    Downloads OS upgrade package for the specified OS ID, build ID, and platform.
     [Tags]    internal
-    [Arguments]    ${os_id}=${UPGRADE_OS_ID}    ${build_id}=${BUILD_ID}    ${platform}=${PLATFORM}    ${os_version}=${OS_VERSION}    ${app_version}=${APP_VERSION}
+    [Arguments]    ${os_id}    ${build_id}=${BUILD_ID}    ${platform}=${PLATFORM}    ${os_version}=${OS_VERSION}    ${app_version}=${APP_VERSION}
 
     # Remove and recreate the directory
     Run Keyword And Ignore Error    Remove Directory    ${DOWNLOAD_DIR}    recursive=True
@@ -143,7 +144,7 @@ Delete Bins
     END
 
     IF    'generator-api.service' in @{services_list}
-        Remove file with sudo    /usr/bin/grpcserv
+        Remove file with sudo    /usr/bin/grpcserver
         Remove file with sudo    ${CONFIGS_PATH}/generator-api/${CONFIG_FILE_NAME}
     END
 
@@ -154,7 +155,7 @@ Delete Bins
         Remove file with sudo    /var/lib/archiver/backup/therapy.db*
     END
 
-    IF    'audio-service' in @{services_list}
+    IF    'audio-service.service' in @{services_list}
         Remove file with sudo    /usr/bin/audio_service
         Remove file with sudo    ${CONFIGS_PATH}/audio_service/${CONFIG_FILE_NAME}
     END
@@ -937,5 +938,4 @@ Pull Therapy DB From Board
 
     Log    Downloaded therapy.db to: ${local_file}
     RETURN    ${local_file}
-
 

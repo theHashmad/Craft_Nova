@@ -5,8 +5,6 @@ Library     Collections
 Library     String
 Resource    ../Configuration/Codebeamer/Codebeamer_Configuration.resource
 Library     OperatingSystem
-Library     ../../Tools/StepResult.py
-
 
 *** Variables ***
 @{tmpCodeBeamerCreds}           ${cbUserName}    ${cbPwd}

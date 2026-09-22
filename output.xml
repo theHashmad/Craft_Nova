@@ -1,0 +1,3730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-09-22T15:56:04.424214" rpa="false" schemaversion="5">
+<suite id="s1" name="Application Inspection" source="C:\Hashmad_ali\Craft_Nova\Test_Cases\E2E\application_inspection.robot">
+<test id="s1-t1" name="143698: Inspect NOVA Controls" line="18">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Get Test Start Time" owner="Keyword_Codebeamer">
+<kw name="Get Time" owner="BuiltIn">
+<var>${start_time}</var>
+<arg>format=epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.306534" elapsed="0.000174"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${start_time}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.306852" elapsed="0.000130"/>
+</kw>
+<tag>teardown</tag>
+<status status="PASS" start="2026-09-22T15:56:05.306281" elapsed="0.000775"/>
+</kw>
+<arg>Get Test Start Time</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.305653" elapsed="0.001788"/>
+</kw>
+<kw name="Launch NOVA">
+<kw name="Launch Application" owner="FlaUILibrary">
+<var>${pid}</var>
+<arg>${NOVA_APPLICATION}</arg>
+<doc>Launches an application.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.307852" elapsed="0.000063"/>
+</kw>
+<kw name="Wait For Application Handle By Pid" owner="FlaUILibrary">
+<arg>${pid}</arg>
+<arg>10000</arg>
+<doc>Wait for application handle until timeout is reached.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.308033" elapsed="0.000077"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.308197" elapsed="0.000045"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.308852" elapsed="0.000155"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.309106" elapsed="0.000132"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.309321" elapsed="0.000109"/>
+</kw>
+<arg>NOVA opens successfully.</arg>
+<status status="PASS" start="2026-09-22T15:56:05.308663" elapsed="0.000808"/>
+</kw>
+<kw name="Add Screenshot">
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.309865" elapsed="0.000134"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.309695" elapsed="0.000346"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>NOVA opens successfully.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.308378" elapsed="0.001792"/>
+</kw>
+<msg time="2026-09-22T15:56:05.313887" level="INFO">${TCResults} = [['143698', {'Step-1': 'PASS|2026-09-22T15:56:05|'}]]</msg>
+<msg time="2026-09-22T15:56:05.314400" level="INFO">${keyword_result_message} = </msg>
+<tag>143698=1</tag>
+<status status="PASS" start="2026-09-22T15:56:05.307616" elapsed="0.002598"/>
+</kw>
+<kw name="Authenticate Using SSO">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${auth}</var>
+<arg>/Window[@Name='NOVA']//*[@Name='Authenticate in browser via single sign-on (SSO).']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.314830" elapsed="0.000136"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${auth}</arg>
+<arg>10000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.315062" elapsed="0.000100"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${auth}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.315251" elapsed="0.000042"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.315379" elapsed="0.000071"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.316249" elapsed="0.000191"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.316561" elapsed="0.000152"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.316808" elapsed="0.000125"/>
+</kw>
+<arg>User reaches the NOVA landing page.</arg>
+<status status="PASS" start="2026-09-22T15:56:05.315936" elapsed="0.001052"/>
+</kw>
+<kw name="Add Screenshot">
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.317439" elapsed="0.000203"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.317259" elapsed="0.000475"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>User reaches the NOVA landing page.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.315627" elapsed="0.002303"/>
+</kw>
+<msg time="2026-09-22T15:56:05.318427" level="INFO">${TCResults} = [['143698', {'Step-1': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-2': 'PASS|2026-09-22T15:56:05|'}]]</msg>
+<msg time="2026-09-22T15:56:05.318528" level="INFO">${keyword_result_message} = </msg>
+<tag>143698=2</tag>
+<status status="PASS" start="2026-09-22T15:56:05.314657" elapsed="0.003339"/>
+</kw>
+<kw name="Select Update Software Offline">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${offline_update}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.318943" elapsed="0.000182"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${offline_update}</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.319254" elapsed="0.000098"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${offline_update}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.319455" elapsed="0.000057"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.320973" elapsed="0.000144"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.321211" elapsed="0.000117"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.321405" elapsed="0.000101"/>
+</kw>
+<arg>The Update Software (Offline) page is displayed.</arg>
+<status status="PASS" start="2026-09-22T15:56:05.320491" elapsed="0.001053"/>
+</kw>
+<kw name="Add Screenshot">
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.321885" elapsed="0.000126"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.321732" elapsed="0.000326"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The Update Software (Offline) page is displayed.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.319735" elapsed="0.002442"/>
+</kw>
+<msg time="2026-09-22T15:56:05.322590" level="INFO">${TCResults} = [['143698', {'Step-1': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-2': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-3': 'PASS|2026-09-22T15:56:05|'}]]</msg>
+<msg time="2026-09-22T15:56:05.322705" level="INFO">${keyword_result_message} = </msg>
+<tag>143698=3</tag>
+<status status="PASS" start="2026-09-22T15:56:05.318740" elapsed="0.003476"/>
+</kw>
+<kw name="Verify Offline Update Controls">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${update_device}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.323044" elapsed="0.000148"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.323296" elapsed="0.000087"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.323470" elapsed="0.000042"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.324020" elapsed="0.000120"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.324225" elapsed="0.000112"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.324422" elapsed="0.000100"/>
+</kw>
+<arg>The page displays the controls required for offline software update and device selection.</arg>
+<status status="PASS" start="2026-09-22T15:56:05.323864" elapsed="0.000694"/>
+</kw>
+<kw name="Add Screenshot">
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.324872" elapsed="0.000103"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.324734" elapsed="0.000276"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The page displays the controls required for offline software update and device selection.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.323624" elapsed="0.001497"/>
+</kw>
+<msg time="2026-09-22T15:56:05.325478" level="INFO">${TCResults} = [['143698', {'Step-1': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-2': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-3': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-4': 'PASS|2026-09-22T1...</msg>
+<msg time="2026-09-22T15:56:05.325559" level="INFO">${keyword_result_message} = </msg>
+<tag>143698=4</tag>
+<status status="PASS" start="2026-09-22T15:56:05.322874" elapsed="0.002286"/>
+</kw>
+<kw name="Continue To Update Device">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${update_device}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.325841" elapsed="0.000119"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.326047" elapsed="0.000044"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${device_path}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='DevicePath']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.326164" elapsed="0.000107"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>${device_path}</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.326358" elapsed="0.000040"/>
+</kw>
+<kw name="Get All Names From Combobox" owner="FlaUILibrary">
+<var>${items}</var>
+<arg>${device_path}</arg>
+<doc>Get all names from a combobox as a list.
+If element could not be found by xpath an error message will be thrown.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.326475" elapsed="0.000038"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>DOWNLOAD PATH OPTIONS: ${items}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.326589" elapsed="0.000099"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.327183" elapsed="0.000121"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.327390" elapsed="0.000115"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.327581" elapsed="0.000101"/>
+</kw>
+<arg>The Update Device page is displayed.</arg>
+<status status="PASS" start="2026-09-22T15:56:05.327028" elapsed="0.000689"/>
+</kw>
+<kw name="Add Screenshot">
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.328030" elapsed="0.000103"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.327893" elapsed="0.000412"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The Update Device page is displayed.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.326795" elapsed="0.001648"/>
+</kw>
+<msg time="2026-09-22T15:56:05.328798" level="INFO">${TCResults} = [['143698', {'Step-1': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-2': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-3': 'PASS|2026-09-22T15:56:05|'}], ['143698', {'Step-4': 'PASS|2026-09-22T1...</msg>
+<msg time="2026-09-22T15:56:05.328878" level="INFO">${keyword_result_message} = </msg>
+<tag>143698=5</tag>
+<status status="PASS" start="2026-09-22T15:56:05.325692" elapsed="0.002791"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Collect Test Result" owner="Keyword_Codebeamer">
+<if>
+<branch type="IF" condition="'${cbEnabled}'.lower() == 'true'">
+<kw name="Get Time" owner="BuiltIn">
+<var>${end_time}</var>
+<arg>format=epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.329823" elapsed="0.000129"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${duration}</var>
+<arg>${end_time}-${start_time}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.330043" elapsed="0.000106"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${tmptestCaseID}</var>
+<arg>${TEST_NAME}</arg>
+<arg>separator=:</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.330232" elapsed="0.000070"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseID}</var>
+<arg>${tmptestCaseID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.330392" elapsed="0.000111"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${TCResults}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.330583" elapsed="0.000101"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${SuiteType}&quot; == &quot;datadriven&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>\nSkip Processing Data Driven TC Results here...</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.330861" elapsed="0.000129"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.330781" elapsed="0.000244"/>
+</branch>
+<branch type="ELSE">
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpTCSteps}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.331134" elapsed="0.000093"/>
+</kw>
+<if>
+<branch type="IF" condition="${TCResults}">
+<for flavor="IN">
+<iter>
+<if>
+<branch type="IF" condition="&quot;${result}[0]&quot;==&quot;${testCaseID}&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCSteps}</arg>
+<arg>${result}[1]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.331570" elapsed="0.000054"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.331493" elapsed="0.000167"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:05.331481" elapsed="0.000209"/>
+</if>
+<var name="${result}"/>
+<status status="PASS" start="2026-09-22T15:56:05.331440" elapsed="0.000273"/>
+</iter>
+<var>${result}</var>
+<value>@{TCResults}</value>
+<status status="PASS" start="2026-09-22T15:56:05.331343" elapsed="0.000404"/>
+</for>
+<kw name="Log List" owner="Collections">
+<arg>${tmpTCSteps}</arg>
+<doc>Logs contents of the ``list`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.331833" elapsed="0.000041"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<var>${resultStr}</var>
+<arg>${TCResults}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.331965" elapsed="0.000118"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${stepCount}</var>
+<arg>${TCResults}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.332195" elapsed="0.000202"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalFaild}</var>
+<arg>${resultStr}</arg>
+<arg>FAIL|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.332482" elapsed="0.000125"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalNotRun}</var>
+<arg>${resultStr}</arg>
+<arg>NOT RUN|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.332713" elapsed="0.000120"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${passCount}</var>
+<arg>${resultStr}</arg>
+<arg>PASS|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.332919" elapsed="0.000129"/>
+</kw>
+<if>
+<branch type="IF" condition="'${TEST_STATUS}'=='FAIL'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test Case Execution Failed: ${Test Message}. Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}. Please refer to Test Automation Log Files for more details.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.333256" elapsed="0.000120"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.333159" elapsed="0.000290"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>All steps executed successfully.Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.333710" elapsed="0.000246"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.333536" elapsed="0.000510"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:05.333134" elapsed="0.000988"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:05.331297" elapsed="0.002889"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test Setup Failed: ${Test Message}. No Test Steps executed. Check logs for more details.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.334345" elapsed="0.000149"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.334226" elapsed="0.000311"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:05.331284" elapsed="0.003284"/>
+</if>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpTC}</var>
+<arg>${tmptestCaseID}[1]</arg>
+<arg>${TEST STATUS}</arg>
+<arg>${tmpCompletionMessage}</arg>
+<arg>${duration}</arg>
+<arg>${tmpTCSteps}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.334690" elapsed="0.000162"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}=${tmpTC}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.334961" elapsed="0.000094"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nAdded ${TEST NAME} status and result in master suite execution list</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.335149" elapsed="0.000160"/>
+</kw>
+<kw name="Log Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.335549" elapsed="0.000051"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nAdded ${TEST NAME} and its Test Step status and results in master suite execution list</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.335689" elapsed="0.000167"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.331061" elapsed="0.004835"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:05.330760" elapsed="0.005166"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:05.329718" elapsed="0.006236"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCollect Test Result skipped because posting to CodeBeamer is disabled.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:05.336090" elapsed="0.000154"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:05.336000" elapsed="0.000284"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:05.329692" elapsed="0.006619"/>
+</if>
+<tag>teardown</tag>
+<status status="PASS" start="2026-09-22T15:56:05.329520" elapsed="0.006834"/>
+</kw>
+<arg>Collect Test Result</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T15:56:05.329026" elapsed="0.007522"/>
+</kw>
+<doc>Verify the NOVA application launches successfully, the user can authenticate using SSO,
+navigate to the Offline Update page, verify the required controls,
+and continue to the Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:*
+- *TCID:* [https://crdn.codebeamer.com/item/143698 | 143698]
+- *Verifies:* [https://crdn.codebeamer.com/issue/US_ID | US_ID]</doc>
+<tag>application</tag>
+<tag>pipeline</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<tag>ui_interface</tag>
+<status status="PASS" start="2026-09-22T15:56:05.298499" elapsed="0.038099"/>
+</test>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Create Test Run in Codebeamer" owner="Keyword_Codebeamer">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${SUITE_MESSAGE}</arg>
+<arg>Suite setup failed</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.696631" elapsed="0.000219"/>
+</kw>
+<var>${suiteSetupStatus}</var>
+<arg>Should Not Contain</arg>
+<arg>${SUITE_MESSAGE}</arg>
+<arg>Suite setup failed</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.696301" elapsed="0.000703"/>
+</kw>
+<if>
+<branch type="IF" condition="'${suiteSetupStatus}' == 'False'">
+<kw name="Log" owner="BuiltIn">
+<arg>\nALERT : SKIPPING CodeBeamer Test Run Creation as Suite Setup Failed.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.697615" elapsed="0.000280"/>
+</kw>
+<kw name="Create Task for Suite Setup Failure" owner="Keyword_Codebeamer">
+<kw name="Split String" owner="String">
+<var>${newMsg}</var>
+<arg>${SUITE_MESSAGE}</arg>
+<arg>separator=\n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.698766" elapsed="0.000254"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${taskName}</var>
+<arg>${newMsg}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.699298" elapsed="0.000446"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${taskDescription}</var>
+<arg>Suite Setup for suite ${SUITE_NAME} has failed. Hence skipping test case execution and CodeBeamer Test Run creation.\n\nPlease refer to the logs for more details.\n\n${SUITE_MESSAGE}\n\n Pipeline ID: ${PipelineID} \n CI Job ID: ${CI_JOB_ID}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.700048" elapsed="0.000289"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpTaskBody}</var>
+<arg>name=${taskName}</arg>
+<arg>description=${taskDescription}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.700643" elapsed="0.000442"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpTaskBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.701504" elapsed="0.000334"/>
+</kw>
+<kw name="Create CB Session" owner="Keyword_Codebeamer">
+<kw name="Create Session" owner="RequestsLibrary">
+<var>${cbsession}</var>
+<arg>cb</arg>
+<arg>https://crdn.codebeamer.com</arg>
+<arg>auth=${tmpCodeBeamerCreds}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.703408" elapsed="0.000601"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${cbsession}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.704304" elapsed="0.000511"/>
+</kw>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create a session with CodeBeamer server.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.702465" elapsed="0.002547"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${createTaskOut}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261780/items</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpTaskBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Task creation failed..check logs for further debugging</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.705626" elapsed="0.000191"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${createTaskOut.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.706064" elapsed="0.000254"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${taskID}</var>
+<arg>${createTaskOut.json()}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.706495" elapsed="0.000092"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nNew Task for failure Analysis : ${taskID}[0]</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.706777" elapsed="0.000349"/>
+</kw>
+<return>
+<value>${taskID}[0]</value>
+<status status="PASS" start="2026-09-22T15:56:07.707238" elapsed="0.000089"/>
+</return>
+<var>${taskID}</var>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<status status="PASS" start="2026-09-22T15:56:07.698323" elapsed="0.009111"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.708221" elapsed="0.000140"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.708701" elapsed="0.000105"/>
+</kw>
+<var>${isBugListEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${bugList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.708496" elapsed="0.000348"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.708964" elapsed="0.000127"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${isBugListEmpty}&quot; == &quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>Bug List Empty</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.709711" elapsed="0.000174"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.709571" elapsed="0.000351"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${newBugList}</arg>
+<arg>${key}:${value}|</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.710249" elapsed="0.000125"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.710147" elapsed="0.000273"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{bugList}</value>
+<status status="PASS" start="2026-09-22T15:56:07.710032" elapsed="0.000435"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.709957" elapsed="0.000557"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.709483" elapsed="0.001057"/>
+</if>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.710914" elapsed="0.000121"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.711134" elapsed="0.000099"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.711305" elapsed="0.000110"/>
+</kw>
+<var>${fileContent}</var>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "True"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<arg>ELSE IF</arg>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "False"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.710652" elapsed="0.000794"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>path=C:\\Hashmad_ali\\Craft_Nova\\resources\\keywords/../Reports/RF/results.txt</arg>
+<arg>content=${fileContent}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.711543" elapsed="0.000077"/>
+</kw>
+<arg>${taskID}</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="PASS" start="2026-09-22T15:56:07.707926" elapsed="0.003739"/>
+</kw>
+<return>
+<status status="PASS" start="2026-09-22T15:56:07.711902" elapsed="0.000036"/>
+</return>
+<status status="PASS" start="2026-09-22T15:56:07.697356" elapsed="0.014630"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nSTARTING CodeBeamer Test Run Creation... \n\n</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.712099" elapsed="0.000144"/>
+</kw>
+<if>
+<branch type="IF" condition="'${cbEnabled}'.lower() == 'true'">
+<if>
+<branch type="IF" condition="&quot;${SuiteType}&quot; == &quot;datadriven&quot;">
+<kw name="Process Test Results for New DD" owner="Keyword_Codebeamer">
+<kw name="Get Length" owner="BuiltIn">
+<var>${totalTC}</var>
+<arg>${tmpStepResult}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.712796" elapsed="0.000112"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Total Test Cases in Suite : ${totalTC}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.712995" elapsed="0.000138"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${totalStepCount}</var>
+<arg>${totalTC} * ${TotalSteps}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.713241" elapsed="0.000184"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Total Steps in Suite : ${totalStepCount}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.713548" elapsed="0.000147"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpFinalStepResult}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.714076" elapsed="0.000122"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tsIndex}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.714312" elapsed="0.000127"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Initial Step Result List : ${tmpStepResult}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.714539" elapsed="0.000157"/>
+</kw>
+<while condition="${tsIndex} &lt; ${totalStepCount+1}">
+<iter>
+<for flavor="IN">
+<iter>
+<if>
+<branch type="IF" condition="${tmpStepResult-item} == []">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${StepDict}</var>
+<arg>Step-${tsIndex}=FAIL|0000-00-00T00:00:00|"FAIL"</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.716927" elapsed="0.000479"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${StepDict}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.717928" elapsed="0.000588"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tmpFinalStepResult}</arg>
+<arg>${StepDict}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.718709" elapsed="0.000075"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${tsIndex}</var>
+<arg>${tsIndex} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.718890" elapsed="0.000126"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.715656" elapsed="0.003424"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>${step}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.719464" elapsed="0.000250"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${StepDict}</var>
+<arg>Step-${tsIndex}=${step}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.719858" elapsed="0.000171"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${StepDict}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.720129" elapsed="0.000150"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tmpFinalStepResult}</arg>
+<arg>${StepDict}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.720385" elapsed="0.000059"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${tsIndex}</var>
+<arg>${tsIndex} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.720555" elapsed="0.000120"/>
+</kw>
+<var name="${step}"/>
+<status status="PASS" start="2026-09-22T15:56:07.719341" elapsed="0.001628"/>
+</iter>
+<var>${step}</var>
+<value>@{tmpStepResult-item}</value>
+<status status="PASS" start="2026-09-22T15:56:07.719196" elapsed="0.001849"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.719133" elapsed="0.001967"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T15:56:07.715628" elapsed="0.005517"/>
+</if>
+<var name="${tmpStepResult-item}"/>
+<status status="NOT RUN" start="2026-09-22T15:56:07.715516" elapsed="0.005666"/>
+</iter>
+<var>${tmpStepResult-item}</var>
+<value>@{tmpStepResult}</value>
+<status status="NOT RUN" start="2026-09-22T15:56:07.715305" elapsed="0.005914"/>
+</for>
+<status status="NOT RUN" start="2026-09-22T15:56:07.714797" elapsed="0.006469"/>
+</iter>
+<status status="NOT RUN" start="2026-09-22T15:56:07.714792" elapsed="0.006560"/>
+</while>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nFinal Step Result List : ${tmpFinalStepResult}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.721536" elapsed="0.000315"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${tmpName}</var>
+<arg>${dataTCName}</arg>
+<arg>separator=:</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.721995" elapsed="0.000095"/>
+</kw>
+<kw name="Set Result Conclusion Message" owner="Keyword_Codebeamer">
+<kw name="Catenate" owner="BuiltIn">
+<var>${resultStr}</var>
+<arg>${stepResult}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.722943" elapsed="0.000148"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalFaild}</var>
+<arg>${resultStr}</arg>
+<arg>FAIL|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.723187" elapsed="0.000125"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalNotRun}</var>
+<arg>${resultStr}</arg>
+<arg>NOT RUN|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.723409" elapsed="0.000127"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${passCount}</var>
+<arg>${resultStr}</arg>
+<arg>PASS|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.723618" elapsed="0.000121"/>
+</kw>
+<if>
+<branch type="IF" condition="'${SUITE_STATUS}'=='FAIL'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test Case Execution Failed. Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}. For more details, please refer to the Test Automation Execution Log File.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.723985" elapsed="0.000139"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.723869" elapsed="0.000316"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>All steps executed successfully.Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.724301" elapsed="0.000131"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.724221" elapsed="0.000250"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.723842" elapsed="0.000661"/>
+</if>
+<return>
+<value>${tmpCompletionMessage}</value>
+<status status="PASS" start="2026-09-22T15:56:07.724539" elapsed="0.000029"/>
+</return>
+<var>${tmpCompletionMessage}</var>
+<arg>${tmpFinalStepResult}</arg>
+<arg>${totalStepCount}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create conclusion message for test case result based on step results.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.722521" elapsed="0.002104"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpDDResult}</var>
+<arg>${tmpName}[1]</arg>
+<arg>${SUITE_STATUS}</arg>
+<arg>${tmpCompletionMessage}</arg>
+<arg>${0}</arg>
+<arg>${tmpFinalStepResult}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.724791" elapsed="0.000150"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{testCaseResultDict}</var>
+<arg>${tmpName}[0]=${tmpDDResult}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.725052" elapsed="0.000132"/>
+</kw>
+<return>
+<value>${testCaseResultDict}</value>
+<status status="PASS" start="2026-09-22T15:56:07.725227" elapsed="0.000025"/>
+</return>
+<var>${testCaseResultDict}</var>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<status status="PASS" start="2026-09-22T15:56:07.712659" elapsed="0.012632"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.712390" elapsed="0.012983"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseResultDict}</var>
+<arg>${testCaseResultDict}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.725487" elapsed="0.000125"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.725405" elapsed="0.000257"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.712380" elapsed="0.013311"/>
+</if>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Dictionary Should Not Be Empty">
+<msg time="2026-09-22T15:56:07.727810" level="FAIL">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</msg>
+<arg>${testCaseResultDict}</arg>
+<status status="FAIL" start="2026-09-22T15:56:07.727733" elapsed="0.000141">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</kw>
+<var>${hasResults}</var>
+<arg>Dictionary Should Not Be Empty</arg>
+<arg>${testCaseResultDict}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="FAIL" start="2026-09-22T15:56:07.725781" elapsed="0.002161">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</kw>
+<if>
+<branch type="IF" condition="'${hasResults}' != 'True'">
+<kw name="Get Variable Value" owner="BuiltIn">
+<var>${testNameValue}</var>
+<arg>${TEST_NAME}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.728165" elapsed="0.000150"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<var>${testStatusValue}</var>
+<arg>${TEST_STATUS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.728408" elapsed="0.000115"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<var>${testMessageValue}</var>
+<arg>${TEST_MESSAGE}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.728603" elapsed="0.000107"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${testNameValue}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.728975" elapsed="0.000099"/>
+</kw>
+<var>${hasTestName}</var>
+<arg>Should Not Be Empty</arg>
+<arg>${testNameValue}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.728796" elapsed="0.000430"/>
+</kw>
+<if>
+<branch type="IF" condition="'${hasTestName}' == 'True'">
+<kw name="Split String" owner="String">
+<var>${tmptestCaseID}</var>
+<arg>${testNameValue}</arg>
+<arg>separator=:</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.729416" elapsed="0.000084"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${hasTestCaseParts}</var>
+<arg>len($tmptestCaseID) &gt; 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.729582" elapsed="0.000135"/>
+</kw>
+<if>
+<branch type="IF" condition="${hasTestCaseParts}">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseID}</var>
+<arg>${tmptestCaseID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.729871" elapsed="0.000178"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpTCSteps}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.730219" elapsed="0.000221"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test case result captured without step details. Test Status: ${testStatusValue}. Message: ${testMessageValue}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.730657" elapsed="0.000245"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpTC}</var>
+<arg>${tmptestCaseID}[1]</arg>
+<arg>${testStatusValue}</arg>
+<arg>${tmpCompletionMessage}</arg>
+<arg>0</arg>
+<arg>${tmpTCSteps}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.731171" elapsed="0.000190"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}=${tmpTC}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.731555" elapsed="0.000198"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.729783" elapsed="0.002037"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Skipping fallback CodeBeamer result because TEST_NAME has no test-case ID separator: ${testNameValue}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.732111" elapsed="0.000389"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.731907" elapsed="0.000680"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.729770" elapsed="0.002888"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:07.729331" elapsed="0.003436"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Skipping fallback CodeBeamer result because TEST_NAME is unavailable in suite teardown.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.733024" elapsed="0.000320"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.732817" elapsed="0.000639"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.729313" elapsed="0.004209"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:07.728055" elapsed="0.005562"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.728035" elapsed="0.005635"/>
+</if>
+<kw name="Create CB Session" owner="Keyword_Codebeamer">
+<kw name="Create Session" owner="RequestsLibrary">
+<var>${cbsession}</var>
+<arg>cb</arg>
+<arg>https://crdn.codebeamer.com</arg>
+<arg>auth=${tmpCodeBeamerCreds}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.734955" elapsed="0.000385"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${cbsession}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.735578" elapsed="0.000290"/>
+</kw>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create a session with CodeBeamer server.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.734298" elapsed="0.001735"/>
+</kw>
+<kw name="Create Test Run Payload" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nCreating payload for TestRun creation in CodeBeamer...</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.738072" elapsed="0.000542"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${testCaseResultDict}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.738866" elapsed="0.000277"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${tcListLength}</var>
+<arg>${tcList}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.739360" elapsed="0.000228"/>
+</kw>
+<if>
+<branch type="IF" condition="${tcListLength} == 0">
+<for flavor="IN">
+<iter>
+<kw name="Get Length" owner="BuiltIn">
+<var>${resultLength}</var>
+<arg>${value}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.740522" elapsed="0.000266"/>
+</kw>
+<if>
+<branch type="IF" condition="${resultLength} == 5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpTRunBody}</var>
+<arg>id=${key}</arg>
+<arg>name=${value}[0]</arg>
+<arg>type=TrackerItemReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.741133" elapsed="0.000222"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tcList}</arg>
+<arg>${tmpTRunBody}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.741506" elapsed="0.000096"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.740974" elapsed="0.000688"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Skipping malformed CodeBeamer result for test case ${key}: ${value}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.741877" elapsed="0.000182"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.741714" elapsed="0.000393"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.740937" elapsed="0.001202"/>
+</if>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.740342" elapsed="0.001824"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{testCaseResultDict}</value>
+<status status="PASS" start="2026-09-22T15:56:07.739997" elapsed="0.002223"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.739843" elapsed="0.002446"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.739779" elapsed="0.002553"/>
+</if>
+<for flavor="IN">
+<iter>
+<kw name="Get Length" owner="BuiltIn">
+<var>${resultLength}</var>
+<arg>${value}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.742777" elapsed="0.000170"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>${resultLength} != 5</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.743140" elapsed="0.000258"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpTRunBody}</var>
+<arg>id=${key}</arg>
+<arg>name=${value}[0]</arg>
+<arg>type=TrackerItemReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.743713" elapsed="0.000323"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${tmpResult}</var>
+<arg>${codeBeamerResultEnum}</arg>
+<arg>${value}[1]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.744937" elapsed="0.000200"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${testCaseResult}</var>
+<arg>testCaseReference=${tmpTRunBody}</arg>
+<arg>result=${tmpResult}</arg>
+<arg>conclusion=${value}[2]</arg>
+<arg>runTime=${value}[3]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.745318" elapsed="0.000282"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${testCaseResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.745775" elapsed="0.000140"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${testCaseResult}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.746051" elapsed="0.000137"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCResult}</arg>
+<arg>${testCaseResult}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.746326" elapsed="0.000058"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.746479" elapsed="0.000251"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${tmpResult}&quot;==&quot;FAILED&quot;">
+<kw name="Create Defect List" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.750578" elapsed="0.000448"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${value}[2]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.751235" elapsed="0.000223"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${value}[-1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.751637" elapsed="0.000174"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{errorStrings}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.751939" elapsed="0.000125"/>
+</kw>
+<if>
+<branch type="IF" condition="${value}[-1] == []">
+<kw name="Append To List" owner="Collections">
+<arg>${errorStrings}</arg>
+<arg>${value}[2]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.752503" elapsed="0.000064"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.752343" elapsed="0.000272"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>New Error String: ${newErrorString}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.753143" elapsed="0.000216"/>
+</kw>
+<kw name="Get Dictionary Values" owner="Collections">
+<var>${tmpErrorString}</var>
+<arg>${newErrorString}</arg>
+<doc>Returns values of the given ``dictionary`` as a list.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.753487" elapsed="0.000052"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${tmpErrorString}</var>
+<arg>${tmpErrorString}[0]</arg>
+<arg>separator=|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.753665" elapsed="0.000210"/>
+</kw>
+<if>
+<branch type="IF" condition="'FAIL' in ${tmpErrorString}">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpErrorString}</var>
+<arg>${tmpErrorString}[-1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.754193" elapsed="0.000179"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errorStrings}</arg>
+<arg>${tmpErrorString}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.754480" elapsed="0.000058"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.754044" elapsed="0.000538"/>
+</branch>
+<branch type="ELSE">
+<kw name="Continue For Loop" owner="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.754768" elapsed="0.000148"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.754638" elapsed="0.000376"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.753999" elapsed="0.001156"/>
+</if>
+<var name="${newErrorString}"/>
+<status status="PASS" start="2026-09-22T15:56:07.752995" elapsed="0.002232"/>
+</iter>
+<var>${newErrorString}</var>
+<value>@{value}[-1]</value>
+<status status="PASS" start="2026-09-22T15:56:07.752764" elapsed="0.002540"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.752665" elapsed="0.002707"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.752278" elapsed="0.003139"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>${errorStrings}</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.755520" elapsed="0.000234"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${associatedItems}</var>
+<arg>url=https://crdn.codebeamer.com/rest/items/${key}/relations</arg>
+<arg>alias=${cbsession}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.755887" elapsed="0.000092"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${associationID}</var>
+<arg>${associatedItems.json()}</arg>
+<arg>$..keyAndId</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.756083" elapsed="0.000064"/>
+</kw>
+<kw name="Get Matches" owner="Collections">
+<var>${bugIDList}</var>
+<arg>${associationID}</arg>
+<arg>*DEFECT-*</arg>
+<doc>Returns a list of matches to ``pattern`` in ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.756245" elapsed="0.000065"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${bugIDList}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.756749" elapsed="0.000126"/>
+</kw>
+<var>${checkDefectsAssociated}</var>
+<arg>Should Not Be Empty</arg>
+<arg>${bugIDList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.756453" elapsed="0.000460"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${checkDefectsAssociated}&quot; == &quot;True&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${existingActiveBug}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.757117" elapsed="0.000116"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable If" owner="BuiltIn">
+<var>${tmpDefectKeyString}</var>
+<arg>'AUTODEFECT' in '${bug}'</arg>
+<arg>AUTODEFECT-</arg>
+<arg>DEFECT-</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.757525" elapsed="0.000151"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${bugID}</var>
+<arg>${bug}</arg>
+<arg>characters=${tmpDefectKeyString}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.757765" elapsed="0.000064"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${bugDetails}</var>
+<arg>url=https://crdn.codebeamer.com/rest/items/${bugID}</arg>
+<arg>alias=${cbsession}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.757909" elapsed="0.000170"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${bugStatus}</var>
+<arg>${bugDetails.json()}</arg>
+<arg>$..status</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.758176" elapsed="0.000046"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${bugDescription}</var>
+<arg>${bugDetails.json()}</arg>
+<arg>$..description</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.758325" elapsed="0.000046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\nExisting Bug Details: ID: ${bugID}, Status: ${bugStatus[0]} , Description: ${bugDescription}[0]</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.758460" elapsed="0.000149"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain Any" owner="BuiltIn">
+<arg>${bugDescription}[0]</arg>
+<arg>@{errorStrings}</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.758916" elapsed="0.000131"/>
+</kw>
+<var>${exactActiveBug}</var>
+<arg>Should Contain Any</arg>
+<arg>${bugDescription}[0]</arg>
+<arg>@{errorStrings}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.758710" elapsed="0.000380"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${bugState}</var>
+<arg>${bugStatus[0]}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.759187" elapsed="0.000056"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${bugState}&quot;==&quot;Closed&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${existingActiveBug}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.759407" elapsed="0.000114"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.759323" elapsed="0.000238"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${existingActiveBug}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.759671" elapsed="0.000102"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.759596" elapsed="0.000212"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.759305" elapsed="0.000528"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${existingActiveBug}&quot;==&quot;True&quot; and &quot;${exactActiveBug}&quot;==&quot;True&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${openBug}</var>
+<arg>${bugID}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.759953" elapsed="0.000105"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.760138" elapsed="0.000090"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.759882" elapsed="0.000394"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.759871" elapsed="0.000433"/>
+</if>
+<var name="${bug}"/>
+<status status="PASS" start="2026-09-22T15:56:07.757434" elapsed="0.002890"/>
+</iter>
+<var>${bug}</var>
+<value>@{bugIDList}</value>
+<status status="PASS" start="2026-09-22T15:56:07.757285" elapsed="0.003079"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>${existingActiveBug}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.760476" elapsed="0.000121"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${existingActiveBug}&quot;==&quot;True&quot; and &quot;${exactActiveBug}&quot;==&quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>\nSkipping Bug Creation as existing Active Bug(s) exists : ${openBug}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.760747" elapsed="0.000155"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${bugList}</arg>
+<arg>${key}</arg>
+<arg>${openBug}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.760989" elapsed="0.000052"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.760665" elapsed="0.000422"/>
+</branch>
+<branch type="ELSE">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugDetected}</var>
+<arg>fieldId=10000</arg>
+<arg>name=Found In Build</arg>
+<arg>value=${BUILD_ID}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.761201" elapsed="0.000138"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${bugDetectedList}</var>
+<arg>${tmpBugDetected}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.761425" elapsed="0.000105"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugPriority}</var>
+<arg>id=3</arg>
+<arg>name=Normal</arg>
+<arg>type=ChoiceOptionReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.761612" elapsed="0.000115"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugSeverity}</var>
+<arg>id=4</arg>
+<arg>name=Minor</arg>
+<arg>type=ChoiceOptionReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.761812" elapsed="0.000118"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tempBugSeverityList}</var>
+<arg>${tmpBugSeverity}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.762010" elapsed="0.000100"/>
+</kw>
+<kw name="Strip Image Markup" owner="StepResult">
+<var>${clean_conclusion}</var>
+<arg>${value}[2]</arg>
+<doc>Public Robot keyword: strips both &lt;img&gt; HTML tags and [{Image src='...'}] CB wiki markup
+from a string. Use this for any CodeBeamer plain-text field (bug description, conclusion, etc.)
+where image markup cannot be rendered.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.762187" elapsed="0.000034"/>
+</kw>
+<kw name="Strip Image Markup" owner="StepResult">
+<var>${clean_step_logs}</var>
+<arg>${value}[4]</arg>
+<doc>Public Robot keyword: strips both &lt;img&gt; HTML tags and [{Image src='...'}] CB wiki markup
+from a string. Use this for any CodeBeamer plain-text field (bug description, conclusion, etc.)
+where image markup cannot be rendered.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.762296" elapsed="0.000032"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugDetails}</var>
+<arg>name=[Automation-Bug]: Bug for TC ${key}:${value}[0]</arg>
+<arg>description=Test Case ${key} Failed! pipeline ID:${PipelineID} Error Message : ${clean_conclusion}. \n Step Logs : ${clean_step_logs}.\nRefer to detailed Logs for more details.</arg>
+<arg>customFields=${bugDetectedList}</arg>
+<arg>priority=${tmpBugPriority}</arg>
+<arg>severities=${tempBugSeverityList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.762406" elapsed="0.000120"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${bugCreation}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/330137/items</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpBugDetails}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Try bug creation</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.762612" elapsed="0.000063"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${bugID}</var>
+<arg>${bugCreation.json()}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.762875" elapsed="0.000056"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nBug Created: ${bugID}[0]</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.763012" elapsed="0.000186"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${bugList}</arg>
+<arg>${key}</arg>
+<arg>${bugID}[0]</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.763292" elapsed="0.000078"/>
+</kw>
+<kw name="Attach Screenshot To Bug" owner="Keyword_Codebeamer">
+<kw name="Extract Image For Upload" owner="StepResult">
+<var>${image_data}</var>
+<arg>${step_logs}</arg>
+<doc>Public Robot keyword: extracts the LAST base64 image embedded in text.
+${value}[4] is the full list of all step results as a string, so there may be
+multiple images (one per step). Using findall and taking [-1] ensures we always
+upload the most recent screenshot rather than the first one.
+Searches for both CB [{Image src='data:...'}] wiki markup (stored in TCResults)
+and HTML &lt;img src="data:..."&gt; tags.
+Returns a (filename, bytes, mime_type) tuple suitable for the RequestsLibrary
+'files' parameter in a multipart POST, or None if no image is found.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.765440" elapsed="0.000048"/>
+</kw>
+<if>
+<branch type="IF" condition="$image_data is not None">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpUploadContent}</var>
+<arg>attachments=${image_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.777730" elapsed="0.000202"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<arg>url=https://crdn.codebeamer.com/api/v3/items/${bug_id}/attachments</arg>
+<arg>alias=cb</arg>
+<arg>files=${tmpUploadContent}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Screenshot attachment upload to bug ${bug_id} failed</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.778310" elapsed="0.000096"/>
+</kw>
+<arg>POST On Session</arg>
+<arg>url=https://crdn.codebeamer.com/api/v3/items/${bug_id}/attachments</arg>
+<arg>alias=cb</arg>
+<arg>files=${tmpUploadContent}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Screenshot attachment upload to bug ${bug_id} failed</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.778061" elapsed="0.000395"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot attached to bug ${bug_id}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.778551" elapsed="0.000158"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.777493" elapsed="0.001273"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.765600" elapsed="0.013199"/>
+</if>
+<arg>${bugID}[0]</arg>
+<arg>${value}[4]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Attaches a screenshot embedded in step results to a CodeBeamer bug item.
+Extracts the base64 image from ${step_logs} and uploads it as a multipart attachment.
+Silently skips if no image is found.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.764989" elapsed="0.013848"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.761117" elapsed="0.017831"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.760652" elapsed="0.018321"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:07.757025" elapsed="0.021967"/>
+</branch>
+<branch type="ELSE">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugDetected}</var>
+<arg>fieldId=10000</arg>
+<arg>name=Found In Build</arg>
+<arg>value=${BUILD_ID}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.779106" elapsed="0.000140"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${bugDetectedList}</var>
+<arg>${tmpBugDetected}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.779331" elapsed="0.000100"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugPriority}</var>
+<arg>id=3</arg>
+<arg>name=Normal</arg>
+<arg>type=ChoiceOptionReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.779510" elapsed="0.000111"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugSeverity}</var>
+<arg>id=4</arg>
+<arg>name=Minor</arg>
+<arg>type=ChoiceOptionReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.779707" elapsed="0.000127"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tempBugSeverityList}</var>
+<arg>${tmpBugSeverity}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.779958" elapsed="0.000126"/>
+</kw>
+<kw name="Strip Image Markup" owner="StepResult">
+<var>${clean_conclusion}</var>
+<arg>${value}[2]</arg>
+<doc>Public Robot keyword: strips both &lt;img&gt; HTML tags and [{Image src='...'}] CB wiki markup
+from a string. Use this for any CodeBeamer plain-text field (bug description, conclusion, etc.)
+where image markup cannot be rendered.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.780202" elapsed="0.000037"/>
+</kw>
+<kw name="Strip Image Markup" owner="StepResult">
+<var>${clean_step_logs}</var>
+<arg>${value}[4]</arg>
+<doc>Public Robot keyword: strips both &lt;img&gt; HTML tags and [{Image src='...'}] CB wiki markup
+from a string. Use this for any CodeBeamer plain-text field (bug description, conclusion, etc.)
+where image markup cannot be rendered.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.780320" elapsed="0.000034"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugDetails}</var>
+<arg>name=[Automation-Bug]: Bug for TC ${key}:${value}[0]</arg>
+<arg>description=Test Case ${key} Failed! pipeline ID:${PipelineID} Error Message : ${clean_conclusion}. \n Step Logs : ${clean_step_logs}.\nRefer to detailed Logs for more details.</arg>
+<arg>customFields=${bugDetectedList}</arg>
+<arg>priority=${tmpBugPriority}</arg>
+<arg>severities=${tempBugSeverityList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.780452" elapsed="0.000144"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${bugCreation}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/330137/items</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpBugDetails}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Try bug creation</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.780698" elapsed="0.000090"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${bugID}</var>
+<arg>${bugCreation.json()}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.780891" elapsed="0.000050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nBug Created: ${bugID}[0]</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.781042" elapsed="0.000198"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${bugList}</arg>
+<arg>${key}</arg>
+<arg>${bugID}[0]</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.781942" elapsed="0.000140"/>
+</kw>
+<kw name="Attach Screenshot To Bug" owner="Keyword_Codebeamer">
+<kw name="Extract Image For Upload" owner="StepResult">
+<var>${image_data}</var>
+<arg>${step_logs}</arg>
+<doc>Public Robot keyword: extracts the LAST base64 image embedded in text.
+${value}[4] is the full list of all step results as a string, so there may be
+multiple images (one per step). Using findall and taking [-1] ensures we always
+upload the most recent screenshot rather than the first one.
+Searches for both CB [{Image src='data:...'}] wiki markup (stored in TCResults)
+and HTML &lt;img src="data:..."&gt; tags.
+Returns a (filename, bytes, mime_type) tuple suitable for the RequestsLibrary
+'files' parameter in a multipart POST, or None if no image is found.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.784872" elapsed="0.000239"/>
+</kw>
+<if>
+<branch type="IF" condition="$image_data is not None">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpUploadContent}</var>
+<arg>attachments=${image_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.786000" elapsed="0.000637"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<arg>url=https://crdn.codebeamer.com/api/v3/items/${bug_id}/attachments</arg>
+<arg>alias=cb</arg>
+<arg>files=${tmpUploadContent}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Screenshot attachment upload to bug ${bug_id} failed</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.787303" elapsed="0.000140"/>
+</kw>
+<arg>POST On Session</arg>
+<arg>url=https://crdn.codebeamer.com/api/v3/items/${bug_id}/attachments</arg>
+<arg>alias=cb</arg>
+<arg>files=${tmpUploadContent}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Screenshot attachment upload to bug ${bug_id} failed</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.786948" elapsed="0.000584"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Screenshot attached to bug ${bug_id}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.787701" elapsed="0.000280"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.785589" elapsed="0.002448"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.785473" elapsed="0.002640"/>
+</if>
+<arg>${bugID}[0]</arg>
+<arg>${value}[4]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Attaches a screenshot embedded in step results to a CodeBeamer bug item.
+Extracts the base64 image from ${step_logs} and uploads it as a multipart attachment.
+Silently skips if no image is found.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.783999" elapsed="0.004279"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.779016" elapsed="0.009456"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.757008" elapsed="0.031509"/>
+</if>
+<return>
+<value>${bugList}</value>
+<status status="PASS" start="2026-09-22T15:56:07.788568" elapsed="0.000029"/>
+</return>
+<var>${bugList}</var>
+<arg>${key}</arg>
+<arg>${value}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to get the list of defects created during the test run.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.749704" elapsed="0.038939"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugRef}</var>
+<arg>id=${bugList}[${key}]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.788802" elapsed="0.000152"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpBugRefList}</var>
+<arg>${tmpBugRef}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.789057" elapsed="0.000140"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResult}</arg>
+<arg>reportedBugReferences=${tmpBugRefList}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.789301" elapsed="0.000068"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.747410" elapsed="0.042001"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${bugList}</var>
+<arg>${None}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.789556" elapsed="0.000115"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.789446" elapsed="0.000270"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.747294" elapsed="0.042453"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.789866" elapsed="0.000113"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.742668" elapsed="0.047350"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{testCaseResultDict}</value>
+<status status="PASS" start="2026-09-22T15:56:07.742388" elapsed="0.047699"/>
+</for>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create payload for creating Test Run in CodeBeamer with test cases and their results.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.737349" elapsed="0.052798"/>
+</kw>
+<kw name="Create Master Test Run" owner="Keyword_Codebeamer">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tcRunNameObj}</var>
+<arg>name=${cbTestRunName}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.790935" elapsed="0.000167"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${finalTestRunBody}</var>
+<arg>testCaseIds=@{tcList}</arg>
+<arg>testRunModel=${tcRunNameObj}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.791208" elapsed="0.000114"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${finalTestRunBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.791423" elapsed="0.000106"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nCreating a new TestRun instance in CodeBeamer with executed TestCases added...</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.791605" elapsed="0.000140"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns</arg>
+<arg>alias=cb</arg>
+<arg>json=${finalTestRunBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun creation failed..check logs for further debugging</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.792054" elapsed="0.000068"/>
+</kw>
+<var>${createTestRunStatus}</var>
+<var>${createTestRunOut}</var>
+<arg>POST On Session</arg>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns</arg>
+<arg>alias=cb</arg>
+<arg>json=${finalTestRunBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun creation failed..check logs for further debugging</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.791847" elapsed="0.000325"/>
+</kw>
+<if>
+<branch type="IF" condition="'${createTestRunStatus}' == 'PASS'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${createRunResponseText}</var>
+<arg>${createTestRunOut.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.792491" elapsed="0.000126"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${createRunResponseText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.792701" elapsed="0.000107"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Value From Json" owner="JSONLibrary">
+<arg>${createRunResponseText}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.793076" elapsed="0.000047"/>
+</kw>
+<var>${runIdList}</var>
+<arg>Get Value From Json</arg>
+<arg>${createRunResponseText}</arg>
+<arg>$..id</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.792891" elapsed="0.000266"/>
+</kw>
+<if>
+<branch type="IF" condition="'${runIdList}[0]' == 'PASS'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testRunID}</var>
+<arg>${runIdList}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.793299" elapsed="0.000140"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nThe TestRun instance created is: ${testRunID}[0]</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.793530" elapsed="0.000126"/>
+</kw>
+<kw name="Update Test Config Information" owner="Keyword_Codebeamer">
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${testConfigs}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261904/items/</arg>
+<arg>alias=cb</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.793967" elapsed="0.000039"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>@{testConfig}</var>
+<arg>${testConfigs.json()}</arg>
+<arg>$..name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794082" elapsed="0.000042"/>
+</kw>
+<kw name="Get Index From List" owner="Collections">
+<var>${testConfigIndex}</var>
+<arg>${testConfig}</arg>
+<arg>${testConfigName}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794204" elapsed="0.000048"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${testConfigID}</var>
+<arg>${testConfigs.json()}</arg>
+<arg>$.itemRefs.[${testConfigIndex}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794326" elapsed="0.000042"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpPropogate}</var>
+<arg>suspectPropagation=DO_NOT_PROPAGATE</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794445" elapsed="0.000112"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${refData}</var>
+<arg>referenceData=${tmpPropogate}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794637" elapsed="0.000103"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${refData}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794814" elapsed="0.000097"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpPlatformBody}</var>
+<arg>id=${testConfigID}[0]</arg>
+<arg>name=${testConfigName}</arg>
+<arg>type=TrackerItemReference</arg>
+<arg>angularIcon=settings</arg>
+<arg>iconColor=#00a85d</arg>
+<arg>propagateSuspects=false</arg>
+<arg>trackerKey=TESTCONF</arg>
+<arg>trackerTypeId=16</arg>
+<arg>uri=/item/${testConfigID}[0]</arg>
+<arg>referenceData=${tmpPropogate}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.794984" elapsed="0.000133"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpPlatformList}</var>
+<arg>${tmpPlatformBody}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.795208" elapsed="0.000094"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpSharedField}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.795371" elapsed="0.000085"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBuildNumberID}</var>
+<arg>fieldId=10003</arg>
+<arg>name=AuroraApps_Build_Number</arg>
+<arg>value=${BUILD_ID}</arg>
+<arg>sharedFieldNames=${tmpSharedField}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.795528" elapsed="0.000112"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpExecutionID}</var>
+<arg>fieldId=10005</arg>
+<arg>name=PipelineID</arg>
+<arg>value=${PipelineID}</arg>
+<arg>sharedFieldNames=${tmpSharedField}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.795722" elapsed="0.000112"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpCustomFieldList}</var>
+<arg>${tmpBuildNumberID}</arg>
+<arg>${tmpExecutionID}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.795911" elapsed="0.000116"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunByDetails}</var>
+<arg>id=121</arg>
+<arg>name=craft-runner</arg>
+<arg>type=UserReference</arg>
+<arg>email=karvec2@medtronic.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.796122" elapsed="0.000122"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpPlatformsBody}</var>
+<arg>name=${tmpSuiteName}</arg>
+<arg>platforms=${tmpPlatformList}</arg>
+<arg>customFields=${tmpCustomFieldList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.796338" elapsed="0.000129"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpPlatformsBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.796564" elapsed="0.000109"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${tmpUpdateTestConfigResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${tmpRunID}</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpPlatformsBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${tmpRunID} with Test Configuration and Build Number failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.796771" elapsed="0.000100"/>
+</kw>
+<arg>${cbTestRunName}</arg>
+<arg>${testRunID}[0]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with Test</doc>
+<status status="PASS" start="2026-09-22T15:56:07.793839" elapsed="0.003111"/>
+</kw>
+<return>
+<value>${createTestRunOut}</value>
+<value>${testRunID}[0]</value>
+<status status="PASS" start="2026-09-22T15:56:07.797195" elapsed="0.000058"/>
+</return>
+<status status="PASS" start="2026-09-22T15:56:07.793227" elapsed="0.004086"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCodeBeamer Test Run request returned no run ID. Check the configured credentials and tracker permissions.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.797474" elapsed="0.000174"/>
+</kw>
+<return>
+<value>${createTestRunOut}</value>
+<value>${None}</value>
+<status status="PASS" start="2026-09-22T15:56:07.798112" elapsed="0.000049"/>
+</return>
+<status status="PASS" start="2026-09-22T15:56:07.797366" elapsed="0.000866"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.793212" elapsed="0.005061"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:07.792401" elapsed="0.005935"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCodeBeamer Test Run request failed before creation. This usually means the configured credentials are invalid or the user lacks permissions for tracker 261965.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.798534" elapsed="0.000234"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${createTestRunOut}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.798883" elapsed="0.000150"/>
+</kw>
+<return>
+<value>${None}</value>
+<value>${None}</value>
+<status status="PASS" start="2026-09-22T15:56:07.799095" elapsed="0.000037"/>
+</return>
+<status status="PASS" start="2026-09-22T15:56:07.798376" elapsed="0.000807"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.792382" elapsed="0.006850"/>
+</if>
+<var>${tmpTRResponse}</var>
+<var>${tmpTRID}</var>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<tag>teardown</tag>
+<doc>Keyword to create Test Run in codebeamer with list of Test Cases that are being executed. This is used as a Suite Teardown keyword to update the results for individual test cases and finally update the test run instance and close it.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.790728" elapsed="0.008610"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${tmpTRID}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.800443" elapsed="0.000418"/>
+</kw>
+<var>${runIdStatus}</var>
+<arg>Should Not Be Equal</arg>
+<arg>${tmpTRID}</arg>
+<arg>${None}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.799782" elapsed="0.001255"/>
+</kw>
+<if>
+<branch type="IF" condition="'${runIdStatus}' == 'True'">
+<kw name="Identify Internal Test Run Instances" owner="Keyword_Codebeamer">
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${HiddentestRuns}</var>
+<arg>${createTestRunOut.json()}</arg>
+<arg>$..children</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.803306" elapsed="0.000104"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nThe Hidden TestRun instances created are: ${HiddentestRuns}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.803627" elapsed="0.000432"/>
+</kw>
+<return>
+<value>${HiddentestRuns}</value>
+<status status="PASS" start="2026-09-22T15:56:07.804183" elapsed="0.000045"/>
+</return>
+<var>@{tmpHiddenRuns}</var>
+<arg>${tmpTRResponse}</arg>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to identify hidden test run instances created as children of the main test run instance in CodeBeamer.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.802697" elapsed="0.001664"/>
+</kw>
+<kw name="Update Test Step Results" owner="Keyword_Codebeamer">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>${hiddenRun}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.806999" elapsed="0.000196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${hiddenRun}[id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.807331" elapsed="0.000171"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${hiddenTestRunResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${hiddenRun}[id]</arg>
+<arg>alias=cb</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.807704" elapsed="0.000159"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${hiddenTestRunResponse.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.808020" elapsed="0.000174"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${tmpRunID}</var>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.808327" elapsed="0.000068"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${hiddenTestRunID}</var>
+<arg>${tmpRunID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.808514" elapsed="0.000117"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseID}</var>
+<arg>${tmpRunID}[5]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.808713" elapsed="0.000104"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${testCaseID}</var>
+<arg>${testCaseID}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.808899" elapsed="0.000096"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{TCStepResultSet}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.809081" elapsed="0.000104"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${tmpCBResult1}</var>
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.809269" elapsed="0.000050"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCBResult2}</var>
+<arg>@{tmpCBResult1}[4]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.809396" elapsed="0.000109"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${listStatus}</var>
+<arg>${tmpCBResult2}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.809585" elapsed="0.000097"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${testLogFileMessage}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.809763" elapsed="0.000107"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${listStatus}&quot; != &quot;0&quot;">
+<if>
+<branch type="IF" condition="&quot;${listStatus}&quot; == &quot;1&quot;">
+<kw name="Log Dictionary" owner="Collections">
+<arg>${tmpCBResult2}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.810101" elapsed="0.000042"/>
+</kw>
+<kw name="Get Dictionary Keys" owner="Collections">
+<var>${key}</var>
+<arg>${tmpCBResult2}</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.810219" elapsed="0.000038"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${value}</var>
+<arg>${tmpCBResult2}</arg>
+<arg>${key}[0]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.810329" elapsed="0.000044"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TCStepResultSet}</arg>
+<arg>${key}[0]</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.810562" elapsed="0.000069"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.810033" elapsed="0.000638"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TCStepResultSet}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.810973" elapsed="0.000051"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.810907" elapsed="0.000155"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{step}</value>
+<status status="PASS" start="2026-09-22T15:56:07.810859" elapsed="0.000238"/>
+</for>
+<var name="${step}"/>
+<status status="PASS" start="2026-09-22T15:56:07.810830" elapsed="0.000305"/>
+</iter>
+<var>${step}</var>
+<value>@{tmpCBResult2}</value>
+<status status="PASS" start="2026-09-22T15:56:07.810751" elapsed="0.000410"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.810705" elapsed="0.000488"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.810022" elapsed="0.001195"/>
+</if>
+<status status="PASS" start="2026-09-22T15:56:07.809966" elapsed="0.001273"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.809946" elapsed="0.001317"/>
+</if>
+<kw name="Log Dictionary" owner="Collections">
+<arg>${TCStepResultSet}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.811325" elapsed="0.000042"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${stepResultStatus}</var>
+<arg>${TCStepResultSet}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.811449" elapsed="0.000137"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>"${stepResultStatus}"=="${0}"</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.811690" elapsed="0.000128"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${tmpRunName}</var>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<arg>$..name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.811898" elapsed="0.000048"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${hiddenTestRunName}</var>
+<arg>${tmpRunName}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.812028" elapsed="0.000106"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${actualResultObject}</var>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<arg>$..customFields</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.812214" elapsed="0.000043"/>
+</kw>
+<for flavor="IN">
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${fieldID}</var>
+<arg>${tmpOnject}</arg>
+<arg>fieldId</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.813166" elapsed="0.000153"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${resultList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.813589" elapsed="0.000169"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${fieldID}&quot; == &quot;2000000&quot;">
+<kw name="Get From Dictionary" owner="Collections">
+<var>${tmpTCStepResults}</var>
+<arg>${tmpOnject}</arg>
+<arg>values</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.814284" elapsed="0.000090"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpTCStepResults}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.814495" elapsed="0.000140"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${testStepsCount}</var>
+<arg>${tmpTCStepResults}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.814746" elapsed="0.000119"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpStepResultList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.815638" elapsed="0.000138"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${TCStepResultSet}</arg>
+<arg>Step-${tmpStepResultCounter+1}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.816225" elapsed="0.000070"/>
+</kw>
+<var>${tmpCBResultKeyStatus}</var>
+<arg>Dictionary Should Contain Key</arg>
+<arg>${TCStepResultSet}</arg>
+<arg>Step-${tmpStepResultCounter+1}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.815923" elapsed="0.000425"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${tmpCBResultKeyStatus}&quot; == &quot;True&quot;">
+<kw name="Get From Dictionary" owner="Collections">
+<var>${tmpCBResult}</var>
+<arg>${TCStepResultSet}</arg>
+<arg>Step-${tmpStepResultCounter+1}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.816958" elapsed="0.000299"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${splitResult}</var>
+<arg>${tmpCBResult}</arg>
+<arg>separator=|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.817590" elapsed="0.000306"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${translatedStepResult}</var>
+<arg>${codeBeamerResultEnum}</arg>
+<arg>${splitResult}[0]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.818163" elapsed="0.000170"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${timeStamp}</var>
+<arg>${splitResult}[1]</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.818647" elapsed="0.000141"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.816510" elapsed="0.002400"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Time" owner="BuiltIn">
+<var>${tmpStepTime}</var>
+<arg>format=YYYY-MM-DDThh:mm:ss</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.819538" elapsed="0.000791"/>
+</kw>
+<kw name="Replace String" owner="String">
+<var>${splitStepTime}</var>
+<arg>${tmpStepTime}</arg>
+<arg>${SPACE}</arg>
+<arg>T</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.820728" elapsed="0.000350"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCBResult}</var>
+<arg>Unknown|${splitStepTime}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.821431" elapsed="0.000527"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${splitResult}</var>
+<arg>${tmpCBResult}</arg>
+<arg>separator=|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.822239" elapsed="0.000183"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${translatedStepResult}</var>
+<arg>${codeBeamerResultEnum}</arg>
+<arg>${splitResult}[0]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.822601" elapsed="0.000267"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${timeStamp}</var>
+<arg>${splitResult}[1]</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.823057" elapsed="0.000085"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.819097" elapsed="0.004119"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.816471" elapsed="0.006839"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${translatedStepResult}&quot;==&quot;FAILED&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${stepconclusion}</var>
+<arg>${splitResult}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.823798" elapsed="0.000324"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: ${stepconclusion}.${testLogFileMessage}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.824324" elapsed="0.000242"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.823608" elapsed="0.001045"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${translatedStepResult}&quot;==&quot;Not Run/Pending&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: Test Step Not updated with results as Keyword mapping details missing.${testLogFileMessage}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.824836" elapsed="0.000158"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.824709" elapsed="0.000343"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${translatedStepResult}&quot;==&quot;BLOCKED&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: Test Step Blocked due to previous step failure.${testLogFileMessage}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.825222" elapsed="0.000173"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.825098" elapsed="0.000357"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: ${splitResult}[2]${testLogFileMessage}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.825624" elapsed="0.000154"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.825506" elapsed="0.000338"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.823563" elapsed="0.002325"/>
+</if>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepActualResultBody}</var>
+<arg>fieldId=2000004</arg>
+<arg>name=Actual result</arg>
+<arg>value=${actualResultString}</arg>
+<arg>type=WikiTextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.826027" elapsed="0.000231"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepResultBody}</var>
+<arg>fieldId=2000005</arg>
+<arg>name=Result</arg>
+<arg>value=${translatedStepResult}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.826406" elapsed="0.000201"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunByDetails}</var>
+<arg>id=121</arg>
+<arg>name=craft-runner</arg>
+<arg>type=UserReference</arg>
+<arg>email=karvec2@medtronic.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.826756" elapsed="0.000183"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpStepRunByList}</var>
+<arg>${tmpStepRunByDetails}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.827045" elapsed="0.000116"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpSharedFieldNames}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.827252" elapsed="0.000099"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunByBody}</var>
+<arg>fieldId=2000006</arg>
+<arg>name=Run by</arg>
+<arg>values=${tmpStepRunByList}</arg>
+<arg>type=ChoiceFieldValue</arg>
+<arg>sharedFieldNames=${tmpSharedFieldNames}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.827440" elapsed="0.000132"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunAtBody}</var>
+<arg>fieldId=2000007</arg>
+<arg>name=Run at</arg>
+<arg>value=${timeStamp}.000</arg>
+<arg>type=DateFieldValue</arg>
+<arg>sharedFieldNames=${tmpSharedFieldNames}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.827665" elapsed="0.000124"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCStepResults}[${tmpStepResultCounter}]</arg>
+<arg>${tmpStepActualResultBody}</arg>
+<arg>${tmpStepResultBody}</arg>
+<arg>${tmpStepRunByBody}</arg>
+<arg>${tmpStepRunAtBody}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.827892" elapsed="0.000081"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${resultList}</arg>
+<arg>${tmpTCStepResults}[${tmpStepResultCounter}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.828055" elapsed="0.000050"/>
+</kw>
+<var name="${tmpStepResultCounter}"/>
+<status status="PASS" start="2026-09-22T15:56:07.815500" elapsed="0.012639"/>
+</iter>
+<var>${tmpStepResultCounter}</var>
+<value>${0}</value>
+<value>${testStepsCount}</value>
+<status status="PASS" start="2026-09-22T15:56:07.814954" elapsed="0.013226"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>${resultList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.828284" elapsed="0.000117"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.814149" elapsed="0.014295"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.814109" elapsed="0.014366"/>
+</if>
+<var name="${tmpOnject}"/>
+<status status="PASS" start="2026-09-22T15:56:07.813076" elapsed="0.015435"/>
+</iter>
+<var>${tmpOnject}</var>
+<value>@{resultObject}</value>
+<status status="PASS" start="2026-09-22T15:56:07.812798" elapsed="0.015747"/>
+</for>
+<kw name="Catenate" owner="BuiltIn">
+<var>${tmpExp}</var>
+<arg>${resultList}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.828640" elapsed="0.000132"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${customFieldUpdateBody}</var>
+<arg>fieldId=${fieldID}</arg>
+<arg>name=Test Step Results</arg>
+<arg>values=${resultList}</arg>
+<arg>type=TableFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.828871" elapsed="0.000129"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${customFieldList}</var>
+<arg>${customFieldUpdateBody}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.829089" elapsed="0.000106"/>
+</kw>
+<var name="${resultObject}"/>
+<status status="PASS" start="2026-09-22T15:56:07.812747" elapsed="0.016484"/>
+</iter>
+<var>${resultObject}</var>
+<value>@{actualResultObject}</value>
+<status status="PASS" start="2026-09-22T15:56:07.812319" elapsed="0.016947"/>
+</for>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${hiddenTestRunUpdateBody}</var>
+<arg>id=${hiddenTestRunID}</arg>
+<arg>name=${hiddenTestRunName}</arg>
+<arg>customFields=${customFieldList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.829447" elapsed="0.000141"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${hiddenTestRunUpdateBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.829682" elapsed="0.000133"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${tmpUpdateTestStepUpdateResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${hiddenRun}[id]</arg>
+<arg>alias=cb</arg>
+<arg>json=${hiddenTestRunUpdateBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${hiddenTestRunID} with Test Step Results Failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.829934" elapsed="0.000131"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${CI_JOB_ID}&quot; == &quot;NotApplicable&quot;">
+<kw name="Upload Custom Report To Test Run" owner="Keyword_Codebeamer">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${reportPath}</var>
+<arg>${OUTPUTDIR}${/}CustomReports${/}${testCaseID}.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.831165" elapsed="0.000137"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${reportPath}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.831465" elapsed="0.000095"/>
+</kw>
+<kw name="Create Zip Attachment" owner="StepResult">
+<var>${reportFile}</var>
+<arg>${reportPath}</arg>
+<arg>${testCaseID}.zip</arg>
+<doc>Return a CodeBeamer-compatible ZIP attachment containing an HTML report.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.831820" elapsed="0.000140"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{uploadFiles}</var>
+<arg>attachments=${reportFile}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.832182" elapsed="0.000203"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${uploadResponse}</var>
+<arg>url=https://crdn.codebeamer.com/api/v3/items/${testRunID}/attachments</arg>
+<arg>alias=cb</arg>
+<arg>files=${uploadFiles}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Uploading custom report ${reportPath} to TestRun ${testRunID} failed</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.832529" elapsed="0.001488"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${uploadedAttachments}</var>
+<arg>${uploadResponse.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.834331" elapsed="0.000203"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${uploadedAttachments}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.834691" elapsed="0.000130"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Uploaded local custom report ${reportPath} to TestRun ${testRunID}.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.834957" elapsed="0.000313"/>
+</kw>
+<return>
+<value>${uploadResponse}</value>
+<status status="PASS" start="2026-09-22T15:56:07.835386" elapsed="0.000056"/>
+</return>
+<arg>${hiddenRun}[id]</arg>
+<arg>${testCaseID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Upload the locally generated custom HTML report to a CodeBeamer test-run item.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.830814" elapsed="0.004733"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.830313" elapsed="0.005478"/>
+</branch>
+<branch type="ELSE">
+<kw name="Associate Custom Report Link To Test Run" owner="Keyword_Codebeamer">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${reportURL}</var>
+<arg>https://code.mdtcreate.com/crdn/-/aurora/artf/-/jobs/${CI_JOB_ID}/artifacts/Reports/CustomReports/${testCaseID}.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.836643" elapsed="0.000263"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpFromDict}</var>
+<arg>id=${hiddenRun}</arg>
+<arg>type=TrackerItemReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.837224" elapsed="0.000335"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpRelationType}</var>
+<arg>id=4</arg>
+<arg>name=related</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.837823" elapsed="0.000255"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${ReportAssociationBody}</var>
+<arg>name=Automation Test Report</arg>
+<arg>description=Custom Report Link for Automation Test Run-${hiddenRun}</arg>
+<arg>descriptionFormat=PlainText</arg>
+<arg>url=${reportURL}</arg>
+<arg>from=${tmpFromDict}</arg>
+<arg>type=${tmpRelationType}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.838352" elapsed="0.000400"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${ReportAssociationBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.839060" elapsed="0.000276"/>
+</kw>
+<kw name="Convert Json To String" owner="JSONLibrary">
+<var>${tmpJSON}</var>
+<arg>${ReportAssociationBody}</arg>
+<doc>Convert JSON object to string</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.839584" elapsed="0.000064"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpJSON}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.839825" elapsed="0.000270"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<arg>url=https://crdn.codebeamer.com/rest/v3/associations</arg>
+<arg>alias=cb</arg>
+<arg>json=${ReportAssociationBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun-Report Association creation failed..check logs for further debugging</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.840938" elapsed="0.000262"/>
+</kw>
+<var>${ReportAssociationResponse}</var>
+<arg>POST On Session</arg>
+<arg>url=https://crdn.codebeamer.com/rest/v3/associations</arg>
+<arg>alias=cb</arg>
+<arg>json=${ReportAssociationBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun-Report Association creation failed..check logs for further debugging</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.840298" elapsed="0.001006"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${ReportAssociationResponse}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.841527" elapsed="0.000272"/>
+</kw>
+<arg>${hiddenRun}[id]</arg>
+<arg>${PipelineID}</arg>
+<arg>${testCaseID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to associate custom report links to the main test run instance in CodeBeamer.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.836283" elapsed="0.005701"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.835852" elapsed="0.006651"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.830269" elapsed="0.012307"/>
+</if>
+<kw name="Update Test Config Information" owner="Keyword_Codebeamer">
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${testConfigs}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261904/items/</arg>
+<arg>alias=cb</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.843301" elapsed="0.000086"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>@{testConfig}</var>
+<arg>${testConfigs.json()}</arg>
+<arg>$..name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.843555" elapsed="0.000073"/>
+</kw>
+<kw name="Get Index From List" owner="Collections">
+<var>${testConfigIndex}</var>
+<arg>${testConfig}</arg>
+<arg>${testConfigName}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.843816" elapsed="0.000069"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${testConfigID}</var>
+<arg>${testConfigs.json()}</arg>
+<arg>$.itemRefs.[${testConfigIndex}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.843977" elapsed="0.000049"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpPropogate}</var>
+<arg>suspectPropagation=DO_NOT_PROPAGATE</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.844154" elapsed="0.000292"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${refData}</var>
+<arg>referenceData=${tmpPropogate}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.844558" elapsed="0.000122"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${refData}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.844772" elapsed="0.000107"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpPlatformBody}</var>
+<arg>id=${testConfigID}[0]</arg>
+<arg>name=${testConfigName}</arg>
+<arg>type=TrackerItemReference</arg>
+<arg>angularIcon=settings</arg>
+<arg>iconColor=#00a85d</arg>
+<arg>propagateSuspects=false</arg>
+<arg>trackerKey=TESTCONF</arg>
+<arg>trackerTypeId=16</arg>
+<arg>uri=/item/${testConfigID}[0]</arg>
+<arg>referenceData=${tmpPropogate}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.844961" elapsed="0.000158"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpPlatformList}</var>
+<arg>${tmpPlatformBody}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.845231" elapsed="0.000100"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpSharedField}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.845403" elapsed="0.000086"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBuildNumberID}</var>
+<arg>fieldId=10003</arg>
+<arg>name=AuroraApps_Build_Number</arg>
+<arg>value=${BUILD_ID}</arg>
+<arg>sharedFieldNames=${tmpSharedField}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.845563" elapsed="0.000124"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpExecutionID}</var>
+<arg>fieldId=10005</arg>
+<arg>name=PipelineID</arg>
+<arg>value=${PipelineID}</arg>
+<arg>sharedFieldNames=${tmpSharedField}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.845772" elapsed="0.000118"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpCustomFieldList}</var>
+<arg>${tmpBuildNumberID}</arg>
+<arg>${tmpExecutionID}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.845970" elapsed="0.000104"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunByDetails}</var>
+<arg>id=121</arg>
+<arg>name=craft-runner</arg>
+<arg>type=UserReference</arg>
+<arg>email=karvec2@medtronic.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.846156" elapsed="0.000115"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpPlatformsBody}</var>
+<arg>name=${tmpSuiteName}</arg>
+<arg>platforms=${tmpPlatformList}</arg>
+<arg>customFields=${tmpCustomFieldList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.846380" elapsed="0.000120"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpPlatformsBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.846663" elapsed="0.000317"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${tmpUpdateTestConfigResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${tmpRunID}</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpPlatformsBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${tmpRunID} with Test Configuration and Build Number failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.847155" elapsed="0.000150"/>
+</kw>
+<arg>${hiddenTestRunName}</arg>
+<arg>${hiddenTestRunID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with Test</doc>
+<status status="PASS" start="2026-09-22T15:56:07.842942" elapsed="0.004519"/>
+</kw>
+<var name="${hiddenRun}"/>
+<status status="PASS" start="2026-09-22T15:56:07.806836" elapsed="0.041020"/>
+</iter>
+<var>${hiddenRun}</var>
+<value>@{HiddentestRuns}[0]</value>
+<status status="PASS" start="2026-09-22T15:56:07.806088" elapsed="0.042009"/>
+</for>
+<arg>${tmpHiddenRuns}</arg>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update individual test step results for a test case in CodeBeamer.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.805886" elapsed="0.042451"/>
+</kw>
+<kw name="Update Test Run with Test Case Results and Close" owner="Keyword_Codebeamer">
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<arg>reason=Waiting for Test Run in CodeBeamer to be active before updating results..</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.849488" elapsed="0.000359"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpTCResultBodyFinal}</var>
+<arg>updateRequestModels=${tmpTCResult}</arg>
+<arg>parentResultPropagation=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.849991" elapsed="0.000166"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpTCResultBodyFinal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.850269" elapsed="0.000135"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nUpdating ${testRunID} TestRun instance with results for individual test cases...</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.850516" elapsed="0.000230"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${tmpUpdateTRunResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/testruns/${testRunID}</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpTCResultBodyFinal}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${testRunID} with results failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.850861" elapsed="0.000097"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nThe TestRun instance ${testRunID} updated with TC results and Closed</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.851315" elapsed="0.000219"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>https://crdn.codebeamer.com/issue/${testRunID}</arg>
+<arg>html=True</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.851647" elapsed="0.000162"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<var>${SUITE NAME}</var>
+<arg>${SUITE NAME}</arg>
+<arg>https://crdn.codebeamer.com/issue/${testRunID}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.851914" elapsed="0.000126"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${CI_JOB_ID}&quot; == &quot;NotApplicable&quot;">
+<for flavor="IN">
+<iter>
+<kw name="Upload Custom Report To Test Run" owner="Keyword_Codebeamer">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${reportPath}</var>
+<arg>${OUTPUTDIR}${/}CustomReports${/}${testCaseID}.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.852870" elapsed="0.000167"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<arg>${reportPath}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.853166" elapsed="0.000058"/>
+</kw>
+<kw name="Create Zip Attachment" owner="StepResult">
+<var>${reportFile}</var>
+<arg>${reportPath}</arg>
+<arg>${testCaseID}.zip</arg>
+<doc>Return a CodeBeamer-compatible ZIP attachment containing an HTML report.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.853327" elapsed="0.000051"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{uploadFiles}</var>
+<arg>attachments=${reportFile}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.853501" elapsed="0.000143"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${uploadResponse}</var>
+<arg>url=https://crdn.codebeamer.com/api/v3/items/${testRunID}/attachments</arg>
+<arg>alias=cb</arg>
+<arg>files=${uploadFiles}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Uploading custom report ${reportPath} to TestRun ${testRunID} failed</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.853747" elapsed="0.000085"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${uploadedAttachments}</var>
+<arg>${uploadResponse.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.853923" elapsed="0.000112"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${uploadedAttachments}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.854121" elapsed="0.000107"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Uploaded local custom report ${reportPath} to TestRun ${testRunID}.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.854334" elapsed="0.000157"/>
+</kw>
+<return>
+<value>${uploadResponse}</value>
+<status status="PASS" start="2026-09-22T15:56:07.854548" elapsed="0.000026"/>
+</return>
+<arg>${testRunID}</arg>
+<arg>${tcResult}[testCaseReference][id]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Upload the locally generated custom HTML report to a CodeBeamer test-run item.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.852552" elapsed="0.002065"/>
+</kw>
+<var name="${tcResult}"/>
+<status status="PASS" start="2026-09-22T15:56:07.852319" elapsed="0.002404"/>
+</iter>
+<var>${tcResult}</var>
+<value>@{tmpTCResult}</value>
+<status status="PASS" start="2026-09-22T15:56:07.852238" elapsed="0.002536"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.852172" elapsed="0.002644"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Associate Custom Report Link To Test Run" owner="Keyword_Codebeamer">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${reportURL}</var>
+<arg>https://code.mdtcreate.com/crdn/-/aurora/artf/-/jobs/${CI_JOB_ID}/artifacts/Reports/CustomReports/${testCaseID}.html</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.855452" elapsed="0.000122"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpFromDict}</var>
+<arg>id=${hiddenRun}</arg>
+<arg>type=TrackerItemReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.855676" elapsed="0.000140"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpRelationType}</var>
+<arg>id=4</arg>
+<arg>name=related</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.855905" elapsed="0.000117"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${ReportAssociationBody}</var>
+<arg>name=Automation Test Report</arg>
+<arg>description=Custom Report Link for Automation Test Run-${hiddenRun}</arg>
+<arg>descriptionFormat=PlainText</arg>
+<arg>url=${reportURL}</arg>
+<arg>from=${tmpFromDict}</arg>
+<arg>type=${tmpRelationType}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.856103" elapsed="0.000123"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${ReportAssociationBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.856329" elapsed="0.000123"/>
+</kw>
+<kw name="Convert Json To String" owner="JSONLibrary">
+<var>${tmpJSON}</var>
+<arg>${ReportAssociationBody}</arg>
+<doc>Convert JSON object to string</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.856535" elapsed="0.000036"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpJSON}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.856643" elapsed="0.000110"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<arg>url=https://crdn.codebeamer.com/rest/v3/associations</arg>
+<arg>alias=cb</arg>
+<arg>json=${ReportAssociationBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun-Report Association creation failed..check logs for further debugging</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.857080" elapsed="0.000069"/>
+</kw>
+<var>${ReportAssociationResponse}</var>
+<arg>POST On Session</arg>
+<arg>url=https://crdn.codebeamer.com/rest/v3/associations</arg>
+<arg>alias=cb</arg>
+<arg>json=${ReportAssociationBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun-Report Association creation failed..check logs for further debugging</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.856849" elapsed="0.000340"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${ReportAssociationResponse}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.857276" elapsed="0.000118"/>
+</kw>
+<arg>${testRunID}</arg>
+<arg>${PipelineID}</arg>
+<arg>${tcResult}[testCaseReference][id]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to associate custom report links to the main test run instance in CodeBeamer.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.855252" elapsed="0.002183"/>
+</kw>
+<var name="${tcResult}"/>
+<status status="PASS" start="2026-09-22T15:56:07.855017" elapsed="0.002657"/>
+</iter>
+<var>${tcResult}</var>
+<value>@{tmpTCResult}</value>
+<status status="PASS" start="2026-09-22T15:56:07.854916" elapsed="0.002805"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.854851" elapsed="0.002922"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.852147" elapsed="0.005656"/>
+</if>
+<arg>${tmpTRID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<tag>teardown</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with results for individual test cases and close the Test Run instance.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.849227" elapsed="0.008612"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.858335" elapsed="0.000137"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.858743" elapsed="0.000118"/>
+</kw>
+<var>${isBugListEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${bugList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.858562" elapsed="0.000336"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.858982" elapsed="0.000107"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${isBugListEmpty}&quot; == &quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>Bug List Empty</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.859257" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.859174" elapsed="0.000226"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${newBugList}</arg>
+<arg>${key}:${value}|</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.859623" elapsed="0.000113"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.859551" elapsed="0.000224"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{bugList}</value>
+<status status="PASS" start="2026-09-22T15:56:07.859475" elapsed="0.000336"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.859437" elapsed="0.000412"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.859155" elapsed="0.000718"/>
+</if>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.860193" elapsed="0.000112"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.860387" elapsed="0.000123"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.860595" elapsed="0.000102"/>
+</kw>
+<var>${fileContent}</var>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "True"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<arg>ELSE IF</arg>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "False"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.859954" elapsed="0.000774"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>path=C:\\Hashmad_ali\\Craft_Nova\\resources\\keywords/../Reports/RF/results.txt</arg>
+<arg>content=${fileContent}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.860816" elapsed="0.000065"/>
+</kw>
+<arg>${tmpTRID}</arg>
+<arg>${bugList}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="PASS" start="2026-09-22T15:56:07.858159" elapsed="0.002760"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.801860" elapsed="0.059248"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCodeBeamer Test Run creation did not return a valid run ID. The request likely failed because the configured CodeBeamer credentials or tracker permissions are invalid.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.861212" elapsed="0.000137"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.861637" elapsed="0.000105"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.862007" elapsed="0.000103"/>
+</kw>
+<var>${isBugListEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${bugList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.861827" elapsed="0.000314"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.862214" elapsed="0.000094"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${isBugListEmpty}&quot; == &quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>Bug List Empty</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.862455" elapsed="0.000101"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.862377" elapsed="0.000225"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${newBugList}</arg>
+<arg>${key}:${value}|</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.862799" elapsed="0.000114"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.862727" elapsed="0.000226"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{bugList}</value>
+<status status="PASS" start="2026-09-22T15:56:07.862665" elapsed="0.000323"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.862630" elapsed="0.000415"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.862362" elapsed="0.000707"/>
+</if>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.863767" elapsed="0.000455"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.864886" elapsed="0.000334"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.865435" elapsed="0.000223"/>
+</kw>
+<var>${fileContent}</var>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "True"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<arg>ELSE IF</arg>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "False"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.863157" elapsed="0.002591"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>path=C:\\Hashmad_ali\\Craft_Nova\\resources\\keywords/../Reports/RF/results.txt</arg>
+<arg>content=${fileContent}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.866005" elapsed="0.000230"/>
+</kw>
+<arg>NotApplicable</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="PASS" start="2026-09-22T15:56:07.861516" elapsed="0.004915"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.861140" elapsed="0.006507"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.801679" elapsed="0.066228"/>
+</if>
+<status status="FAIL" start="2026-09-22T15:56:07.712342" elapsed="0.155970">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\n-------------\n\nPOSTING TO CodeBeamer DISABLED FOR DEVELOPMENT / DEBUGING / ETC. \n\n</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.869507" elapsed="0.001266"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.872295" elapsed="0.000265"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${bugList}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.873015" elapsed="0.000179"/>
+</kw>
+<var>${isBugListEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${bugList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.872727" elapsed="0.000536"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.873423" elapsed="0.000209"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${isBugListEmpty}&quot; == &quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>Bug List Empty</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.874164" elapsed="0.000276"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.873921" elapsed="0.000581"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${newBugList}</arg>
+<arg>${key}:${value}|</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.875027" elapsed="0.000156"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="PASS" start="2026-09-22T15:56:07.874829" elapsed="0.000433"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{bugList}</value>
+<status status="PASS" start="2026-09-22T15:56:07.874651" elapsed="0.000677"/>
+</for>
+<status status="PASS" start="2026-09-22T15:56:07.874557" elapsed="0.000844"/>
+</branch>
+<status status="PASS" start="2026-09-22T15:56:07.873841" elapsed="0.001603"/>
+</if>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.876039" elapsed="0.000126"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.876257" elapsed="0.000095"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.876425" elapsed="0.000096"/>
+</kw>
+<var>${fileContent}</var>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "True"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<arg>ELSE IF</arg>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "False"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T15:56:07.875639" elapsed="0.000914"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<arg>path=C:\\Hashmad_ali\\Craft_Nova\\resources\\keywords/../Reports/RF/results.txt</arg>
+<arg>content=${fileContent}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" start="2026-09-22T15:56:07.876700" elapsed="0.000087"/>
+</kw>
+<arg>NotApplicable</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="PASS" start="2026-09-22T15:56:07.871726" elapsed="0.005130"/>
+</kw>
+<status status="PASS" start="2026-09-22T15:56:07.868444" elapsed="0.008696"/>
+</branch>
+<status status="FAIL" start="2026-09-22T15:56:07.712328" elapsed="0.164876">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</if>
+<status status="FAIL" start="2026-09-22T15:56:07.712019" elapsed="0.165336">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</branch>
+<status status="FAIL" start="2026-09-22T15:56:07.697268" elapsed="0.180123">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</if>
+<tag>codebeamer</tag>
+<tag>high</tag>
+<doc>High-level keyword to update CodeBeamer with test results.</doc>
+<status status="FAIL" start="2026-09-22T15:56:07.695986" elapsed="0.181515">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</kw>
+<arg>Create Test Run In Codebeamer</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-22T15:56:07.695145" elapsed="0.182447">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</kw>
+<doc>NOVA application inspection test for verifying the application launch,
+SSO authentication, Offline Update navigation, and Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:*
+- *User Story:* US_ID</doc>
+<status status="FAIL" start="2026-09-22T15:56:04.426176" elapsed="3.451539">Suite teardown failed:
+No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">application</stat>
+<stat pass="0" fail="1" skip="0">pipeline</stat>
+<stat pass="0" fail="1" skip="0">positive</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">ui_interface</stat>
+</tag>
+<suite>
+<stat name="Application Inspection" id="s1" pass="0" fail="1" skip="0">Application Inspection</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

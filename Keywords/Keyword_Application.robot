@@ -8,7 +8,7 @@ Launch NOVA
     [Tags]    143698=1
 
     ${pid}=    Launch Application    ${NOVA_APPLICATION}
-    Set Suite Variable    ${NOVA_PID}    ${pid}
+    Set Suite Variable    \${NOVA_PID}    ${pid}
     Wait For Application Handle By PID    ${pid}    10000
 
     Element Should Exist    /Window[@Name='NOVA']
@@ -21,8 +21,8 @@ Launch NOVA
 Close NOVA
     [Documentation]    Explicitly close the NOVA window and kill the process if it remains open.
     Run Keyword And Ignore Error    Close Window    /Window[@Name='NOVA']
-    Run Keyword And Ignore Error    Close Application
-    ${pid_to_close}=    Get Variable Value    ${NOVA_PID}    ${EMPTY}
+    Run Keyword And Ignore Error    Close Application    ${NOVA_APPLICATION}
+    ${pid_to_close}=    Get Variable Value    \${NOVA_PID}    ${EMPTY}
     Run Keyword If    '${pid_to_close}' != '${EMPTY}' and '${pid_to_close}' != 'None'    Run    taskkill /PID ${pid_to_close} /F /T
 
 
@@ -104,7 +104,7 @@ Continue To Update Device
 Document Keyword Outcome
     [Arguments]    ${message}
 
-    Set Suite Variable    ${keyword_result_message}    ${message}
+    Set Suite Variable    \${keyword_result_message}    ${message}
     Set Suite Variable    ${KEYWORD_STATUS}    PASS
     Log    Verification Passed: ${message}
 
