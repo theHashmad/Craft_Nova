@@ -1,0 +1,6 @@
+﻿chore(tests): update test case ID to 143698
+
+- Update TC ID from 143694 to 143698 in Test_Cases/E2E/*.robot and Keywords/Keyword_Application.robot
+- Keeps test metadata in sync with CodeBeamer
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>

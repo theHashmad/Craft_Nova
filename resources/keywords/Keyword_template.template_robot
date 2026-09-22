@@ -1,0 +1,36 @@
+*** Settings ***
+Documentation    Keyword Library for FEATURE (eg. Display)
+...                - *Date of Implementation:* DATE
+...                - *Author:* AUTHOR
+...                - *Components:* IMPACTED_COMPONENTS
+...                - *Dependencies:* DEPENDENCIES ON OTHER MODULES/LIBRARIES
+
+Library     SOME_LIB
+Resource    SOME_RESOURCE
+
+
+#variables optional
+*** Variables ***
+${a}    a
+${b}    b
+etc...
+    
+
+*** Keywords ***
+KEYWORD_NAME
+    [Documentation]    Keyword DOING SOMETHING SPECIFIC
+    ...                - *Date of Implementation:* DATE
+    ...                - *Author:* AUTHOR
+    ...                - *Usage:* EXPLANE HOW TO USE KEYWORD AND ITS ARGUMENTS (IF ANY)
+    ...                - *Returns:* WHAT IS RETURNED (IF ANY)
+    [Tags]    internal    OR    TC_ID_1=Step1,Step2...    TC_ID_2=Step1,Step2...
+    #arguments optional
+    [Arguments]    SOME_ARG
+    SOME ACTION
+    SOME ACTION
+    SOME ACTION
+    etc...
+    #return optional
+    RETURN    SOME_RETURN_VALUE
+    #if not internal keyword then you need Teardown section
+    [Teardown]    Document Keyword Outcome    Verified that SOMETHING HAPPENED.

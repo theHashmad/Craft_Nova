@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$report_title</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; word-wrap: break-word; }
+        th { background: #eee; }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        .skipped { color: orange; }
+        .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
+        .section-title { background: #ffffff; padding: 10px; margin-top: 5; font-weight: bold; color: #005fae; }
+        .caption {
+          background-color: #f0f0f0;
+          font-weight: bold;
+          color: #005fae;
+        }
+    </style>
+</head>
+<body>
+  $report_header
+  $suite_setup
+  $test_cases
+  $suite_teardown
+</body>
+</html>

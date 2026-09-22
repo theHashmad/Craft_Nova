@@ -1,0 +1,31 @@
+
+Application Inspection,None,FAIL
+Application Inspection,None,FAIL
+Application Inspection,NotApplicable,FAIL
+Application Inspection,NotApplicable,FAIL
+Application Inspection,NotApplicable,FAIL
+Application Inspection,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,FAIL
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,None,FAIL
+Application Navigation Offline,None,FAIL
+Application Navigation Offline,None,FAIL
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,NotApplicable,PASS
+Application Navigation Offline,148623,PASS
+Application Navigation Offline,148627,PASS
+Application Navigation Offline,148637,PASS
+Application Navigation Offline,148641,PASS
+Application Navigation Offline,148669,PASS
+Application Navigation Offline,148673,PASS
+Application Navigation Offline,148681,PASS
+Application Navigation Offline,148683,PASS
+Application Navigation Offline,148694,PASS
+Application Navigation Offline,148698,PASS
+Application Navigation Offline,148715,PASS

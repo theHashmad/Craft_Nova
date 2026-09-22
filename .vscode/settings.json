@@ -1,0 +1,28 @@
+{
+  "python.languageServer": "Pylance",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/CRAFT_NOVA",
+    "${workspaceFolder}/Common_Lib",
+    "${workspaceFolder}/Common_Lib/G4_API/Core"
+  ],
+  "python.envFile": "${workspaceFolder}/.env",
+
+  "robot.language-server.python": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "robot.pythonpath": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/resources",
+    "${workspaceFolder}/resources/keywords",
+    "${workspaceFolder}/keywords",
+    "${workspaceFolder}/config",
+    "${workspaceFolder}/Common_Lib",
+    "${workspaceFolder}/Common_Lib/G4_API/Core"
+  ],
+
+  "editor.gotoLocation.multiple": "goto",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  }
+}

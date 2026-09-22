@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-09-14T12:17:21.986240" rpa="false" schemaversion="5">
+<suite id="s1" name="Application Inspection" source="C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\tests\smoke\application\application_inspection.robot">
+<test id="s1-t1" name="143694: Inspect NOVA Controls" line="15">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Get Test Start Time">
+<msg time="2026-09-14T12:17:22.643261" level="FAIL">No keyword with name 'Get Test Start Time' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2026-09-14T12:17:22.643172" elapsed="0.000196">No keyword with name 'Get Test Start Time' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<arg>Get Test Start Time</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-14T12:17:22.638270" elapsed="0.005305">No keyword with name 'Get Test Start Time' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Collect Test Result">
+<msg time="2026-09-14T12:17:22.645847" level="FAIL">No keyword with name 'Collect Test Result' found.</msg>
+<status status="FAIL" start="2026-09-14T12:17:22.645812" elapsed="0.000069">No keyword with name 'Collect Test Result' found.</status>
+</kw>
+<arg>Collect Test Result</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-14T12:17:22.643931" elapsed="0.002029">No keyword with name 'Collect Test Result' found.</status>
+</kw>
+<doc>Verify the NOVA application launches successfully and that the Download Path combobox can be inspected.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;your name&gt;
+- *TCID:* [https://crdn.codebeamer.com/item/143694 | 143694]
+- *Verifies:* [https://crdn.codebeamer.com/issue/US_ID | US_ID]</doc>
+<tag>application</tag>
+<tag>pipeline</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<tag>ui_interface</tag>
+<status status="FAIL" start="2026-09-14T12:17:22.636688" elapsed="0.009403">Setup failed:
+No keyword with name 'Get Test Start Time' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?
+
+Also teardown failed:
+No keyword with name 'Collect Test Result' found.</status>
+</test>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Create Test Run In Codebeamer">
+<msg time="2026-09-14T12:17:22.654959" level="FAIL">No keyword with name 'Create Test Run In Codebeamer' found.</msg>
+<status status="FAIL" start="2026-09-14T12:17:22.654917" elapsed="0.000075">No keyword with name 'Create Test Run In Codebeamer' found.</status>
+</kw>
+<arg>Create Test Run In Codebeamer</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-14T12:17:22.653214" elapsed="0.001857">No keyword with name 'Create Test Run In Codebeamer' found.</status>
+</kw>
+<doc>NOVA application inspection test for checking the application launches and the download path combobox is available.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;your name&gt;
+- *User Story:* US_ID</doc>
+<status status="FAIL" start="2026-09-14T12:17:22.004515" elapsed="0.650614">Suite teardown failed:
+No keyword with name 'Create Test Run In Codebeamer' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">application</stat>
+<stat pass="0" fail="1" skip="0">pipeline</stat>
+<stat pass="0" fail="1" skip="0">positive</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">ui_interface</stat>
+</tag>
+<suite>
+<stat name="Application Inspection" id="s1" pass="0" fail="1" skip="0">Application Inspection</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

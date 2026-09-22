@@ -1,0 +1,64 @@
+[
+  {
+    "key": "learned_32201",
+    "display_name": "Test Case Execution Failed: 5 != kPatientCircuitConnectedInSheath",
+    "regex": "PatientCircuitConnectedInSheath",
+    "color_fg": "#004d40",
+    "color_bg": "#e0f2f1",
+    "description": "Auto-detected from 5 failure(s): Test Case Execution Failed: 5 != kPatientCircuitConnectedInSheath",
+    "confirmed": true,
+    "added_date": "2026-04-23",
+    "example": "Test Case 66102 Failed! pipeline ID:3831648 Error Message : Test Case Execution Failed: 5 != kPatientCircuitConnectedInSheath. Total Steps:5, Passed Steps:2, Failed Steps:1, Not Run Steps:2. Please refer to Test Automation Log Files for more details.. \n Step Logs : [{'Step-1': 'PASS|2026-04-23T12:32",
+    "affected_suites": [
+      "TS Display transition from Standby to Therapy inSheath - positive",
+      "TS Generator transition from Therapy-InSheath to Standby state while REM is out of range  - positive",
+      "TS Generator transition from Therapy-InSheath to Standby state while temperature is out of range and catheter is disconnected - positive",
+      "TS Generator transition from Therapy-InSheath to Therapy-Ready state while RF impedance is in range for all enabled electrodes - positive",
+      "TS Display State Machine reflects Generator State Machine based on HDD message - positive"
+    ]
+  },
+  {
+    "key": "learned_48479",
+    "display_name": "Test Case Execution Failed: ValueError: Enum PatientCircuitState has no value de",
+    "regex": "ValueError",
+    "color_fg": "#1a237e",
+    "color_bg": "#e8eaf6",
+    "description": "Auto-detected from 3 failure(s): Test Case Execution Failed: ValueError: Enum PatientCircuitState has no value defined for name 'kPatientCircuitConnected",
+    "confirmed": true,
+    "added_date": "2026-04-23",
+    "example": "Test Case 66650 Failed! pipeline ID:3831648 Error Message : Test Case Execution Failed: ValueError: Enum PatientCircuitState has no value defined for name 'kPatientCircuitConnectedInVivo'. Total Steps:5, Passed Steps:0, Failed Steps:1, Not Run Steps:4. Please refer to Test Automation Log Files for m",
+    "affected_suites": [
+      "TS Generator transition from Therapy-Ready to Therapy-InSheath state while RF impedance out of in range for all enabled electrodes - positive",
+      "TS Initial Power Ramp Positive",
+      "TS Power Step Down on All Channels via RF Channel Data Notices Boundary"
+    ]
+  },
+  {
+    "key": "learned_03432",
+    "display_name": "Test Case Execution Failed: 2 != kPatientCircuitWaitForRem",
+    "regex": "PatientCircuitWaitForRem",
+    "color_fg": "#4a148c",
+    "color_bg": "#f3e5f5",
+    "description": "Auto-detected from 1 failure(s): Test Case Execution Failed: 2 != kPatientCircuitWaitForRem",
+    "confirmed": true,
+    "added_date": "2026-04-23",
+    "example": "Test Case 62205 Failed! pipeline ID:3831648 Error Message : Test Case Execution Failed: 2 != kPatientCircuitWaitForRem. Total Steps:9, Passed Steps:2, Failed Steps:1, Not Run Steps:6. Please refer to Test Automation Log Files for more details.. \n Step Logs : [{'Step-1': 'PASS|2026-04-23T12:46:23|Ver",
+    "affected_suites": [
+      "TS Patient Circuit SM all States Positive"
+    ]
+  },
+  {
+    "key": "learned_16008",
+    "display_name": "Test Case Execution Failed",
+    "regex": "Execution|Failed",
+    "color_fg": "#bf360c",
+    "color_bg": "#fbe9e7",
+    "description": "Auto-detected from 1 failure(s): Test Case Execution Failed",
+    "confirmed": true,
+    "added_date": "2026-04-23",
+    "example": "Test Case 66587 Failed! Error Message : Test Case Execution Failed. Total Steps:16, Passed Steps:0, Failed Steps:16, Not Run Steps:0. For more details, please refer to the Test Automation Execution Log File.. \n Step Logs : [{'Step-1': 'FAIL|0000-00-00T00:00:00|\"FAIL\"'}, {'Step-2': 'FAIL|0000-00-00T0",
+    "affected_suites": [
+      "TS Electrode selection - sending toggle notice to HDD message - positive"
+    ]
+  }
+]

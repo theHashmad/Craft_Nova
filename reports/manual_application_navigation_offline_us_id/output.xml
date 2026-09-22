@@ -1,0 +1,2405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-09-22T12:16:30.562852" rpa="false" schemaversion="5">
+<suite id="s1" name="Application Navigation Offline" source="C:\Hashmad_ali\Craft_Nova\Test_Cases\E2E\application_navigation_offline.robot">
+<test id="s1-t1" name="143698: Verify navigation to Update Software (Offline)" line="19">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Get Test Start Time" owner="Keyword_Codebeamer">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-09-22T12:16:31.401021" level="INFO">${start_time} = 1790072191</msg>
+<var>${start_time}</var>
+<arg>format=epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-09-22T12:16:31.400740" elapsed="0.000316"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:31.401413" level="INFO">${start_time} = 1790072191</msg>
+<arg>${start_time}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:31.401185" elapsed="0.000267"/>
+</kw>
+<tag>teardown</tag>
+<status status="PASS" start="2026-09-22T12:16:31.400504" elapsed="0.001010"/>
+</kw>
+<arg>Get Test Start Time</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:31.400024" elapsed="0.001537"/>
+</kw>
+<kw name="Launch NOVA" owner="Keyword_Application">
+<kw name="Launch Application" owner="FlaUILibrary">
+<msg time="2026-09-22T12:16:31.538308" level="INFO">${pid} = 23608</msg>
+<var>${pid}</var>
+<arg>${NOVA_APPLICATION}</arg>
+<doc>Launches an application.</doc>
+<status status="PASS" start="2026-09-22T12:16:31.401888" elapsed="0.136477"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:31.539493" level="INFO">${NOVA_PID} = 23608</msg>
+<arg>${NOVA_PID}</arg>
+<arg>${pid}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:31.538582" elapsed="0.000959"/>
+</kw>
+<kw name="Wait For Application Handle By Pid" owner="FlaUILibrary">
+<arg>${pid}</arg>
+<arg>10000</arg>
+<doc>Wait for application handle until timeout is reached.</doc>
+<status status="PASS" start="2026-09-22T12:16:31.539721" elapsed="1.267415"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="PASS" start="2026-09-22T12:16:32.807608" elapsed="0.227692"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.037971" level="INFO">${keyword_result_message} = NOVA opens successfully.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.037072" elapsed="0.001019"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.038648" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.038297" elapsed="0.000394"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.039023" level="INFO">Verification Passed: NOVA opens successfully.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.038809" elapsed="0.000255"/>
+</kw>
+<arg>NOVA opens successfully.</arg>
+<status status="PASS" start="2026-09-22T12:16:33.036673" elapsed="0.002454"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.039607" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.039439" elapsed="0.000247"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:33.039250" elapsed="0.000525"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>NOVA opens successfully.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.036080" elapsed="0.003744"/>
+</kw>
+<tag>143698=1</tag>
+<status status="PASS" start="2026-09-22T12:16:31.401714" elapsed="1.638173"/>
+</kw>
+<kw name="Authenticate Using SSO" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.040654" level="INFO">${auth} = /Window[@Name='NOVA']//*[@Name='Authenticate in browser via single sign-on (SSO).']</msg>
+<var>${auth}</var>
+<arg>/Window[@Name='NOVA']//*[@Name='Authenticate in browser via single sign-on (SSO).']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.040320" elapsed="0.000374"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${auth}</arg>
+<arg>10000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.040836" elapsed="0.059260"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${auth}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.100416" elapsed="0.208814"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.310699" elapsed="0.104259"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.416797" level="INFO">${keyword_result_message} = User reaches the NOVA landing page.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.416517" elapsed="0.000322"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.417146" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.416941" elapsed="0.000235"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.417437" level="INFO">Verification Passed: User reaches the NOVA landing page.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.417261" elapsed="0.000227"/>
+</kw>
+<arg>User reaches the NOVA landing page.</arg>
+<status status="PASS" start="2026-09-22T12:16:33.416150" elapsed="0.001420"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.418564" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.418280" elapsed="0.000355"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:33.417893" elapsed="0.000824"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>User reaches the NOVA landing page.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.415410" elapsed="0.003365"/>
+</kw>
+<tag>143698=2</tag>
+<status status="PASS" start="2026-09-22T12:16:33.040122" elapsed="0.379292"/>
+</kw>
+<kw name="Select Update Software Offline" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.419949" level="INFO">${offline_update} = /Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</msg>
+<var>${offline_update}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.419763" elapsed="0.000209"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${offline_update}</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.420068" elapsed="0.054694"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${offline_update}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.475709" elapsed="0.178138"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.657621" level="INFO">${keyword_result_message} = The Update Software (Offline) page is displayed.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.657161" elapsed="0.000553"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.658151" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.657831" elapsed="0.000368"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.658487" level="INFO">Verification Passed: The Update Software (Offline) page is displayed.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.658308" elapsed="0.000213"/>
+</kw>
+<arg>The Update Software (Offline) page is displayed.</arg>
+<status status="PASS" start="2026-09-22T12:16:33.656366" elapsed="0.002203"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.659118" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.658989" elapsed="0.000160"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:33.658747" elapsed="0.000465"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The Update Software (Offline) page is displayed.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.654422" elapsed="0.004829"/>
+</kw>
+<tag>143698=3</tag>
+<status status="PASS" start="2026-09-22T12:16:33.419583" elapsed="0.239712"/>
+</kw>
+<kw name="Verify Offline Update Controls" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.659751" level="INFO">${update_device} = /Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</msg>
+<var>${update_device}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.659575" elapsed="0.000199"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.659914" elapsed="0.031476"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.691914" elapsed="0.025950"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.719277" level="INFO">${keyword_result_message} = The page displays the controls required for offline software update and device selection.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.719016" elapsed="0.000301"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.719615" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.719410" elapsed="0.000236"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.719885" level="INFO">Verification Passed: The page displays the controls required for offline software update and device selection.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.719729" elapsed="0.000191"/>
+</kw>
+<arg>The page displays the controls required for offline software update and device selection.</arg>
+<status status="PASS" start="2026-09-22T12:16:33.718650" elapsed="0.001316"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.720354" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.720224" elapsed="0.000164"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:33.720067" elapsed="0.000366"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The page displays the controls required for offline software update and device selection.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.718136" elapsed="0.002329"/>
+</kw>
+<tag>143698=4</tag>
+<status status="PASS" start="2026-09-22T12:16:33.659430" elapsed="0.061076"/>
+</kw>
+<kw name="Continue To Update Device" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.720936" level="INFO">${update_device} = /Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</msg>
+<var>${update_device}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.720776" elapsed="0.000180"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.721039" elapsed="0.168706"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:33.892915" level="INFO">${device_path} = /Window[@Name='NOVA']//*[@AutomationId='DevicePath']</msg>
+<var>${device_path}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='DevicePath']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.891328" elapsed="0.001719"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>${device_path}</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="PASS" start="2026-09-22T12:16:33.893908" elapsed="0.144096"/>
+</kw>
+<kw name="Get All Names From Combobox" owner="FlaUILibrary">
+<msg time="2026-09-22T12:16:34.430987" level="INFO">${items} = []</msg>
+<var>${items}</var>
+<arg>${device_path}</arg>
+<doc>Get all names from a combobox as a list.
+If element could not be found by xpath an error message will be thrown.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.039396" elapsed="0.391643"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.431510" level="INFO">DOWNLOAD PATH OPTIONS: []</msg>
+<arg>DOWNLOAD PATH OPTIONS: ${items}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.431227" elapsed="0.000324"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.432745" level="INFO">${keyword_result_message} = The Update Device page is displayed.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.432179" elapsed="0.000648"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.433508" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.433048" elapsed="0.000540"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.434128" level="INFO">Verification Passed: The Update Device page is displayed.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.433770" elapsed="0.000457"/>
+</kw>
+<arg>The Update Device page is displayed.</arg>
+<status status="PASS" start="2026-09-22T12:16:34.431976" elapsed="0.002433"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.435244" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.435018" elapsed="0.000275"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:34.434768" elapsed="0.000592"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The Update Device page is displayed.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.431689" elapsed="0.003725"/>
+</kw>
+<tag>143698=5</tag>
+<status status="PASS" start="2026-09-22T12:16:33.720636" elapsed="0.714850"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Collect Test Result" owner="Keyword_Codebeamer">
+<if>
+<branch type="IF" condition="'${cbEnabled}'.lower() == 'true'">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.438981" level="INFO">${end_time} = 1790072194</msg>
+<var>${end_time}</var>
+<arg>format=epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.438187" elapsed="0.000861"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.439772" level="INFO">${duration} = 3</msg>
+<var>${duration}</var>
+<arg>${end_time}-${start_time}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.439183" elapsed="0.000629"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2026-09-22T12:16:34.440109" level="INFO">${tmptestCaseID} = ['143698', ' Verify navigation to Update Software (Offline)']</msg>
+<var>${tmptestCaseID}</var>
+<arg>${TEST_NAME}</arg>
+<arg>separator=:</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.439937" elapsed="0.000200"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.440580" level="INFO">${testCaseID} = 143698</msg>
+<var>${testCaseID}</var>
+<arg>${tmptestCaseID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.440299" elapsed="0.000309"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.440854" level="INFO">[]</msg>
+<arg>${TCResults}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.440697" elapsed="0.000207"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${SuiteType}&quot; == &quot;datadriven&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>\nSkip Processing Data Driven TC Results here...</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441224" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441019" elapsed="0.000269"/>
+</branch>
+<branch type="ELSE">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.441648" level="INFO">@{tmpTCSteps} = [ ]</msg>
+<var>@{tmpTCSteps}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.441459" elapsed="0.000212"/>
+</kw>
+<if>
+<branch type="IF" condition="${TCResults}">
+<for flavor="IN">
+<iter>
+<if>
+<branch type="IF" condition="&quot;${result}[0]&quot;==&quot;${testCaseID}&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCSteps}</arg>
+<arg>${result}[1]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442054" elapsed="0.000022"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441974" elapsed="0.000137"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441962" elapsed="0.000180"/>
+</if>
+<var name="${result}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441923" elapsed="0.000241"/>
+</iter>
+<var>${result}</var>
+<value>@{TCResults}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441813" elapsed="0.000386"/>
+</for>
+<kw name="Log List" owner="Collections">
+<arg>${tmpTCSteps}</arg>
+<doc>Logs contents of the ``list`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442285" elapsed="0.000020"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<var>${resultStr}</var>
+<arg>${TCResults}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442379" elapsed="0.000020"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${stepCount}</var>
+<arg>${TCResults}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442509" elapsed="0.000022"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalFaild}</var>
+<arg>${resultStr}</arg>
+<arg>FAIL|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442616" elapsed="0.000017"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalNotRun}</var>
+<arg>${resultStr}</arg>
+<arg>NOT RUN|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442704" elapsed="0.000017"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${passCount}</var>
+<arg>${resultStr}</arg>
+<arg>PASS|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442898" elapsed="0.000023"/>
+</kw>
+<if>
+<branch type="IF" condition="'${TEST_STATUS}'=='FAIL'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test Case Execution Failed: ${Test Message}. Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}. Please refer to Test Automation Log Files for more details.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.443055" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442982" elapsed="0.000121"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>All steps executed successfully.Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.443193" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:34.443130" elapsed="0.000109"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:34.442967" elapsed="0.000296"/>
+</if>
+<status status="NOT RUN" start="2026-09-22T12:16:34.441734" elapsed="0.001547"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.443564" level="INFO">${tmpCompletionMessage} = Test Setup Failed: . No Test Steps executed. Check logs for more details.</msg>
+<var>${tmpCompletionMessage}</var>
+<arg>Test Setup Failed: ${Test Message}. No Test Steps executed. Check logs for more details.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.443365" elapsed="0.000222"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:34.443304" elapsed="0.000317"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:34.441719" elapsed="0.001930"/>
+</if>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.443987" level="INFO">@{tmpTC} = [  Verify navigation to Update Software (Offline) | PASS | Test Setup Failed: . No Test Steps executed. Check logs for more details. | 3 | [] ]</msg>
+<var>@{tmpTC}</var>
+<arg>${tmptestCaseID}[1]</arg>
+<arg>${TEST STATUS}</arg>
+<arg>${tmpCompletionMessage}</arg>
+<arg>${duration}</arg>
+<arg>${tmpTCSteps}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.443715" elapsed="0.000294"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}=${tmpTC}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.444098" elapsed="0.001241"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.445789" level="INFO">
+
+Added 143698: Verify navigation to Update Software (Offline) status and result in master suite execution list</msg>
+<arg>\n\nAdded ${TEST NAME} status and result in master suite execution list</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.445447" elapsed="0.000518"/>
+</kw>
+<kw name="Log Dictionary" owner="Collections">
+<msg time="2026-09-22T12:16:34.446283" level="INFO">Dictionary has one item:
+143698: [' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]</msg>
+<arg>${testCaseResultDict}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.446089" elapsed="0.000249"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.446691" level="INFO">
+
+Added 143698: Verify navigation to Update Software (Offline) and its Test Step status and results in master suite execution list</msg>
+<arg>\n\nAdded ${TEST NAME} and its Test Step status and results in master suite execution list</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.446428" elapsed="0.000362"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:34.441358" elapsed="0.005488"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:34.440977" elapsed="0.005913"/>
+</if>
+<status status="PASS" start="2026-09-22T12:16:34.437297" elapsed="0.009633"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCollect Test Result skipped because posting to CodeBeamer is disabled.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:34.447042" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:34.446958" elapsed="0.000135"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:34.437250" elapsed="0.009866"/>
+</if>
+<tag>teardown</tag>
+<status status="PASS" start="2026-09-22T12:16:34.436956" elapsed="0.010201"/>
+</kw>
+<kw name="Close NOVA" owner="Keyword_Application">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Window" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Try to close window from element.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.447687" elapsed="0.037375"/>
+</kw>
+<arg>Close Window</arg>
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.447482" elapsed="0.037693"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Application" owner="FlaUILibrary">
+<msg time="2026-09-22T12:16:34.485757" level="FAIL">Keyword 'FlaUILibrary.Close Application' expected 1 to 2 arguments, got 0.</msg>
+<doc>Closes the attached application.</doc>
+<status status="FAIL" start="2026-09-22T12:16:34.485638" elapsed="0.000156">Keyword 'FlaUILibrary.Close Application' expected 1 to 2 arguments, got 0.</status>
+</kw>
+<arg>Close Application</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.485335" elapsed="0.000519"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-09-22T12:16:34.486192" level="INFO">${pid_to_close} = 23608</msg>
+<var>${pid_to_close}</var>
+<arg>${NOVA_PID}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.485948" elapsed="0.000266"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-09-22T12:16:34.498955" level="INFO">Running command 'taskkill /PID 23608 /F /T 2&gt;&amp;1'.</msg>
+<arg>taskkill /PID ${pid_to_close} /F /T</arg>
+<doc>_This keyword is considered deprecated. Use the
+[http://robotframework.org/robotframework/latest/libraries/Process.html|
+Process] library instead._</doc>
+<status status="PASS" start="2026-09-22T12:16:34.487981" elapsed="0.531762"/>
+</kw>
+<arg>'${pid_to_close}' != '${EMPTY}' and '${pid_to_close}' != 'None'</arg>
+<arg>Run</arg>
+<arg>taskkill /PID ${pid_to_close} /F /T</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.486332" elapsed="0.533547"/>
+</kw>
+<doc>Explicitly close the NOVA window and kill the process if it remains open.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.447291" elapsed="0.572662"/>
+</kw>
+<arg>Collect Test Result</arg>
+<arg>Close NOVA</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:34.435791" elapsed="0.584209"/>
+</kw>
+<doc>Verify the NOVA application launches successfully, the user can authenticate using SSO,
+navigate to the Offline Update page, verify the required controls,
+and continue to the Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;HashmadAli&gt;
+- *TCID:* [https://crdn.codebeamer.com/item/143698 | 143698]
+- *Verifies:* [https://crdn.codebeamer.com/issue/141004 | 141004]</doc>
+<tag>application</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<tag>ui_interface</tag>
+<status status="PASS" start="2026-09-22T12:16:31.398408" elapsed="3.621841"/>
+</test>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Create Test Run in Codebeamer" owner="Keyword_Codebeamer">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${SUITE_MESSAGE}</arg>
+<arg>Suite setup failed</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.024454" elapsed="0.000832"/>
+</kw>
+<msg time="2026-09-22T12:16:35.025428" level="INFO">${suiteSetupStatus} = True</msg>
+<var>${suiteSetupStatus}</var>
+<arg>Should Not Contain</arg>
+<arg>${SUITE_MESSAGE}</arg>
+<arg>Suite setup failed</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.024174" elapsed="0.001279"/>
+</kw>
+<if>
+<branch type="IF" condition="'${suiteSetupStatus}' == 'False'">
+<kw name="Log" owner="BuiltIn">
+<arg>\nALERT : SKIPPING CodeBeamer Test Run Creation as Suite Setup Failed.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.025772" elapsed="0.000024"/>
+</kw>
+<kw name="Create Task for Suite Setup Failure" owner="Keyword_Codebeamer">
+<var>${taskID}</var>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<status status="NOT RUN" start="2026-09-22T12:16:35.026000" elapsed="0.000026"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<arg>${taskID}</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="NOT RUN" start="2026-09-22T12:16:35.026232" elapsed="0.000024"/>
+</kw>
+<return>
+<status status="NOT RUN" start="2026-09-22T12:16:35.026316" elapsed="0.000037"/>
+</return>
+<status status="NOT RUN" start="2026-09-22T12:16:35.025546" elapsed="0.000839"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.026702" level="INFO">
+STARTING CodeBeamer Test Run Creation... 
+
+</msg>
+<arg>\nSTARTING CodeBeamer Test Run Creation... \n\n</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.026488" elapsed="0.000316"/>
+</kw>
+<if>
+<branch type="IF" condition="'${cbEnabled}'.lower() == 'true'">
+<if>
+<branch type="IF" condition="&quot;${SuiteType}&quot; == &quot;datadriven&quot;">
+<kw name="Process Test Results for New DD" owner="Keyword_Codebeamer">
+<var>${testCaseResultDict}</var>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<status status="NOT RUN" start="2026-09-22T12:16:35.027337" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:35.027018" elapsed="0.000389"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.027776" level="INFO">${testCaseResultDict} = {'143698': [' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]}</msg>
+<var>${testCaseResultDict}</var>
+<arg>${testCaseResultDict}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.027524" elapsed="0.000278"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:35.027435" elapsed="0.000404"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.027007" elapsed="0.000858"/>
+</if>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Dictionary Should Not Be Empty">
+<msg time="2026-09-22T12:16:35.029686" level="FAIL">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</msg>
+<arg>${testCaseResultDict}</arg>
+<status status="FAIL" start="2026-09-22T12:16:35.029646" elapsed="0.000076">No keyword with name 'Dictionary Should Not Be Empty' found. Did you mean:
+    OperatingSystem.Directory Should Not Be Empty</status>
+</kw>
+<msg time="2026-09-22T12:16:35.029808" level="INFO">${hasResults} = False</msg>
+<var>${hasResults}</var>
+<arg>Dictionary Should Not Be Empty</arg>
+<arg>${testCaseResultDict}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.027948" elapsed="0.001880"/>
+</kw>
+<if>
+<branch type="IF" condition="'${hasResults}' != 'True'">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.031571" level="INFO">${testNameValue} = </msg>
+<var>${testNameValue}</var>
+<arg>${TEST_NAME}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.030040" elapsed="0.001555"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.033240" level="INFO">${testStatusValue} = </msg>
+<var>${testStatusValue}</var>
+<arg>${TEST_STATUS}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.031691" elapsed="0.001571"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.034903" level="INFO">${testMessageValue} = </msg>
+<var>${testMessageValue}</var>
+<arg>${TEST_MESSAGE}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.033358" elapsed="0.001569"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.035388" level="INFO">Length is 0.</msg>
+<msg time="2026-09-22T12:16:35.035467" level="FAIL">'' should not be empty.</msg>
+<arg>${testNameValue}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="FAIL" start="2026-09-22T12:16:35.035203" elapsed="0.000391">'' should not be empty.</status>
+</kw>
+<msg time="2026-09-22T12:16:35.035667" level="INFO">${hasTestName} = False</msg>
+<var>${hasTestName}</var>
+<arg>Should Not Be Empty</arg>
+<arg>${testNameValue}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.035020" elapsed="0.000665"/>
+</kw>
+<if>
+<branch type="IF" condition="'${hasTestName}' == 'True'">
+<kw name="Split String" owner="String">
+<var>${tmptestCaseID}</var>
+<arg>${testNameValue}</arg>
+<arg>separator=:</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.035866" elapsed="0.000019"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${hasTestCaseParts}</var>
+<arg>len($tmptestCaseID) &gt; 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.035960" elapsed="0.000017"/>
+</kw>
+<if>
+<branch type="IF" condition="${hasTestCaseParts}">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseID}</var>
+<arg>${tmptestCaseID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036091" elapsed="0.000017"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpTCSteps}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036176" elapsed="0.000017"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test case result captured without step details. Test Status: ${testStatusValue}. Message: ${testMessageValue}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036336" elapsed="0.000023"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpTC}</var>
+<arg>${tmptestCaseID}[1]</arg>
+<arg>${testStatusValue}</arg>
+<arg>${tmpCompletionMessage}</arg>
+<arg>0</arg>
+<arg>${tmpTCSteps}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036432" elapsed="0.000019"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}=${tmpTC}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036529" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036027" elapsed="0.000548"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Skipping fallback CodeBeamer result because TEST_NAME has no test-case ID separator: ${testNameValue}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036669" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036603" elapsed="0.000113"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:35.036016" elapsed="0.000725"/>
+</if>
+<status status="NOT RUN" start="2026-09-22T12:16:35.035740" elapsed="0.001018"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.037149" level="INFO">Skipping fallback CodeBeamer result because TEST_NAME is unavailable in suite teardown.</msg>
+<arg>Skipping fallback CodeBeamer result because TEST_NAME is unavailable in suite teardown.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.036850" elapsed="0.000529"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:35.036783" elapsed="0.000647"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.035727" elapsed="0.001739"/>
+</if>
+<status status="PASS" start="2026-09-22T12:16:35.029891" elapsed="0.007603"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.029876" elapsed="0.007645"/>
+</if>
+<kw name="Create CB Session" owner="Keyword_Codebeamer">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-09-22T12:16:35.038494" level="INFO">Creating Session using : alias=cb, url=https://crdn.codebeamer.com, headers={},                     cookies={}, auth=&lt;requests.auth.HTTPBasicAuth object at 0x000001105431B230&gt;, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2026-09-22T12:16:35.039279" level="INFO">${cbsession} = &lt;requests.sessions.Session object at 0x00000110548BB4D0&gt;</msg>
+<var>${cbsession}</var>
+<arg>cb</arg>
+<arg>https://crdn.codebeamer.com</arg>
+<arg>auth=${tmpCodeBeamerCreds}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-09-22T12:16:35.038110" elapsed="0.001200"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.039771" level="INFO">${cbsession} = &lt;requests.sessions.Session object at 0x00000110548BB4D0&gt;</msg>
+<arg>${cbsession}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.039476" elapsed="0.000329"/>
+</kw>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create a session with CodeBeamer server.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.037834" elapsed="0.002031"/>
+</kw>
+<kw name="Create Test Run Payload" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.040676" level="INFO">
+
+Creating payload for TestRun creation in CodeBeamer...</msg>
+<arg>\n\nCreating payload for TestRun creation in CodeBeamer...</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.040478" elapsed="0.000288"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.041063" level="INFO">{'143698': [' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]}</msg>
+<arg>${testCaseResultDict}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.040873" elapsed="0.000225"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.041539" level="INFO">Length is 0.</msg>
+<msg time="2026-09-22T12:16:35.041611" level="INFO">${tcListLength} = 0</msg>
+<var>${tcListLength}</var>
+<arg>${tcList}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.041185" elapsed="0.000450"/>
+</kw>
+<if>
+<branch type="IF" condition="${tcListLength} == 0">
+<for flavor="IN">
+<iter>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.042361" level="INFO">Length is 5.</msg>
+<msg time="2026-09-22T12:16:35.042415" level="INFO">${resultLength} = 5</msg>
+<var>${resultLength}</var>
+<arg>${value}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.042180" elapsed="0.000253"/>
+</kw>
+<if>
+<branch type="IF" condition="${resultLength} == 5">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.042937" level="INFO">${tmpTRunBody} = {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}</msg>
+<var>${tmpTRunBody}</var>
+<arg>id=${key}</arg>
+<arg>name=${value}[0]</arg>
+<arg>type=TrackerItemReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.042661" elapsed="0.000296"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tcList}</arg>
+<arg>${tmpTRunBody}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.043047" elapsed="0.000150"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:35.042501" elapsed="0.000730"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Skipping malformed CodeBeamer result for test case ${key}: ${value}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.043347" elapsed="0.000032"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:35.043264" elapsed="0.000149"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.042484" elapsed="0.000954"/>
+</if>
+<var name="${key}">143698</var>
+<var name="${value}">[' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]</var>
+<status status="PASS" start="2026-09-22T12:16:35.042089" elapsed="0.001369"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{testCaseResultDict}</value>
+<status status="PASS" start="2026-09-22T12:16:35.041834" elapsed="0.001668"/>
+</for>
+<status status="PASS" start="2026-09-22T12:16:35.041703" elapsed="0.001842"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.041686" elapsed="0.001883"/>
+</if>
+<for flavor="IN">
+<iter>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.044089" level="INFO">Length is 5.</msg>
+<msg time="2026-09-22T12:16:35.044141" level="INFO">${resultLength} = 5</msg>
+<var>${resultLength}</var>
+<arg>${value}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.043893" elapsed="0.000267"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<arg>${resultLength} != 5</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.044477" elapsed="0.000271"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.045107" level="INFO">${tmpTRunBody} = {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}</msg>
+<var>${tmpTRunBody}</var>
+<arg>id=${key}</arg>
+<arg>name=${value}[0]</arg>
+<arg>type=TrackerItemReference</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.044847" elapsed="0.000281"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-09-22T12:16:35.045344" level="INFO">${tmpResult} = PASSED</msg>
+<var>${tmpResult}</var>
+<arg>${codeBeamerResultEnum}</arg>
+<arg>${value}[1]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.045212" elapsed="0.000150"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.045743" level="INFO">${testCaseResult} = {'testCaseReference': {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}, 'result': 'PASSED', 'conclusion': 'Test Setup Failed: . No Test Steps...</msg>
+<var>${testCaseResult}</var>
+<arg>testCaseReference=${tmpTRunBody}</arg>
+<arg>result=${tmpResult}</arg>
+<arg>conclusion=${value}[2]</arg>
+<arg>runTime=${value}[3]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.045454" elapsed="0.000311"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.045999" level="INFO">{'testCaseReference': {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}, 'result': 'PASSED', 'conclusion': 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 'runTime': 3}</msg>
+<arg>${testCaseResult}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.045848" elapsed="0.000182"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.046299" level="INFO">${testCaseResult} = {'testCaseReference': {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}, 'result': 'PASSED', 'conclusion': 'Test Setup Failed: . No Test Steps...</msg>
+<arg>${testCaseResult}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.046111" elapsed="0.000217"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCResult}</arg>
+<arg>${testCaseResult}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.046399" elapsed="0.000115"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.046732" level="INFO">[' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]</msg>
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.046590" elapsed="0.000172"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${tmpResult}&quot;==&quot;FAILED&quot;">
+<kw name="Create Defect List" owner="Keyword_Codebeamer">
+<var>${bugList}</var>
+<arg>${key}</arg>
+<arg>${value}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to get the list of defects created during the test run.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.047471" elapsed="0.000029"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpBugRef}</var>
+<arg>id=${bugList}[${key}]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.047593" elapsed="0.000018"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpBugRefList}</var>
+<arg>${tmpBugRef}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.047681" elapsed="0.000018"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResult}</arg>
+<arg>reportedBugReferences=${tmpBugRefList}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:35.047769" elapsed="0.000016"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:35.046817" elapsed="0.000996"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.048087" level="INFO">${bugList} = None</msg>
+<var>${bugList}</var>
+<arg>${None}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.047908" elapsed="0.000199"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:35.047841" elapsed="0.000298"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.046803" elapsed="0.001360"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.048380" level="INFO">None</msg>
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.048238" elapsed="0.000172"/>
+</kw>
+<var name="${key}">143698</var>
+<var name="${value}">[' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]</var>
+<status status="PASS" start="2026-09-22T12:16:35.043815" elapsed="0.004624"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{testCaseResultDict}</value>
+<status status="PASS" start="2026-09-22T12:16:35.043598" elapsed="0.004880"/>
+</for>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create payload for creating Test Run in CodeBeamer with test cases and their results.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.040265" elapsed="0.008270"/>
+</kw>
+<kw name="Create Master Test Run" owner="Keyword_Codebeamer">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.049365" level="INFO">${tcRunNameObj} = {'name': '"CRAFT_NOVA_Application Navigation Offline"'}</msg>
+<var>${tcRunNameObj}</var>
+<arg>name=${cbTestRunName}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.049143" elapsed="0.000251"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.049717" level="INFO">${finalTestRunBody} = {'testCaseIds': [{'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}], 'testRunModel': {'name': '"CRAFT_NOVA_Application Navigation Offline"'}}</msg>
+<var>${finalTestRunBody}</var>
+<arg>testCaseIds=@{tcList}</arg>
+<arg>testRunModel=${tcRunNameObj}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.049485" elapsed="0.000252"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.049958" level="INFO">{'testCaseIds': [{'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}], 'testRunModel': {'name': '"CRAFT_NOVA_Application Navigation Offline"'}}</msg>
+<arg>${finalTestRunBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.049815" elapsed="0.000175"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.050225" level="INFO">
+
+Creating a new TestRun instance in CodeBeamer with executed TestCases added...</msg>
+<arg>\n\nCreating a new TestRun instance in CodeBeamer with executed TestCases added...</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.050064" elapsed="0.000234"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-09-22T12:16:35.678292" level="INFO">POST Request : url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns 
+ path_url=/rest/v3/trackers/261965/testruns 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '201', 'Content-Type': 'application/json', 'Authorization': 'Basic Y3JhZnQtcnVubmVyOmNyYWZ0LXJ1bm5lcg=='} 
+ body=b'{"testCaseIds": [{"id": "143698", "name": " Verify navigation to Update Software (Offline)", "type": "TrackerItemReference"}], "testRunModel": {"name": "\\"CRAFT_NOVA_Application Navigation Offline\\""}}' 
+ </msg>
+<msg time="2026-09-22T12:16:35.678459" level="INFO">POST Response : url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns 
+ status=200, reason= 
+ headers={'X-XSS-Protection': '1', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "frame-ancestors 'self'", 'vary': 'accept-encoding', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 22 Sep 2026 10:16:03 GMT', 'Keep-Alive': 'timeout=80', 'Connection': 'keep-alive'} 
+ body={"id":148627,"name":"\"CRAFT_NOVA_Application Navigation Offline\"","description":"__Preconditions__\r\n\r\n# NOVA is installed.\r\n# The user is authenticated in NOVA.","descriptionFormat":"Wiki","createdAt":"2026-09-22T10:16:03.020","createdBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"modifiedAt":"2026-09-22T10:16:03.020","modifiedBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"version":1,"assignedTo":[],"tracker":{"id":261965,"name":"Test Runs","type":"TrackerReference"},"children":[{"id":148628,"name":"Run of Verify navigation to Update Software (Offline)","type":"TrackerItemReference"}],"customFields":[{"fieldId":10000,"name":"Sequential","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"},{"fieldId":10002,"name":"Run only Accepted TestCases","value":true,"sharedFieldNames":[],"type":"BoolFieldValue"},{"fieldId":1000000,"name":"Test Cases","values":[[{"fieldId":1000001,"name":"Test Case","values":[{"id":143698,"name":"Verify navigation to Update Software (Offline)","type":"TrackerItemReference","angularIcon":"gps_fixed","iconColor":"#b31317","propagateSuspects":false,"trackerKey":"TC","trackerTypeId":16,"uri":"/item/143698","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"sharedFieldNames":[],"type":"ChoiceFieldValue"}]],"type":"TableFieldValue"}],"priority":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"status":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"platforms":[],"subjects":[],"resolutions":[],"severities":[],"formality":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"versions":[],"ordinal":0,"typeName":"Testrun","comments":[],"tags":[{"id":7,"name":"FINISHED_TESTRUN_GENERATION","privateLabel":false,"hidden":true,"createdAt":"2024-10-29T20:34:54.257","createdBy":{"id":17,"name":"subbak2","type":"UserReference","email":"kala.subbaraman@medtronic.com"}}],"angularIcon":"touch_app","iconColor":"#d3474c","iconUrl":"/images/trackertype/testrun.gif"} 
+ </msg>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns</arg>
+<arg>alias=cb</arg>
+<arg>json=${finalTestRunBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun creation failed..check logs for further debugging</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.050766" elapsed="0.627814"/>
+</kw>
+<msg time="2026-09-22T12:16:35.678787" level="INFO">${createTestRunStatus} = PASS</msg>
+<msg time="2026-09-22T12:16:35.678863" level="INFO">${createTestRunOut} = &lt;Response [200]&gt;</msg>
+<var>${createTestRunStatus}</var>
+<var>${createTestRunOut}</var>
+<arg>POST On Session</arg>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns</arg>
+<arg>alias=cb</arg>
+<arg>json=${finalTestRunBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=TestRun creation failed..check logs for further debugging</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.050476" elapsed="0.628409"/>
+</kw>
+<if>
+<branch type="IF" condition="'${createTestRunStatus}' == 'PASS'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.679992" level="INFO">${createRunResponseText} = {'id': 148627, 'name': '"CRAFT_NOVA_Application Navigation Offline"', 'description': '__Preconditions__\r\n\r\n# NOVA is installed.\r\n# The user is authenticated in NOVA.', 'descriptionFormat': 'Wiki...</msg>
+<var>${createRunResponseText}</var>
+<arg>${createTestRunOut.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.679308" elapsed="0.000714"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.680365" level="INFO">{'id': 148627, 'name': '"CRAFT_NOVA_Application Navigation Offline"', 'description': '__Preconditions__\r\n\r\n# NOVA is installed.\r\n# The user is authenticated in NOVA.', 'descriptionFormat': 'Wiki', 'createdAt': '2026-09-22T10:16:03.020', 'createdBy': {'id': 121, 'name': 'craft-runner', 'type': 'UserReference', 'email': 'karvec2@medtronic.com'}, 'modifiedAt': '2026-09-22T10:16:03.020', 'modifiedBy': {'id': 121, 'name': 'craft-runner', 'type': 'UserReference', 'email': 'karvec2@medtronic.com'}, 'version': 1, 'assignedTo': [], 'tracker': {'id': 261965, 'name': 'Test Runs', 'type': 'TrackerReference'}, 'children': [{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}], 'customFields': [{'fieldId': 10000, 'name': 'Sequential', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}, {'fieldId': 10002, 'name': 'Run only Accepted TestCases', 'value': True, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}, {'fieldId': 1000000, 'name': 'Test Cases', 'values': [[{'fieldId': 1000001, 'name': 'Test Case', 'values': [{'id': 143698, 'name': 'Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference', 'angularIcon': 'gps_fixed', 'iconColor': '#b31317', 'propagateSuspects': False, 'trackerKey': 'TC', 'trackerTypeId': 16, 'uri': '/item/143698', 'referenceData': {'suspectPropagation': 'DO_NOT_PROPAGATE'}}], 'sharedFieldNames': [], 'type': 'ChoiceFieldValue'}]], 'type': 'TableFieldValue'}], 'priority': {'id': 0, 'name': 'Unset', 'type': 'ChoiceOptionReference'}, 'status': {'id': 0, 'name': 'Unset', 'type': 'ChoiceOptionReference'}, 'platforms': [], 'subjects': [], 'resolutions': [], 'severities': [], 'formality': {'id': 0, 'name': 'Unset', 'type': 'ChoiceOptionReference'}, 'versions': [], 'ordinal': 0, 'typeName': 'Testrun', 'comments': [], 'tags': [{'id': 7, 'name': 'FINISHED_TESTRUN_GENERATION', 'privateLabel': False, 'hidden': True, 'createdAt': '2024-10-29T20:34:54.257', 'createdBy': {'id': 17, 'name': 'subbak2', 'type': 'UserReference', 'email': 'kala.subbaraman@medtronic.com'}}], 'angularIcon': 'touch_app', 'iconColor': '#d3474c', 'iconUrl': '/images/trackertype/testrun.gif'}</msg>
+<arg>${createRunResponseText}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.680158" elapsed="0.000248"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Value From Json" owner="JSONLibrary">
+<arg>${createRunResponseText}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-09-22T12:16:35.680735" elapsed="0.030417"/>
+</kw>
+<msg time="2026-09-22T12:16:35.711312" level="INFO">${runIdList} = ('PASS', [148627, 121, 121, 261965, 148628, 143698, 0, 0, 0, 7, 17])</msg>
+<var>${runIdList}</var>
+<arg>Get Value From Json</arg>
+<arg>${createRunResponseText}</arg>
+<arg>$..id</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.680502" elapsed="0.030839"/>
+</kw>
+<if>
+<branch type="IF" condition="'${runIdList}[0]' == 'PASS'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.712165" level="INFO">${testRunID} = [148627, 121, 121, 261965, 148628, 143698, 0, 0, 0, 7, 17]</msg>
+<var>${testRunID}</var>
+<arg>${runIdList}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.711843" elapsed="0.000350"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.712551" level="INFO">
+
+The TestRun instance created is: 148627</msg>
+<arg>\n\nThe TestRun instance created is: ${testRunID}[0]</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.712306" elapsed="0.000334"/>
+</kw>
+<kw name="Update Test Config Information" owner="Keyword_Codebeamer">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-09-22T12:16:35.862935" level="INFO">GET Request : url=https://crdn.codebeamer.com/rest/v3/trackers/261904/items/ 
+ path_url=/rest/v3/trackers/261904/items/ 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Basic Y3JhZnQtcnVubmVyOmNyYWZ0LXJ1bm5lcg=='} 
+ body=None 
+ </msg>
+<msg time="2026-09-22T12:16:35.863031" level="INFO">GET Response : url=https://crdn.codebeamer.com/rest/v3/trackers/261904/items/ 
+ status=200, reason= 
+ headers={'Cache-Control': 'private', 'X-XSS-Protection': '1', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "frame-ancestors 'self'", 'vary': 'origin,accept-encoding', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 22 Sep 2026 10:16:03 GMT', 'Keep-Alive': 'timeout=80', 'Connection': 'keep-alive'} 
+ body={"page":1,"pageSize":25,"total":18,"itemRefs":[{"id":135554,"name":"Alpha-1 HLA board Kraków","type":"TrackerItemReference"},{"id":133731,"name":"mv-alpha-craft1","type":"TrackerItemReference"},{"id":117403,"name":"mv-kr260-craft3","type":"TrackerItemReference"},{"id":111367,"name":"sr-lab-kv260-craft3","type":"TrackerItemReference"},{"id":96176,"name":"mv-lab-kv260-craft2","type":"TrackerItemReference"},{"id":96175,"name":"mv-lab-kv260-craft1","type":"TrackerItemReference"},{"id":96174,"name":"mv-kr260-craft2","type":"TrackerItemReference"},{"id":95559,"name":"mv-kr260-craft1","type":"TrackerItemReference"},{"id":94648,"name":"pl-lab-kr260-craft1","type":"TrackerItemReference"},{"id":94647,"name":"KR260 Krakow Local Pawel","type":"TrackerItemReference"},{"id":92137,"name":"sr-lab-kv260-craft2","type":"TrackerItemReference"},{"id":88107,"name":"pl-lab-kr260-craft3","type":"TrackerItemReference"},{"id":68919,"name":"Alpha-1 HLA board","type":"TrackerItemReference"},{"id":54025,"name":"KR260 Krakow Local Oliwia","type":"TrackerItemReference"},{"id":44082,"name":"SR-LAB-KV260-CRAFT1","type":"TrackerItemReference"},{"id":42334,"name":"pl-lab-kr260-craft2","type":"TrackerItemReference"},{"id":41018,"name":"KR260 Cracow Local Valentyn","type":"TrackerItemReference"},{"id":40891,"name":"KR260 Krakow Local Mateusz","type":"TrackerItemReference"}]} 
+ </msg>
+<msg time="2026-09-22T12:16:35.863148" level="INFO">${testConfigs} = &lt;Response [200]&gt;</msg>
+<var>${testConfigs}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/trackers/261904/items/</arg>
+<arg>alias=cb</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.713148" elapsed="0.150022"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2026-09-22T12:16:35.879303" level="INFO">@{testConfig} = [ Alpha-1 HLA board Kraków | mv-alpha-craft1 | mv-kr260-craft3 | sr-lab-kv260-craft3 | mv-lab-kv260-craft2 | mv-lab-kv260-craft1 | mv-kr260-craft2 | mv-kr260-craft1 | pl-lab-kr260-craft1 | KR260 Krako...</msg>
+<var>@{testConfig}</var>
+<arg>${testConfigs.json()}</arg>
+<arg>$..name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-09-22T12:16:35.863328" elapsed="0.016022"/>
+</kw>
+<kw name="Get Index From List" owner="Collections">
+<msg time="2026-09-22T12:16:35.879687" level="INFO">${testConfigIndex} = -1</msg>
+<var>${testConfigIndex}</var>
+<arg>${testConfig}</arg>
+<arg>${testConfigName}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.879503" elapsed="0.000204"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2026-09-22T12:16:35.894343" level="INFO">${testConfigID} = [40891]</msg>
+<var>${testConfigID}</var>
+<arg>${testConfigs.json()}</arg>
+<arg>$.itemRefs.[${testConfigIndex}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-09-22T12:16:35.879793" elapsed="0.014594"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.894858" level="INFO">${tmpPropogate} = {'suspectPropagation': 'DO_NOT_PROPAGATE'}</msg>
+<var>${tmpPropogate}</var>
+<arg>suspectPropagation=DO_NOT_PROPAGATE</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.894562" elapsed="0.000321"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.895199" level="INFO">${refData} = {'referenceData': {'suspectPropagation': 'DO_NOT_PROPAGATE'}}</msg>
+<var>${refData}</var>
+<arg>referenceData=${tmpPropogate}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.894980" elapsed="0.000239"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.895461" level="INFO">{'referenceData': {'suspectPropagation': 'DO_NOT_PROPAGATE'}}</msg>
+<arg>${refData}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.895303" elapsed="0.000193"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.895943" level="INFO">${tmpPlatformBody} = {'id': 40891, 'name': 'sr-lab-kv260-craft1', 'type': 'TrackerItemReference', 'angularIcon': 'settings', 'iconColor': '#00a85d', 'propagateSuspects': 'false', 'trackerKey': 'TESTCONF', 'trackerTypeId':...</msg>
+<var>${tmpPlatformBody}</var>
+<arg>id=${testConfigID}[0]</arg>
+<arg>name=${testConfigName}</arg>
+<arg>type=TrackerItemReference</arg>
+<arg>angularIcon=settings</arg>
+<arg>iconColor=#00a85d</arg>
+<arg>propagateSuspects=false</arg>
+<arg>trackerKey=TESTCONF</arg>
+<arg>trackerTypeId=16</arg>
+<arg>uri=/item/${testConfigID}[0]</arg>
+<arg>referenceData=${tmpPropogate}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.895579" elapsed="0.000385"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.896274" level="INFO">${tmpPlatformList} = [{'id': 40891, 'name': 'sr-lab-kv260-craft1', 'type': 'TrackerItemReference', 'angularIcon': 'settings', 'iconColor': '#00a85d', 'propagateSuspects': 'false', 'trackerKey': 'TESTCONF', 'trackerTypeId'...</msg>
+<var>${tmpPlatformList}</var>
+<arg>${tmpPlatformBody}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.896068" elapsed="0.000228"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.896517" level="INFO">${tmpSharedField} = []</msg>
+<var>${tmpSharedField}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.896375" elapsed="0.000161"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.896868" level="INFO">${tmpBuildNumberID} = {'fieldId': '10003', 'name': 'AuroraApps_Build_Number', 'value': 'NotApplicable', 'sharedFieldNames': [], 'type': 'TextFieldValue'}</msg>
+<var>${tmpBuildNumberID}</var>
+<arg>fieldId=10003</arg>
+<arg>name=AuroraApps_Build_Number</arg>
+<arg>value=${BUILD_ID}</arg>
+<arg>sharedFieldNames=${tmpSharedField}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.896615" elapsed="0.000359"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.897361" level="INFO">${tmpExecutionID} = {'fieldId': '10005', 'name': 'PipelineID', 'value': 'NotApplicable', 'sharedFieldNames': [], 'type': 'TextFieldValue'}</msg>
+<var>${tmpExecutionID}</var>
+<arg>fieldId=10005</arg>
+<arg>name=PipelineID</arg>
+<arg>value=${PipelineID}</arg>
+<arg>sharedFieldNames=${tmpSharedField}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.897086" elapsed="0.000297"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.897680" level="INFO">${tmpCustomFieldList} = [{'fieldId': '10003', 'name': 'AuroraApps_Build_Number', 'value': 'NotApplicable', 'sharedFieldNames': [], 'type': 'TextFieldValue'}, {'fieldId': '10005', 'name': 'PipelineID', 'value': 'NotApplicable...</msg>
+<var>${tmpCustomFieldList}</var>
+<arg>${tmpBuildNumberID}</arg>
+<arg>${tmpExecutionID}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.897476" elapsed="0.000225"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.897987" level="INFO">${tmpStepRunByDetails} = {'id': '121', 'name': 'craft-runner', 'type': 'UserReference', 'email': 'karvec2@medtronic.com'}</msg>
+<var>${tmpStepRunByDetails}</var>
+<arg>id=121</arg>
+<arg>name=craft-runner</arg>
+<arg>type=UserReference</arg>
+<arg>email=karvec2@medtronic.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.897789" elapsed="0.000218"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.898374" level="INFO">${tmpPlatformsBody} = {'name': '"CRAFT_NOVA_Application Navigation Offline"', 'platforms': [{'id': 40891, 'name': 'sr-lab-kv260-craft1', 'type': 'TrackerItemReference', 'angularIcon': 'settings', 'iconColor': '#00a85d', 'p...</msg>
+<var>${tmpPlatformsBody}</var>
+<arg>name=${tmpSuiteName}</arg>
+<arg>platforms=${tmpPlatformList}</arg>
+<arg>customFields=${tmpCustomFieldList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.898095" elapsed="0.000299"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:35.898626" level="INFO">{'name': '"CRAFT_NOVA_Application Navigation Offline"', 'platforms': [{'id': 40891, 'name': 'sr-lab-kv260-craft1', 'type': 'TrackerItemReference', 'angularIcon': 'settings', 'iconColor': '#00a85d', 'propagateSuspects': 'false', 'trackerKey': 'TESTCONF', 'trackerTypeId': '16', 'uri': '/item/40891', 'referenceData': {'suspectPropagation': 'DO_NOT_PROPAGATE'}}], 'customFields': [{'fieldId': '10003', 'name': 'AuroraApps_Build_Number', 'value': 'NotApplicable', 'sharedFieldNames': [], 'type': 'TextFieldValue'}, {'fieldId': '10005', 'name': 'PipelineID', 'value': 'NotApplicable', 'sharedFieldNames': [], 'type': 'TextFieldValue'}]}</msg>
+<arg>${tmpPlatformsBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.898475" elapsed="0.000185"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2026-09-22T12:16:36.144719" level="INFO">PUT Request : url=https://crdn.codebeamer.com/rest/v3/items/148627 
+ path_url=/rest/v3/items/148627 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '634', 'Content-Type': 'application/json', 'Authorization': 'Basic Y3JhZnQtcnVubmVyOmNyYWZ0LXJ1bm5lcg=='} 
+ body=b'{"name": "\\"CRAFT_NOVA_Application Navigation Offline\\"", "platforms": [{"id": 40891, "name": "sr-lab-kv260-craft1", "type": "TrackerItemReference", "angularIcon": "settings", "iconColor": "#00a85d", "propagateSuspects": "false", "trackerKey": "TESTCONF", "trackerTypeId": "16", "uri": "/item/40891", "referenceData": {"suspectPropagation": "DO_NOT_PROPAGATE"}}], "customFields": [{"fieldId": "10003", "name": "AuroraApps_Build_Number", "value": "NotApplicable", "sharedFieldNames": [], "type": "TextFieldValue"}, {"fieldId": "10005", "name": "PipelineID", "value": "NotApplicable", "sharedFieldNames": [], "type": "TextFieldValue"}]}' 
+ </msg>
+<msg time="2026-09-22T12:16:36.144803" level="INFO">PUT Response : url=https://crdn.codebeamer.com/rest/v3/items/148627 
+ status=200, reason= 
+ headers={'X-XSS-Protection': '1', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "frame-ancestors 'self'", 'vary': 'accept-encoding', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 22 Sep 2026 10:16:03 GMT', 'Keep-Alive': 'timeout=80', 'Connection': 'keep-alive'} 
+ body={"id":148627,"name":"\"CRAFT_NOVA_Application Navigation Offline\"","description":"","descriptionFormat":"PlainText","createdAt":"2026-09-22T10:16:03.020","createdBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"modifiedAt":"2026-09-22T10:16:03.509","modifiedBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"version":2,"assignedTo":[],"tracker":{"id":261965,"name":"Test Runs","type":"TrackerReference"},"children":[{"id":148628,"name":"Run of Verify navigation to Update Software (Offline)","type":"TrackerItemReference"}],"customFields":[{"fieldId":10002,"name":"Run only Accepted TestCases","value":true,"sharedFieldNames":[],"type":"BoolFieldValue"},{"fieldId":10003,"name":"Apps Build Number","value":"NotApplicable","sharedFieldNames":[],"type":"TextFieldValue"},{"fieldId":10005,"name":"PipelineID","value":"NotApplicable","sharedFieldNames":[],"type":"TextFieldValue"},{"fieldId":1000000,"name":"Test Cases","values":[[{"fieldId":1000001,"name":"Test Case","values":[{"id":143698,"name":"Verify navigation to Update Software (Offline)","type":"TrackerItemReference","angularIcon":"gps_fixed","iconColor":"#b31317","propagateSuspects":false,"trackerKey":"TC","trackerTypeId":16,"uri":"/item/143698","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"sharedFieldNames":[],"type":"ChoiceFieldValue"}]],"type":"TableFieldValue"}],"priority":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"status":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"platforms":[{"id":40891,"name":"KR260 Krakow Local Mateusz","type":"TrackerItemReference","angularIcon":"settings","iconColor":"#00a85d","propagateSuspects":false,"trackerKey":"TESTCONF","trackerTypeId":16,"uri":"/item/40891","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"subjects":[],"resolutions":[],"severities":[],"formality":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"versions":[],"ordinal":0,"typeName":"Testrun","comments":[],"tags":[{"id":7,"name":"FINISHED_TESTRUN_GENERATION","privateLabel":false,"hidden":true,"createdAt":"2024-10-29T20:34:54.257","createdBy":{"id":17,"name":"subbak2","type":"UserReference","email":"kala.subbaraman@medtronic.com"}}],"angularIcon":"touch_app","iconColor":"#d3474c","iconUrl":"/images/trackertype/testrun.gif"} 
+ </msg>
+<msg time="2026-09-22T12:16:36.144922" level="INFO">${tmpUpdateTestConfigResponse} = &lt;Response [200]&gt;</msg>
+<var>${tmpUpdateTestConfigResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${tmpRunID}</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpPlatformsBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${tmpRunID} with Test Configuration and Build Number failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.898739" elapsed="0.246205"/>
+</kw>
+<arg>${cbTestRunName}</arg>
+<arg>${testRunID}[0]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with Test</doc>
+<status status="PASS" start="2026-09-22T12:16:35.712891" elapsed="0.432245"/>
+</kw>
+<return>
+<value>${createTestRunOut}</value>
+<value>${testRunID}[0]</value>
+<status status="PASS" start="2026-09-22T12:16:36.145209" elapsed="0.000056"/>
+</return>
+<status status="PASS" start="2026-09-22T12:16:35.711520" elapsed="0.433790"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCodeBeamer Test Run request returned no run ID. Check the configured credentials and tracker permissions.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145460" elapsed="0.000023"/>
+</kw>
+<return>
+<value>${createTestRunOut}</value>
+<value>${None}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145518" elapsed="0.000016"/>
+</return>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145342" elapsed="0.000219"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.711491" elapsed="0.434093"/>
+</if>
+<status status="PASS" start="2026-09-22T12:16:35.679042" elapsed="0.466568"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCodeBeamer Test Run request failed before creation. This usually means the configured credentials are invalid or the user lacks permissions for tracker 261965.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145699" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${createTestRunOut}</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145785" elapsed="0.000016"/>
+</kw>
+<return>
+<value>${None}</value>
+<value>${None}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145834" elapsed="0.000015"/>
+</return>
+<status status="NOT RUN" start="2026-09-22T12:16:36.145633" elapsed="0.000242"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.679005" elapsed="0.466902"/>
+</if>
+<msg time="2026-09-22T12:16:36.146036" level="INFO">${tmpTRResponse} = &lt;Response [200]&gt;</msg>
+<msg time="2026-09-22T12:16:36.146067" level="INFO">${tmpTRID} = 148627</msg>
+<var>${tmpTRResponse}</var>
+<var>${tmpTRID}</var>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<tag>teardown</tag>
+<doc>Keyword to create Test Run in codebeamer with list of Test Cases that are being executed. This is used as a Suite Teardown keyword to update the results for individual test cases and finally update the test run instance and close it.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.048766" elapsed="1.097318"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.146611" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'NoneType'&gt;</msg>
+<arg>${tmpTRID}</arg>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.146439" elapsed="0.000215"/>
+</kw>
+<msg time="2026-09-22T12:16:36.146715" level="INFO">${runIdStatus} = True</msg>
+<var>${runIdStatus}</var>
+<arg>Should Not Be Equal</arg>
+<arg>${tmpTRID}</arg>
+<arg>${None}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.146188" elapsed="0.000545"/>
+</kw>
+<if>
+<branch type="IF" condition="'${runIdStatus}' == 'True'">
+<kw name="Identify Internal Test Run Instances" owner="Keyword_Codebeamer">
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2026-09-22T12:16:36.161611" level="INFO">${HiddentestRuns} = [[{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}]]</msg>
+<var>${HiddentestRuns}</var>
+<arg>${createTestRunOut.json()}</arg>
+<arg>$..children</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-09-22T12:16:36.147205" elapsed="0.014451"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.162080" level="INFO">
+
+The Hidden TestRun instances created are: [[{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}]]</msg>
+<arg>\n\nThe Hidden TestRun instances created are: ${HiddentestRuns}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.161814" elapsed="0.000305"/>
+</kw>
+<return>
+<value>${HiddentestRuns}</value>
+<status status="PASS" start="2026-09-22T12:16:36.162168" elapsed="0.000043"/>
+</return>
+<msg time="2026-09-22T12:16:36.162331" level="INFO">@{tmpHiddenRuns} = [ [{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}] ]</msg>
+<var>@{tmpHiddenRuns}</var>
+<arg>${tmpTRResponse}</arg>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to identify hidden test run instances created as children of the main test run instance in CodeBeamer.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.147018" elapsed="0.015333"/>
+</kw>
+<kw name="Update Test Step Results" owner="Keyword_Codebeamer">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.163857" level="INFO">{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}</msg>
+<arg>${hiddenRun}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.163690" elapsed="0.000203"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.164134" level="INFO">148628</msg>
+<arg>${hiddenRun}[id]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.163981" elapsed="0.000185"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-09-22T12:16:36.317572" level="INFO">GET Request : url=https://crdn.codebeamer.com/rest/v3/items/148628 
+ path_url=/rest/v3/items/148628 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Basic Y3JhZnQtcnVubmVyOmNyYWZ0LXJ1bm5lcg=='} 
+ body=None 
+ </msg>
+<msg time="2026-09-22T12:16:36.317663" level="INFO">GET Response : url=https://crdn.codebeamer.com/rest/v3/items/148628 
+ status=200, reason= 
+ headers={'Cache-Control': 'private', 'X-XSS-Protection': '1', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "frame-ancestors 'self'", 'vary': 'accept-encoding', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 22 Sep 2026 10:16:03 GMT', 'Keep-Alive': 'timeout=80', 'Connection': 'keep-alive'} 
+ body={"id":148628,"name":"Run of Verify navigation to Update Software (Offline)","description":"//TEST_CASE_INDEX:0","descriptionFormat":"Wiki","createdAt":"2026-09-22T10:16:03.020","createdBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"modifiedAt":"2026-09-22T10:16:03.535","modifiedBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"parent":{"id":148627,"name":"\"CRAFT_NOVA_Application Navigation Offline\"","type":"TrackerItemReference"},"version":2,"assignedTo":[],"tracker":{"id":261965,"name":"Test Runs","type":"TrackerReference"},"children":[],"customFields":[{"fieldId":10000,"name":"Sequential","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"},{"fieldId":10002,"name":"Run only Accepted TestCases","value":true,"sharedFieldNames":[],"type":"BoolFieldValue"},{"fieldId":1000000,"name":"Test Cases","values":[[{"fieldId":1000001,"name":"Test Case","values":[{"id":143698,"name":"Verify navigation to Update Software (Offline)","type":"TrackerItemReference","angularIcon":"gps_fixed","iconColor":"#b31317","propagateSuspects":false,"trackerKey":"TC","trackerTypeId":16,"uri":"/item/143698","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"sharedFieldNames":[],"type":"ChoiceFieldValue"}]],"type":"TableFieldValue"},{"fieldId":2000000,"name":"Test Step Results","values":[[{"fieldId":2000001,"name":"Action","value":"Launch NOVA.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000002,"name":"Expected result","value":"NOVA opens successfully.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000003,"name":"Critical","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"}],[{"fieldId":2000001,"name":"Action","value":"Authenticate using SSO.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000002,"name":"Expected result","value":"User reaches the NOVA landing page.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000003,"name":"Critical","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"}],[{"fieldId":2000001,"name":"Action","value":"Select Update Software (Offline).","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000002,"name":"Expected result","value":"The Update Software (Offline) page is displayed.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000003,"name":"Critical","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"}],[{"fieldId":2000001,"name":"Action","value":"Verify the controls available on the page.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000002,"name":"Expected result","value":"The page displays the controls required for offline software update and device selection.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000003,"name":"Critical","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"}],[{"fieldId":2000001,"name":"Action","value":"Select Update Software (Offline) / continue to the update~-device flow.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000002,"name":"Expected result","value":"The Update Device page is displayed.","sharedFieldNames":[],"type":"WikiTextFieldValue"},{"fieldId":2000003,"name":"Critical","value":false,"sharedFieldNames":[],"type":"BoolFieldValue"}]],"type":"TableFieldValue"}],"priority":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"spentMillis":0,"status":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"platforms":[{"id":40891,"name":"KR260 Krakow Local Mateusz","type":"TrackerItemReference","angularIcon":"settings","iconColor":"#00a85d","propagateSuspects":false,"trackerKey":"TESTCONF","trackerTypeId":16,"uri":"/item/40891","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"subjects":[],"resolutions":[],"severities":[],"formality":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"versions":[],"ordinal":0,"typeName":"Testrun","comments":[],"tags":[],"angularIcon":"touch_app","iconColor":"#d3474c","iconUrl":"/images/trackertype/testrun.gif"} 
+ </msg>
+<msg time="2026-09-22T12:16:36.318063" level="INFO">${hiddenTestRunResponse} = &lt;Response [200]&gt;</msg>
+<var>${hiddenTestRunResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${hiddenRun}[id]</arg>
+<arg>alias=cb</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.164249" elapsed="0.153942"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.319632" level="INFO">{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'description': '//TEST_CASE_INDEX:0', 'descriptionFormat': 'Wiki', 'createdAt': '2026-09-22T10:16:03.020', 'createdBy': {'id': 121, 'name': 'craft-runner', 'type': 'UserReference', 'email': 'karvec2@medtronic.com'}, 'modifiedAt': '2026-09-22T10:16:03.535', 'modifiedBy': {'id': 121, 'name': 'craft-runner', 'type': 'UserReference', 'email': 'karvec2@medtronic.com'}, 'parent': {'id': 148627, 'name': '"CRAFT_NOVA_Application Navigation Offline"', 'type': 'TrackerItemReference'}, 'version': 2, 'assignedTo': [], 'tracker': {'id': 261965, 'name': 'Test Runs', 'type': 'TrackerReference'}, 'children': [], 'customFields': [{'fieldId': 10000, 'name': 'Sequential', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}, {'fieldId': 10002, 'name': 'Run only Accepted TestCases', 'value': True, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}, {'fieldId': 1000000, 'name': 'Test Cases', 'values': [[{'fieldId': 1000001, 'name': 'Test Case', 'values': [{'id': 143698, 'name': 'Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference', 'angularIcon': 'gps_fixed', 'iconColor': '#b31317', 'propagateSuspects': False, 'trackerKey': 'TC', 'trackerTypeId': 16, 'uri': '/item/143698', 'referenceData': {'suspectPropagation': 'DO_NOT_PROPAGATE'}}], 'sharedFieldNames': [], 'type': 'ChoiceFieldValue'}]], 'type': 'TableFieldValue'}, {'fieldId': 2000000, 'name': 'Test Step Results', 'values': [[{'fieldId': 2000001, 'name': 'Action', 'value': 'Launch NOVA.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000002, 'name': 'Expected result', 'value': 'NOVA opens successfully.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000003, 'name': 'Critical', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}], [{'fieldId': 2000001, 'name': 'Action', 'value': 'Authenticate using SSO.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000002, 'name': 'Expected result', 'value': 'User reaches the NOVA landing page.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000003, 'name': 'Critical', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}], [{'fieldId': 2000001, 'name': 'Action', 'value': 'Select Update Software (Offline).', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000002, 'name': 'Expected result', 'value': 'The Update Software (Offline) page is displayed.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000003, 'name': 'Critical', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}], [{'fieldId': 2000001, 'name': 'Action', 'value': 'Verify the controls available on the page.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000002, 'name': 'Expected result', 'value': 'The page displays the controls required for offline software update and device selection.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000003, 'name': 'Critical', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}], [{'fieldId': 2000001, 'name': 'Action', 'value': 'Select Update Software (Offline) / continue to the update~-device flow.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000002, 'name': 'Expected result', 'value': 'The Update Device page is displayed.', 'sharedFieldNames': [], 'type': 'WikiTextFieldValue'}, {'fieldId': 2000003, 'name': 'Critical', 'value': False, 'sharedFieldNames': [], 'type': 'BoolFieldValue'}]], 'type': 'TableFieldValue'}], 'priority': {'id': 0, 'name': 'Unset', 'type': 'ChoiceOptionReference'}, 'spentMillis': 0, 'status': {'id': 0, 'name': 'Unset', 'type': 'ChoiceOptionReference'}, 'platforms': [{'id': 40891, 'name': 'KR260 Krakow Local Mateusz', 'type': 'TrackerItemReference', 'angularIcon': 'settings', 'iconColor': '#00a85d', 'propagateSuspects': False, 'trackerKey': 'TESTCONF', 'trackerTypeId': 16, 'uri': '/item/40891', 'referenceData': {'suspectPropagation': 'DO_NOT_PROPAGATE'}}], 'subjects': [], 'resolutions': [], 'severities': [], 'formality': {'id': 0, 'name': 'Unset', 'type': 'ChoiceOptionReference'}, 'versions': [], 'ordinal': 0, 'typeName': 'Testrun', 'comments': [], 'tags': [], 'angularIcon': 'touch_app', 'iconColor': '#d3474c', 'iconUrl': '/images/trackertype/testrun.gif'}</msg>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.318420" elapsed="0.001308"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2026-09-22T12:16:36.334079" level="INFO">${tmpRunID} = [148628, 121, 121, 148627, 261965, 143698, 0, 0, 40891, 0]</msg>
+<var>${tmpRunID}</var>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<arg>$..id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-09-22T12:16:36.320016" elapsed="0.014102"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.334518" level="INFO">${hiddenTestRunID} = 148628</msg>
+<var>${hiddenTestRunID}</var>
+<arg>${tmpRunID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.334259" elapsed="0.000281"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.334815" level="INFO">${testCaseID} = 143698</msg>
+<var>${testCaseID}</var>
+<arg>${tmpRunID}[5]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.334633" elapsed="0.000202"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.335098" level="INFO">${testCaseID} = 143698</msg>
+<var>${testCaseID}</var>
+<arg>${testCaseID}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.334916" elapsed="0.000201"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.335386" level="INFO">&amp;{TCStepResultSet} = { }</msg>
+<var>&amp;{TCStepResultSet}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.335206" elapsed="0.000201"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-09-22T12:16:36.335662" level="INFO">${tmpCBResult1} = [' Verify navigation to Update Software (Offline)', 'PASS', 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 3, []]</msg>
+<var>${tmpCBResult1}</var>
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.335490" elapsed="0.000192"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.336296" level="INFO">${tmpCBResult2} = </msg>
+<var>${tmpCBResult2}</var>
+<arg>@{tmpCBResult1}[4]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.335795" elapsed="0.000527"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.336683" level="INFO">Length is 0.</msg>
+<msg time="2026-09-22T12:16:36.336749" level="INFO">${listStatus} = 0</msg>
+<var>${listStatus}</var>
+<arg>${tmpCBResult2}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.336446" elapsed="0.000323"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${CI_JOB_ID}&quot; == &quot;NotApplicable&quot;">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.338272" level="INFO">${testLogFileMessage} = Please refer to Test Automation Log File generated locally.</msg>
+<arg>${testLogFileMessage}</arg>
+<arg>Please refer to Test Automation Log File generated locally.</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.337331" elapsed="0.000992"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:36.336865" elapsed="0.001509"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${testLogFileMessage}</arg>
+<arg>Please refer to Test Automation Log File in the Test Run's Association Tab.</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.338572" elapsed="0.000022"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.338443" elapsed="0.000190"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:36.336835" elapsed="0.001828"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${listStatus}&quot; != &quot;0&quot;">
+<if>
+<branch type="IF" condition="&quot;${listStatus}&quot; == &quot;1&quot;">
+<kw name="Log Dictionary" owner="Collections">
+<arg>${tmpCBResult2}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.338909" elapsed="0.000021"/>
+</kw>
+<kw name="Get Dictionary Keys" owner="Collections">
+<var>${key}</var>
+<arg>${tmpCBResult2}</arg>
+<doc>Returns keys of the given ``dictionary`` as a list.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339009" elapsed="0.000019"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${value}</var>
+<arg>${tmpCBResult2}</arg>
+<arg>${key}[0]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339102" elapsed="0.000018"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TCStepResultSet}</arg>
+<arg>${key}[0]</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339194" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.338836" elapsed="0.000406"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TCStepResultSet}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339503" elapsed="0.000018"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339444" elapsed="0.000109"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{step}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339407" elapsed="0.000180"/>
+</for>
+<var name="${step}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339378" elapsed="0.000243"/>
+</iter>
+<var>${step}</var>
+<value>@{tmpCBResult2}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339303" elapsed="0.000344"/>
+</for>
+<status status="NOT RUN" start="2026-09-22T12:16:36.339266" elapsed="0.000410"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:36.338826" elapsed="0.000871"/>
+</if>
+<status status="NOT RUN" start="2026-09-22T12:16:36.338724" elapsed="0.000990"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:36.338711" elapsed="0.001033"/>
+</if>
+<kw name="Log Dictionary" owner="Collections">
+<msg time="2026-09-22T12:16:36.339913" level="INFO">Dictionary is empty.</msg>
+<arg>${TCStepResultSet}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.339807" elapsed="0.000142"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.340206" level="INFO">Length is 0.</msg>
+<msg time="2026-09-22T12:16:36.340260" level="INFO">${stepResultStatus} = 0</msg>
+<var>${stepResultStatus}</var>
+<arg>${TCStepResultSet}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.340026" elapsed="0.000252"/>
+</kw>
+<kw name="Continue For Loop If" owner="BuiltIn">
+<msg time="2026-09-22T12:16:36.340823" level="INFO">Continuing for loop from the next iteration.</msg>
+<arg>"${stepResultStatus}"=="${0}"</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.340361" elapsed="0.000525"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${tmpRunName}</var>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<arg>$..name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.340970" elapsed="0.000020"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${hiddenTestRunName}</var>
+<arg>${tmpRunName}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.341064" elapsed="0.000018"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${actualResultObject}</var>
+<arg>${hiddenTestRunResponse.json()}</arg>
+<arg>$..customFields</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.341149" elapsed="0.000017"/>
+</kw>
+<for flavor="IN">
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${fieldID}</var>
+<arg>${tmpOnject}</arg>
+<arg>fieldId</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342017" elapsed="0.000021"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${resultList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342119" elapsed="0.000018"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${fieldID}&quot; == &quot;2000000&quot;">
+<kw name="Get From Dictionary" owner="Collections">
+<var>${tmpTCStepResults}</var>
+<arg>${tmpOnject}</arg>
+<arg>values</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342262" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${tmpTCStepResults}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342356" elapsed="0.000018"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${testStepsCount}</var>
+<arg>${tmpTCStepResults}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342442" elapsed="0.000017"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpStepResultList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342809" elapsed="0.000019"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${tmpCBResultKeyStatus}</var>
+<arg>Dictionary Should Contain Key</arg>
+<arg>${TCStepResultSet}</arg>
+<arg>Step-${tmpStepResultCounter+1}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342905" elapsed="0.000018"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${tmpCBResultKeyStatus}&quot; == &quot;True&quot;">
+<kw name="Get From Dictionary" owner="Collections">
+<var>${tmpCBResult}</var>
+<arg>${TCStepResultSet}</arg>
+<arg>Step-${tmpStepResultCounter+1}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343044" elapsed="0.000026"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${splitResult}</var>
+<arg>${tmpCBResult}</arg>
+<arg>separator=|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343152" elapsed="0.000084"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${translatedStepResult}</var>
+<arg>${codeBeamerResultEnum}</arg>
+<arg>${splitResult}[0]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343330" elapsed="0.000029"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${timeStamp}</var>
+<arg>${splitResult}[1]</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343443" elapsed="0.000028"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342975" elapsed="0.000532"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Time" owner="BuiltIn">
+<var>${tmpStepTime}</var>
+<arg>format=YYYY-MM-DDThh:mm:ss</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343612" elapsed="0.000026"/>
+</kw>
+<kw name="Replace String" owner="String">
+<var>${splitStepTime}</var>
+<arg>${tmpStepTime}</arg>
+<arg>${SPACE}</arg>
+<arg>T</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343717" elapsed="0.000033"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCBResult}</var>
+<arg>Unknown|${splitStepTime}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343834" elapsed="0.000025"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${splitResult}</var>
+<arg>${tmpCBResult}</arg>
+<arg>separator=|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343938" elapsed="0.000025"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${translatedStepResult}</var>
+<arg>${codeBeamerResultEnum}</arg>
+<arg>${splitResult}[0]</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344043" elapsed="0.000026"/>
+</kw>
+<kw name="Strip String" owner="String">
+<var>${timeStamp}</var>
+<arg>${splitResult}[1]</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344148" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.343537" elapsed="0.000671"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342964" elapsed="0.001268"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${translatedStepResult}&quot;==&quot;FAILED&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${stepconclusion}</var>
+<arg>${splitResult}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344341" elapsed="0.000026"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: ${stepconclusion}.\n\n ${testLogFileMessage} \n\n</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344445" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344273" elapsed="0.000233"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${translatedStepResult}&quot;==&quot;Not Run/Pending&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: Test Step Not updated with results as Keyword mapping details missing. \n\n ${testLogFileMessage} \n\n</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344599" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344532" elapsed="0.000128"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${translatedStepResult}&quot;==&quot;BLOCKED&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: Test Step Blocked due to previous step failure. \n\n ${testLogFileMessage} \n\n</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344751" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344685" elapsed="0.000128"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${actualResultString}</var>
+<arg>Step-${tmpStepResultCounter+1}: ${splitResult}[2] \n\n ${testLogFileMessage} \n\n</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344900" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344837" elapsed="0.000126"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:36.344261" elapsed="0.000725"/>
+</if>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepActualResultBody}</var>
+<arg>fieldId=2000004</arg>
+<arg>name=Actual result</arg>
+<arg>value=${actualResultString}</arg>
+<arg>type=WikiTextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345052" elapsed="0.000019"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepResultBody}</var>
+<arg>fieldId=2000005</arg>
+<arg>name=Result</arg>
+<arg>value=${translatedStepResult}</arg>
+<arg>type=TextFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345150" elapsed="0.000019"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunByDetails}</var>
+<arg>id=121</arg>
+<arg>name=craft-runner</arg>
+<arg>type=UserReference</arg>
+<arg>email=karvec2@medtronic.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345247" elapsed="0.000018"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpStepRunByList}</var>
+<arg>${tmpStepRunByDetails}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345341" elapsed="0.000019"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tmpSharedFieldNames}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345431" elapsed="0.000018"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunByBody}</var>
+<arg>fieldId=2000006</arg>
+<arg>name=Run by</arg>
+<arg>values=${tmpStepRunByList}</arg>
+<arg>type=ChoiceFieldValue</arg>
+<arg>sharedFieldNames=${tmpSharedFieldNames}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345521" elapsed="0.000019"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tmpStepRunAtBody}</var>
+<arg>fieldId=2000007</arg>
+<arg>name=Run at</arg>
+<arg>value=${timeStamp}.000</arg>
+<arg>type=DateFieldValue</arg>
+<arg>sharedFieldNames=${tmpSharedFieldNames}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345620" elapsed="0.000018"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCStepResults}[${tmpStepResultCounter}]</arg>
+<arg>${tmpStepActualResultBody}</arg>
+<arg>${tmpStepResultBody}</arg>
+<arg>${tmpStepRunByBody}</arg>
+<arg>${tmpStepRunAtBody}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345714" elapsed="0.000024"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${resultList}</arg>
+<arg>${tmpTCStepResults}[${tmpStepResultCounter}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.345812" elapsed="0.000018"/>
+</kw>
+<var name="${tmpStepResultCounter}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342744" elapsed="0.003160"/>
+</iter>
+<var>${tmpStepResultCounter}</var>
+<value>${0}</value>
+<value>${testStepsCount}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342500" elapsed="0.003442"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>${resultList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346028" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342192" elapsed="0.003884"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:36.342178" elapsed="0.003924"/>
+</if>
+<var name="${tmpOnject}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:36.341942" elapsed="0.004178"/>
+</iter>
+<var>${tmpOnject}</var>
+<value>@{resultObject}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.341608" elapsed="0.004540"/>
+</for>
+<kw name="Catenate" owner="BuiltIn">
+<var>${tmpExp}</var>
+<arg>${resultList}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346223" elapsed="0.000021"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${customFieldUpdateBody}</var>
+<arg>fieldId=${fieldID}</arg>
+<arg>name=Test Step Results</arg>
+<arg>values=${resultList}</arg>
+<arg>type=TableFieldValue</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346322" elapsed="0.000018"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${customFieldList}</var>
+<arg>${customFieldUpdateBody}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346414" elapsed="0.000018"/>
+</kw>
+<var name="${resultObject}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:36.341574" elapsed="0.004886"/>
+</iter>
+<var>${resultObject}</var>
+<value>@{actualResultObject}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:36.341209" elapsed="0.005278"/>
+</for>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${hiddenTestRunUpdateBody}</var>
+<arg>id=${hiddenTestRunID}</arg>
+<arg>name=${hiddenTestRunName}</arg>
+<arg>customFields=${customFieldList}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346563" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${hiddenTestRunUpdateBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346653" elapsed="0.000017"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${tmpUpdateTestStepUpdateResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/items/${hiddenRun}[id]</arg>
+<arg>alias=cb</arg>
+<arg>json=${hiddenTestRunUpdateBody}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${hiddenTestRunID} with Test Step Results Failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346738" elapsed="0.000019"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${CI_JOB_ID}&quot; == &quot;NotApplicable&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>Skipping Custom Report Link Association to Test Run ${hiddenRun}[id] as this is a Local Execution!</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346879" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346814" elapsed="0.000111"/>
+</branch>
+<branch type="ELSE">
+<kw name="Associate Custom Report Link To Test Run" owner="Keyword_Codebeamer">
+<arg>${hiddenRun}[id]</arg>
+<arg>${PipelineID}</arg>
+<arg>${testCaseID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to associate custom report links to the main test run instance in CodeBeamer.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.347106" elapsed="0.000024"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346948" elapsed="0.000222"/>
+</branch>
+<status status="NOT RUN" start="2026-09-22T12:16:36.346803" elapsed="0.000390"/>
+</if>
+<kw name="Update Test Config Information" owner="Keyword_Codebeamer">
+<arg>${hiddenTestRunName}</arg>
+<arg>${hiddenTestRunID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with Test</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:36.347348" elapsed="0.000021"/>
+</kw>
+<var name="${hiddenRun}">{'id': 148628, 'name': 'Run of Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}</var>
+<status status="PASS" start="2026-09-22T12:16:36.163611" elapsed="0.183797"/>
+</iter>
+<var>${hiddenRun}</var>
+<value>@{HiddentestRuns}[0]</value>
+<status status="PASS" start="2026-09-22T12:16:36.163139" elapsed="0.184305"/>
+</for>
+<arg>${tmpHiddenRuns}</arg>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update individual test step results for a test case in CodeBeamer.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.162966" elapsed="0.184536"/>
+</kw>
+<kw name="Update Test Run with Test Case Results and Close" owner="Keyword_Codebeamer">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.348936" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-09-22T12:16:41.349375" level="INFO">Waiting for Test Run in CodeBeamer to be active before updating results..</msg>
+<arg>5s</arg>
+<arg>reason=Waiting for Test Run in CodeBeamer to be active before updating results..</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.347867" elapsed="5.001713"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.351212" level="INFO">${tmpTCResultBodyFinal} = {'updateRequestModels': [{'testCaseReference': {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}, 'result': 'PASSED', 'conclusion': 'Test Setu...</msg>
+<var>${tmpTCResultBodyFinal}</var>
+<arg>updateRequestModels=${tmpTCResult}</arg>
+<arg>parentResultPropagation=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.350343" elapsed="0.000902"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.351614" level="INFO">{'updateRequestModels': [{'testCaseReference': {'id': '143698', 'name': ' Verify navigation to Update Software (Offline)', 'type': 'TrackerItemReference'}, 'result': 'PASSED', 'conclusion': 'Test Setup Failed: . No Test Steps executed. Check logs for more details.', 'runTime': 3}], 'parentResultPropagation': 'true'}</msg>
+<arg>${tmpTCResultBodyFinal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.351381" elapsed="0.000282"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.352036" level="INFO">
+
+Updating 148627 TestRun instance with results for individual test cases...</msg>
+<arg>\n\nUpdating ${testRunID} TestRun instance with results for individual test cases...</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.351774" elapsed="0.000378"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2026-09-22T12:16:41.621062" level="INFO">PUT Request : url=https://crdn.codebeamer.com/rest/v3/testruns/148627 
+ path_url=/rest/v3/testruns/148627 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '317', 'Content-Type': 'application/json', 'Authorization': 'Basic Y3JhZnQtcnVubmVyOmNyYWZ0LXJ1bm5lcg=='} 
+ body=b'{"updateRequestModels": [{"testCaseReference": {"id": "143698", "name": " Verify navigation to Update Software (Offline)", "type": "TrackerItemReference"}, "result": "PASSED", "conclusion": "Test Setup Failed: . No Test Steps executed. Check logs for more details.", "runTime": 3}], "parentResultPropagation": "true"}' 
+ </msg>
+<msg time="2026-09-22T12:16:41.621231" level="INFO">PUT Response : url=https://crdn.codebeamer.com/rest/v3/testruns/148627 
+ status=200, reason= 
+ headers={'X-XSS-Protection': '1', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "frame-ancestors 'self'", 'vary': 'accept-encoding', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 22 Sep 2026 10:16:09 GMT', 'Keep-Alive': 'timeout=80', 'Connection': 'keep-alive'} 
+ body={"id":148627,"name":"\"CRAFT_NOVA_Application Navigation Offline\"","description":"","descriptionFormat":"PlainText","createdAt":"2026-09-22T10:16:03.020","createdBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"modifiedAt":"2026-09-22T10:16:09.049","modifiedBy":{"id":121,"name":"craft-runner","type":"UserReference","email":"karvec2@medtronic.com"},"version":4,"assignedTo":[],"closedAt":"2026-09-22T10:16:09.024","tracker":{"id":261965,"name":"Test Runs","type":"TrackerReference"},"children":[{"id":148628,"name":"Run of Verify navigation to Update Software (Offline)","type":"TrackerItemReference"}],"customFields":[{"fieldId":10002,"name":"Run only Accepted TestCases","value":true,"sharedFieldNames":[],"type":"BoolFieldValue"},{"fieldId":10003,"name":"Apps Build Number","value":"NotApplicable","sharedFieldNames":[],"type":"TextFieldValue"},{"fieldId":10005,"name":"PipelineID","value":"NotApplicable","sharedFieldNames":[],"type":"TextFieldValue"},{"fieldId":1000000,"name":"Test Cases","values":[[{"fieldId":1000001,"name":"Test Case","values":[{"id":143698,"name":"Verify navigation to Update Software (Offline)","type":"TrackerItemReference","angularIcon":"gps_fixed","iconColor":"#b31317","propagateSuspects":false,"trackerKey":"TC","trackerTypeId":16,"uri":"/item/143698","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"sharedFieldNames":[],"type":"ChoiceFieldValue"}]],"type":"TableFieldValue"}],"priority":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"spentMillis":3000,"status":{"id":4,"name":"Finished","type":"ChoiceOptionReference"},"platforms":[{"id":40891,"name":"KR260 Krakow Local Mateusz","type":"TrackerItemReference","angularIcon":"settings","iconColor":"#00a85d","propagateSuspects":false,"trackerKey":"TESTCONF","trackerTypeId":16,"uri":"/item/40891","referenceData":{"suspectPropagation":"DO_NOT_PROPAGATE"}}],"subjects":[],"resolutions":[{"id":1,"name":"Passed","type":"ChoiceOptionReference"}],"severities":[],"formality":{"id":0,"name":"Unset","type":"ChoiceOptionReference"},"versions":[],"ordinal":0,"typeName":"Testrun","comments":[],"tags":[{"id":7,"name":"FINISHED_TESTRUN_GENERATION","privateLabel":false,"hidden":true,"createdAt":"2024-10-29T20:34:54.257","createdBy":{"id":17,"name":"subbak2","type":"UserReference","email":"kala.subbaraman@medtronic.com"}}],"angularIcon":"touch_app","iconColor":"#00a85d","iconUrl":"/images/trackertype/testrun.gif"} 
+ </msg>
+<msg time="2026-09-22T12:16:41.621359" level="INFO">${tmpUpdateTRunResponse} = &lt;Response [200]&gt;</msg>
+<var>${tmpUpdateTRunResponse}</var>
+<arg>url=https://crdn.codebeamer.com/rest/v3/testruns/${testRunID}</arg>
+<arg>alias=cb</arg>
+<arg>json=${tmpTCResultBodyFinal}</arg>
+<arg>expected_status=200</arg>
+<arg>msg=Updating TestRun ${testRunID} with results failed..check logs for further debugging</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.352290" elapsed="0.269093"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.621827" level="INFO">
+
+The TestRun instance 148627 updated with TC results and Closed</msg>
+<arg>\n\nThe TestRun instance ${testRunID} updated with TC results and Closed</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.621545" elapsed="0.000362"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.622265" level="INFO" html="true">https://crdn.codebeamer.com/issue/148627</msg>
+<arg>https://crdn.codebeamer.com/issue/${testRunID}</arg>
+<arg>html=True</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.622035" elapsed="0.000270"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.622648" level="INFO">${SUITE NAME} = Application Navigation Offline https://crdn.codebeamer.com/issue/148627</msg>
+<var>${SUITE NAME}</var>
+<arg>${SUITE NAME}</arg>
+<arg>https://crdn.codebeamer.com/issue/${testRunID}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.622433" elapsed="0.000235"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${CI_JOB_ID}&quot; == &quot;NotApplicable&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.623117" level="INFO">Skipping Custom Report Link Association to Test Run 148627 as this is a Local Execution!</msg>
+<arg>Skipping Custom Report Link Association to Test Run ${testRunID} as this is a Local Execution!</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.622936" elapsed="0.000245"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:41.622776" elapsed="0.000448"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Associate Custom Report Link To Test Run" owner="Keyword_Codebeamer">
+<arg>${testRunID}</arg>
+<arg>${PipelineID}</arg>
+<arg>${tcResult}[testCaseReference][id]</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to associate custom report links to the main test run instance in CodeBeamer.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:41.623566" elapsed="0.000024"/>
+</kw>
+<var name="${tcResult}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:41.623408" elapsed="0.000222"/>
+</iter>
+<var>${tcResult}</var>
+<value>@{tmpTCResult}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:41.623347" elapsed="0.000313"/>
+</for>
+<status status="NOT RUN" start="2026-09-22T12:16:41.623279" elapsed="0.000414"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:41.622746" elapsed="0.000968"/>
+</if>
+<arg>${tmpTRID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<tag>teardown</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with results for individual test cases and close the Test Run instance.</doc>
+<status status="PASS" start="2026-09-22T12:16:36.347698" elapsed="5.276056"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.624324" level="INFO">{}</msg>
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.624163" elapsed="0.000194"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.624783" level="INFO">Length is 0.</msg>
+<arg>${bugList}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.624622" elapsed="0.000192"/>
+</kw>
+<msg time="2026-09-22T12:16:41.624875" level="INFO">${isBugListEmpty} = True</msg>
+<var>${isBugListEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${bugList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.624443" elapsed="0.000450"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.625423" level="INFO">${newBugList} = </msg>
+<var>${newBugList}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.624973" elapsed="0.000470"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${isBugListEmpty}&quot; == &quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-22T12:16:41.625829" level="INFO">Bug List Empty</msg>
+<arg>Bug List Empty</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.625633" elapsed="0.000232"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:41.625502" elapsed="0.000397"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${newBugList}</arg>
+<arg>${key}:${value}|</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:41.626094" elapsed="0.000024"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="NOT RUN" start="2026-09-22T12:16:41.626024" elapsed="0.000127"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{bugList}</value>
+<status status="NOT RUN" start="2026-09-22T12:16:41.625966" elapsed="0.000217"/>
+</for>
+<status status="NOT RUN" start="2026-09-22T12:16:41.625927" elapsed="0.000290"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:41.625487" elapsed="0.000752"/>
+</if>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.626655" elapsed="0.000202"/>
+</kw>
+<msg time="2026-09-22T12:16:41.626923" level="INFO">${fileContent} = 
+Application Navigation Offline,148627,PASS</msg>
+<var>${fileContent}</var>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "True"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<arg>ELSE IF</arg>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "False"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.626311" elapsed="0.000632"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2026-09-22T12:16:41.628121" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Hashmad_ali\Craft_Nova\resources\Reports\RF\results.txt"&gt;C:\Hashmad_ali\Craft_Nova\resources\Reports\RF\results.txt&lt;/a&gt;'.</msg>
+<arg>path=C:\\Hashmad_ali\\Craft_Nova\\resources\\keywords/../Reports/RF/results.txt</arg>
+<arg>content=${fileContent}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2026-09-22T12:16:41.627034" elapsed="0.001181"/>
+</kw>
+<arg>${tmpTRID}</arg>
+<arg>${bugList}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="PASS" start="2026-09-22T12:16:41.623923" elapsed="0.004376"/>
+</kw>
+<status status="PASS" start="2026-09-22T12:16:36.146792" elapsed="5.481546"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\nCodeBeamer Test Run creation did not return a valid run ID. The request likely failed because the configured CodeBeamer credentials or tracker permissions are invalid.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:41.628480" elapsed="0.000022"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<arg>NotApplicable</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="NOT RUN" start="2026-09-22T12:16:41.628706" elapsed="0.000023"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:41.628370" elapsed="0.000389"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:36.146779" elapsed="5.482004"/>
+</if>
+<status status="PASS" start="2026-09-22T12:16:35.026882" elapsed="6.601921"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>\n-------------\n\nPOSTING TO CodeBeamer DISABLED FOR DEVELOPMENT / DEBUGING / ETC. \n\n</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-22T12:16:41.628896" elapsed="0.000018"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<arg>NotApplicable</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="NOT RUN" start="2026-09-22T12:16:41.629047" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2026-09-22T12:16:41.628828" elapsed="0.000267"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.026866" elapsed="6.602252"/>
+</if>
+<status status="PASS" start="2026-09-22T12:16:35.026412" elapsed="6.602724"/>
+</branch>
+<status status="PASS" start="2026-09-22T12:16:35.025524" elapsed="6.603633"/>
+</if>
+<tag>codebeamer</tag>
+<tag>high</tag>
+<doc>High-level keyword to update CodeBeamer with test results.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.023918" elapsed="6.605277"/>
+</kw>
+<arg>Create Test Run In Codebeamer</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-22T12:16:35.022139" elapsed="6.607102"/>
+</kw>
+<doc>NOVA application inspection test for verifying the application launch,
+SSO authentication, Offline Update navigation, and Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;HashmadAli&gt;
+- *User Story:* US_ID</doc>
+<status status="PASS" start="2026-09-22T12:16:30.565289" elapsed="11.063984"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">application</stat>
+<stat pass="1" fail="0" skip="0">positive</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">ui_interface</stat>
+</tag>
+<suite>
+<stat name="Application Navigation Offline" id="s1" pass="1" fail="0" skip="0">Application Navigation Offline</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
