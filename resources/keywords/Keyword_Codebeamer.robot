@@ -111,7 +111,7 @@ Create Task for Suite Setup Failure
     Log    ${tmpTaskBody}
     Create CB Session
     ${createTaskOut}=    POST On Session
-    ...    url=https://crdn.codebeamer.com/rest/v3/trackers/261780/items
+    ...    url=https://crdn.codebeamer.com/rest/v3/trackers/298019/items
     ...    alias=cb
     ...    json=${tmpTaskBody}
     ...    expected_status=200
@@ -366,7 +366,7 @@ Create Defect List
             ...    priority=${tmpBugPriority}
             ...    severities=${tempBugSeverityList}
             ${bugCreation}=    POST On Session
-            ...    url=https://crdn.codebeamer.com/rest/v3/trackers/330137/items
+            ...    url=https://crdn.codebeamer.com/rest/v3/trackers/297921/items
             ...    alias=cb
             ...    json=${tmpBugDetails}
             ...    expected_status=200
@@ -453,7 +453,7 @@ Create Master Test Run
     Log    \n\nCreating a new TestRun instance in CodeBeamer with executed TestCases added...    console=Yes
     ${createTestRunStatus}    ${createTestRunOut}=    Run Keyword And Ignore Error
     ...    POST On Session
-    ...    url=https://crdn.codebeamer.com/rest/v3/trackers/261965/testruns
+    ...    url=https://crdn.codebeamer.com/rest/v3/trackers/298214/testruns
     ...    alias=cb
     ...    json=${finalTestRunBody}
     ...    expected_status=200
@@ -699,9 +699,12 @@ Update Test Config Information
     [Documentation]    Keyword to update the Test Run instance created in CodeBeamer with Test
     [Tags]    internal    codebeamer    reporting    p1
     [Arguments]    ${tmpSuiteName}    ${tmpRunID}
-    ${testConfigs}=    GET On Session    url=https://crdn.codebeamer.com/rest/v3/trackers/261904/items/    alias=cb
+    ${testConfigs}=    GET On Session    url=https://crdn.codebeamer.com/rest/v3/trackers/298153/items/    alias=cb
     @{testConfig}=    Get Value From Json    ${testConfigs.json()}    $..name
     ${testConfigIndex}=    Get Index From List    ${testConfig}    ${testConfigName}
+    Run Keyword And Return If    ${testConfigIndex} == -1
+    ...    Fail
+    ...    Codebeamer test configuration '${testConfigName}' was not found in the configured tracker.
     ${testConfigID}=    Get Value From Json    ${testConfigs.json()}    $.itemRefs.[${testConfigIndex}].id
     ${tmpPropogate}=    Create Dictionary    suspectPropagation=DO_NOT_PROPAGATE
     ${refData}=    Create Dictionary    referenceData=${tmpPropogate}
@@ -718,30 +721,10 @@ Update Test Config Information
     ...    uri=/item/${testConfigID}[0]
     ...    referenceData=${tmpPropogate}
     ${tmpPlatformList}=    Create List    ${tmpPlatformBody}
-    ${tmpSharedField}=    Create List
-    ${tmpBuildNumberID}=    Create Dictionary
-    ...    fieldId=10003
-    ...    name=AuroraApps_Build_Number
-    ...    value=${BUILD_ID}
-    ...    sharedFieldNames=${tmpSharedField}
-    ...    type=TextFieldValue
-    ${tmpExecutionID}=    Create Dictionary
-    ...    fieldId=10005
-    ...    name=PipelineID
-    ...    value=${PipelineID}
-    ...    sharedFieldNames=${tmpSharedField}
-    ...    type=TextFieldValue
-    ${tmpCustomFieldList}=    Create List    ${tmpBuildNumberID}    ${tmpExecutionID}
-    ${tmpStepRunByDetails}=    Create Dictionary
-    ...    id=121
-    ...    name=craft-runner
-    ...    type=UserReference
-    ...    email=karvec2@medtronic.com
 
     ${tmpPlatformsBody}=    Create Dictionary
     ...    name=${tmpSuiteName}
     ...    platforms=${tmpPlatformList}
-    ...    customFields=${tmpCustomFieldList}
     Log    ${tmpPlatformsBody}
     ${tmpUpdateTestConfigResponse}=    PUT On Session
     ...    url=https://crdn.codebeamer.com/rest/v3/items/${tmpRunID}

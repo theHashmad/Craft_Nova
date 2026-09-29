@@ -3,7 +3,8 @@ Documentation    NOVA application inspection test for verifying the application 
 ...              SSO authentication, Offline Update navigation, and Update Device flow.
 ...              - *Date of Implementation:* 2026-09-11
 ...              - *Author:* <HashmadAli>
-...              - *User Story:* US_ID
+...              - *User Story:* [https://crdn.codebeamer.com/issue/141004 | 141004]
+...              - *TCID:* [https://crdn.codebeamer.com/item/143698 | 143698]
 
 Library    FlaUILibrary
 Resource   ../../resources/variables/application/application_variables.robot
