@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-09-22T10:44:28.016811" rpa="false" schemaversion="5">
+<suite id="s1" name="Application Navigation Offline" source="C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\Test_Cases\E2E\application_navigation_offline.robot">
+<test id="s1-t1" name="143698: Verify navigation to Update Software (Offline)" line="19">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Get Test Start Time">
+<msg time="2026-09-22T10:44:28.909672" level="FAIL">No keyword with name 'Get Test Start Time' found.</msg>
+<status status="FAIL" start="2026-09-22T10:44:28.909613" elapsed="0.000113">No keyword with name 'Get Test Start Time' found.</status>
+</kw>
+<arg>Get Test Start Time</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-22T10:44:28.906899" elapsed="0.002939">No keyword with name 'Get Test Start Time' found.</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Collect Test Result">
+<msg time="2026-09-22T10:44:28.911694" level="FAIL">No keyword with name 'Collect Test Result' found.</msg>
+<status status="FAIL" start="2026-09-22T10:44:28.911662" elapsed="0.000064">No keyword with name 'Collect Test Result' found.</status>
+</kw>
+<kw name="Close NOVA" owner="Keyword_Application">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Window" owner="FlaUILibrary">
+<msg time="2026-09-22T10:44:30.511956" level="INFO">test_krk1-ldl-p91554_143698_verify_navigation_to_update_software_%28offline%29_1790066670272.jpg</msg>
+<msg time="2026-09-22T10:44:30.512156" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="test_krk1-ldl-p91554_143698_verify_navigation_to_update_software_%28offline%29_1790066670272.jpg"&gt;&lt;img src="test_krk1-ldl-p91554_143698_verify_navigation_to_update_software_%28offline%29_1790066670272.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-09-22T10:44:30.514379" level="FAIL">FlaUiError: Element from XPath '/Window[@Name='NOVA']' could not be found</msg>
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Try to close window from element.</doc>
+<status status="FAIL" start="2026-09-22T10:44:28.912320" elapsed="1.608164">FlaUiError: Element from XPath '/Window[@Name='NOVA']' could not be found</status>
+</kw>
+<arg>Close Window</arg>
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T10:44:28.912117" elapsed="1.608492"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Application" owner="FlaUILibrary">
+<msg time="2026-09-22T10:44:30.521140" level="FAIL">Keyword 'FlaUILibrary.Close Application' expected 1 to 2 arguments, got 0.</msg>
+<doc>Closes the attached application.</doc>
+<status status="FAIL" start="2026-09-22T10:44:30.521031" elapsed="0.000148">Keyword 'FlaUILibrary.Close Application' expected 1 to 2 arguments, got 0.</status>
+</kw>
+<arg>Close Application</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-22T10:44:30.520753" elapsed="0.000485"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-09-22T10:44:30.523750" level="INFO">${pid_to_close} = </msg>
+<var>${pid_to_close}</var>
+<arg>${NOVA_PID}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-09-22T10:44:30.521335" elapsed="0.002606"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${pid_to_close}' != '${EMPTY}' and '${pid_to_close}' != 'None'</arg>
+<arg>Run</arg>
+<arg>taskkill /PID ${pid_to_close} /F /T</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-22T10:44:30.524569" elapsed="0.000734"/>
+</kw>
+<doc>Explicitly close the NOVA window and kill the process if it remains open.</doc>
+<status status="PASS" start="2026-09-22T10:44:28.911905" elapsed="1.613523"/>
+</kw>
+<arg>Collect Test Result</arg>
+<arg>Close NOVA</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-22T10:44:28.910062" elapsed="1.615508">No keyword with name 'Collect Test Result' found.</status>
+</kw>
+<doc>Verify the NOVA application launches successfully, the user can authenticate using SSO,
+navigate to the Offline Update page, verify the required controls,
+and continue to the Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;HashmadAli&gt;
+- *TCID:* [https://crdn.codebeamer.com/item/143698 | 143698]
+- *Verifies:* [https://crdn.codebeamer.com/issue/US_ID | US_ID]</doc>
+<tag>application</tag>
+<tag>pipeline</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<tag>ui_interface</tag>
+<status status="FAIL" start="2026-09-22T10:44:28.905280" elapsed="1.620377">Setup failed:
+No keyword with name 'Get Test Start Time' found.
+
+Also teardown failed:
+No keyword with name 'Collect Test Result' found.</status>
+</test>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Create Test Run In Codebeamer">
+<msg time="2026-09-22T10:44:30.528158" level="FAIL">No keyword with name 'Create Test Run In Codebeamer' found.</msg>
+<status status="FAIL" start="2026-09-22T10:44:30.528099" elapsed="0.000102">No keyword with name 'Create Test Run In Codebeamer' found.</status>
+</kw>
+<arg>Create Test Run In Codebeamer</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2026-09-22T10:44:30.526269" elapsed="0.002027">No keyword with name 'Create Test Run In Codebeamer' found.</status>
+</kw>
+<doc>NOVA application inspection test for verifying the application launch,
+SSO authentication, Offline Update navigation, and Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;HashmadAli&gt;
+- *User Story:* US_ID</doc>
+<status status="FAIL" start="2026-09-22T10:44:28.019226" elapsed="2.509139">Suite teardown failed:
+No keyword with name 'Create Test Run In Codebeamer' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">application</stat>
+<stat pass="0" fail="1" skip="0">pipeline</stat>
+<stat pass="0" fail="1" skip="0">positive</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">ui_interface</stat>
+</tag>
+<suite>
+<stat name="Application Navigation Offline" id="s1" pass="0" fail="1" skip="0">Application Navigation Offline</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-09-22T10:44:28.891076" level="ERROR">Error in file 'C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\Test_Cases\E2E\application_navigation_offline.robot' on line 9: Resource file '..\..\resources\variables\application\application_variables.robot' does not exist.</msg>
+<msg time="2026-09-22T10:44:28.891586" level="ERROR">Error in file 'C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\Test_Cases\E2E\application_navigation_offline.robot' on line 10: Resource file '..\..\resources\keywords\Keyword_Codebeamer.robot' does not exist.</msg>
+<msg time="2026-09-22T10:44:28.904532" level="ERROR">Error in file 'C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\Keywords\Keyword_Application.robot' on line 4: Resource file '..\resources\variables\application\application_variables.robot' does not exist.</msg>
+</errors>
+</robot>

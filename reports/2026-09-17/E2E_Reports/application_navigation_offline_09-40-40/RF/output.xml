@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-09-17T09:40:40.507938" rpa="false" schemaversion="5">
+<suite id="s1" name="Application Navigation Offline" source="C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\Test_Cases\E2E\application_navigation_offline.robot">
+<test id="s1-t1" name="143698: Verify navigation to Update Software (Offline)" line="19">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Get Test Start Time" owner="Keyword_Codebeamer">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2026-09-17T09:40:41.444746" level="INFO">${start_time} = 1789630841</msg>
+<var>${start_time}</var>
+<arg>format=epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2026-09-17T09:40:41.444415" elapsed="0.000373"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:41.445592" level="INFO">${start_time} = 1789630841</msg>
+<arg>${start_time}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:41.445221" elapsed="0.000438"/>
+</kw>
+<tag>teardown</tag>
+<status status="PASS" start="2026-09-17T09:40:41.444112" elapsed="0.001696"/>
+</kw>
+<arg>Get Test Start Time</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:41.443199" elapsed="0.002694"/>
+</kw>
+<kw name="Launch NOVA" owner="Keyword_Application">
+<kw name="Launch Application" owner="FlaUILibrary">
+<msg time="2026-09-17T09:40:41.598636" level="INFO">${pid} = 14008</msg>
+<var>${pid}</var>
+<arg>${NOVA_APPLICATION}</arg>
+<doc>Launches an application.</doc>
+<status status="PASS" start="2026-09-17T09:40:41.446597" elapsed="0.152224"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:41.600313" level="INFO">${NOVA_PID} = 14008</msg>
+<arg>${NOVA_PID}</arg>
+<arg>${pid}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:41.599293" elapsed="0.001076"/>
+</kw>
+<kw name="Wait For Application Handle By Pid" owner="FlaUILibrary">
+<arg>${pid}</arg>
+<arg>10000</arg>
+<doc>Wait for application handle until timeout is reached.</doc>
+<status status="PASS" start="2026-09-17T09:40:41.600614" elapsed="1.292161"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="PASS" start="2026-09-17T09:40:42.893211" elapsed="0.224223"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.119795" level="INFO">${keyword_result_message} = NOVA opens successfully.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.118882" elapsed="0.000976"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.120439" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.120131" elapsed="0.000352"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.121066" level="INFO">Verification Passed: NOVA opens successfully.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.120658" elapsed="0.000505"/>
+</kw>
+<arg>NOVA opens successfully.</arg>
+<status status="PASS" start="2026-09-17T09:40:43.118607" elapsed="0.002822"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.134389" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.133202" elapsed="0.001293"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:43.130986" elapsed="0.003679"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>NOVA opens successfully.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.118054" elapsed="0.016718"/>
+</kw>
+<tag>143698=1</tag>
+<status status="PASS" start="2026-09-17T09:40:41.446206" elapsed="1.688676"/>
+</kw>
+<kw name="Authenticate Using SSO" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.136829" level="INFO">${auth} = /Window[@Name='NOVA']//*[@Name='Authenticate in browser via single sign-on (SSO).']</msg>
+<var>${auth}</var>
+<arg>/Window[@Name='NOVA']//*[@Name='Authenticate in browser via single sign-on (SSO).']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.136368" elapsed="0.000495"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${auth}</arg>
+<arg>10000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.137032" elapsed="0.050199"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${auth}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.188513" elapsed="0.200901"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.391605" elapsed="0.078981"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.474771" level="INFO">${keyword_result_message} = User reaches the NOVA landing page.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.473629" elapsed="0.001341"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.476128" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.475656" elapsed="0.000539"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.476620" level="INFO">Verification Passed: User reaches the NOVA landing page.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.476400" elapsed="0.000270"/>
+</kw>
+<arg>User reaches the NOVA landing page.</arg>
+<status status="PASS" start="2026-09-17T09:40:43.472779" elapsed="0.004078"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.477871" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.477695" elapsed="0.000220"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:43.477477" elapsed="0.000512"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>User reaches the NOVA landing page.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.471476" elapsed="0.006905"/>
+</kw>
+<tag>143698=2</tag>
+<status status="PASS" start="2026-09-17T09:40:43.135251" elapsed="0.343206"/>
+</kw>
+<kw name="Select Update Software Offline" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.479064" level="INFO">${offline_update} = /Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</msg>
+<var>${offline_update}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.478859" elapsed="0.000231"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${offline_update}</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.479198" elapsed="0.076739"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${offline_update}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.556392" elapsed="0.181071"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.742288" level="INFO">${keyword_result_message} = The Update Software (Offline) page is displayed.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.741522" elapsed="0.000841"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.743376" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.742824" elapsed="0.000671"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.744141" level="INFO">Verification Passed: The Update Software (Offline) page is displayed.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.743842" elapsed="0.000363"/>
+</kw>
+<arg>The Update Software (Offline) page is displayed.</arg>
+<status status="PASS" start="2026-09-17T09:40:43.740918" elapsed="0.003441"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.745416" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.745188" elapsed="0.000313"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:43.744896" elapsed="0.000721"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The Update Software (Offline) page is displayed.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.738435" elapsed="0.007267"/>
+</kw>
+<tag>143698=3</tag>
+<status status="PASS" start="2026-09-17T09:40:43.478649" elapsed="0.267147"/>
+</kw>
+<kw name="Verify Offline Update Controls" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.746570" level="INFO">${update_device} = /Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</msg>
+<var>${update_device}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.746304" elapsed="0.000300"/>
+</kw>
+<kw name="Wait Until Element Exist" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<arg>15000</arg>
+<doc>Waits until element exist or timeout was reached. If timeout was reached an FlaUIError occurred.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.746752" elapsed="0.032454"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.779556" elapsed="0.029292"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.810738" level="INFO">${keyword_result_message} = The page displays the controls required for offline software update and device selection.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.810412" elapsed="0.000384"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.811213" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.810998" elapsed="0.000253"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.811562" level="INFO">Verification Passed: The page displays the controls required for offline software update and device selection.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.811391" elapsed="0.000210"/>
+</kw>
+<arg>The page displays the controls required for offline software update and device selection.</arg>
+<status status="PASS" start="2026-09-17T09:40:43.810030" elapsed="0.001675"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.812313" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.812158" elapsed="0.000204"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:43.811982" elapsed="0.000438"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The page displays the controls required for offline software update and device selection.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.809446" elapsed="0.003017"/>
+</kw>
+<tag>143698=4</tag>
+<status status="PASS" start="2026-09-17T09:40:43.746032" elapsed="0.066485"/>
+</kw>
+<kw name="Continue To Update Device" owner="Keyword_Application">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.813060" level="INFO">${update_device} = /Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</msg>
+<var>${update_device}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.812838" elapsed="0.000249"/>
+</kw>
+<kw name="Click" owner="FlaUILibrary">
+<arg>${update_device}</arg>
+<doc>Left click to element by an XPath.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.813198" elapsed="0.156477"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:43.970369" level="INFO">${device_path} = /Window[@Name='NOVA']//*[@AutomationId='DevicePath']</msg>
+<var>${device_path}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='DevicePath']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.969994" elapsed="0.000574"/>
+</kw>
+<kw name="Element Should Exist" owner="FlaUILibrary">
+<arg>${device_path}</arg>
+<doc>Checks if element exists. If element exists True will be returned otherwise False.
+If element could not be found by xpath False will be returned.</doc>
+<status status="PASS" start="2026-09-17T09:40:43.970799" elapsed="0.119745"/>
+</kw>
+<kw name="Get All Names From Combobox" owner="FlaUILibrary">
+<msg time="2026-09-17T09:40:44.458699" level="INFO">${items} = []</msg>
+<var>${items}</var>
+<arg>${device_path}</arg>
+<doc>Get all names from a combobox as a list.
+If element could not be found by xpath an error message will be thrown.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.091316" elapsed="0.367567"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.460049" level="INFO">DOWNLOAD PATH OPTIONS: []</msg>
+<arg>DOWNLOAD PATH OPTIONS: ${items}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.459499" elapsed="0.000620"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Document Keyword Outcome" owner="Keyword_Application">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.461138" level="INFO">${keyword_result_message} = The Update Device page is displayed.</msg>
+<arg>${keyword_result_message}</arg>
+<arg>${message}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.460902" elapsed="0.000272"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.461618" level="INFO">${KEYWORD_STATUS} = PASS</msg>
+<arg>${KEYWORD_STATUS}</arg>
+<arg>PASS</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.461366" elapsed="0.000294"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.462073" level="INFO">Verification Passed: The Update Device page is displayed.</msg>
+<arg>Verification Passed: ${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.461871" elapsed="0.000247"/>
+</kw>
+<arg>The Update Device page is displayed.</arg>
+<status status="PASS" start="2026-09-17T09:40:44.460673" elapsed="0.001567"/>
+</kw>
+<kw name="Add Screenshot" owner="Keyword_Application">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.462992" level="INFO">Screenshot capture is not required for this validation step.</msg>
+<arg>Screenshot capture is not required for this validation step.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.462818" elapsed="0.000214"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:44.462570" elapsed="0.000522"/>
+</kw>
+<arg>Document Keyword Outcome</arg>
+<arg>The Update Device page is displayed.</arg>
+<arg>AND</arg>
+<arg>Add Screenshot</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.460353" elapsed="0.002791"/>
+</kw>
+<tag>143698=5</tag>
+<status status="PASS" start="2026-09-17T09:40:43.812667" elapsed="0.650547"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Collect Test Result" owner="Keyword_Codebeamer">
+<if>
+<branch type="IF" condition="'${cbEnabled}'.lower() == 'true'">
+<kw name="Get Time" owner="BuiltIn">
+<var>${end_time}</var>
+<arg>format=epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.464398" elapsed="0.000029"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${duration}</var>
+<arg>${end_time}-${start_time}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.464528" elapsed="0.000025"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${tmptestCaseID}</var>
+<arg>${TEST_NAME}</arg>
+<arg>separator=:</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.466003" elapsed="0.000027"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseID}</var>
+<arg>${tmptestCaseID}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.466169" elapsed="0.000025"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${TCResults}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.467394" elapsed="0.000026"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${SuiteType}&quot; == &quot;datadriven&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>\nSkip Processing Data Driven TC Results here...</arg>
+<arg>console=False</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.468904" elapsed="0.000033"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:44.468795" elapsed="0.000197"/>
+</branch>
+<branch type="ELSE">
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpTCSteps}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469118" elapsed="0.000023"/>
+</kw>
+<if>
+<branch type="IF" condition="${TCResults}">
+<for flavor="IN">
+<iter>
+<if>
+<branch type="IF" condition="&quot;${result}[0]&quot;==&quot;${testCaseID}&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${tmpTCSteps}</arg>
+<arg>${result}[1]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469501" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469411" elapsed="0.003486"/>
+</branch>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469398" elapsed="0.003587"/>
+</if>
+<var name="${result}"/>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469354" elapsed="0.003679"/>
+</iter>
+<var>${result}</var>
+<value>@{TCResults}</value>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469255" elapsed="0.003865"/>
+</for>
+<kw name="Log List" owner="Collections">
+<arg>${tmpTCSteps}</arg>
+<doc>Logs contents of the ``list`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.473340" elapsed="0.000044"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<var>${resultStr}</var>
+<arg>${TCResults}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.475429" elapsed="0.000040"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<var>${stepCount}</var>
+<arg>${TCResults}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.476979" elapsed="0.000033"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalFaild}</var>
+<arg>${resultStr}</arg>
+<arg>FAIL|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.478335" elapsed="0.000026"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${totalNotRun}</var>
+<arg>${resultStr}</arg>
+<arg>NOT RUN|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.479575" elapsed="0.000024"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<var>${passCount}</var>
+<arg>${resultStr}</arg>
+<arg>PASS|</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.480798" elapsed="0.000024"/>
+</kw>
+<if>
+<branch type="IF" condition="'${TEST_STATUS}'=='FAIL'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test Case Execution Failed: ${Test Message}. Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}. Please refer to Test Automation Log Files for more details.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.482108" elapsed="0.000114"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:44.482013" elapsed="0.005017"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>All steps executed successfully.Total Steps:${stepCount}, Passed Steps:${passCount}, Failed Steps:${totalFaild}, Not Run Steps:${totalNotRun}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.487318" elapsed="0.000048"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:44.487103" elapsed="0.009184"/>
+</branch>
+<status status="NOT RUN" start="2026-09-17T09:40:44.481990" elapsed="0.014379"/>
+</if>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469203" elapsed="0.027221"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${tmpCompletionMessage}</var>
+<arg>Test Setup Failed: ${Test Message}. No Test Steps executed. Check logs for more details.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.496695" elapsed="0.000048"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:44.496476" elapsed="0.000431"/>
+</branch>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469189" elapsed="0.027768"/>
+</if>
+<kw name="Create List" owner="BuiltIn">
+<var>@{tmpTC}</var>
+<arg>${tmptestCaseID}[1]</arg>
+<arg>${TEST STATUS}</arg>
+<arg>${tmpCompletionMessage}</arg>
+<arg>${duration}</arg>
+<arg>${tmpTCSteps}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.497089" elapsed="0.000038"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<arg>${testCaseID}=${tmpTC}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.506546" elapsed="0.000097"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nAdded ${TEST NAME} status and result in master suite execution list</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.512012" elapsed="0.000052"/>
+</kw>
+<kw name="Log Dictionary" owner="Collections">
+<arg>${testCaseResultDict}</arg>
+<doc>Logs the contents of the ``dictionary`` using the given ``level``.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.512327" elapsed="0.000031"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>\n\nAdded ${TEST NAME} and its Test Step status and results in master suite execution list</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:44.512768" elapsed="0.000182"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:44.469033" elapsed="0.044172"/>
+</branch>
+<status status="NOT RUN" start="2026-09-17T09:40:44.468773" elapsed="0.044527"/>
+</if>
+<status status="NOT RUN" start="2026-09-17T09:40:44.464166" elapsed="0.049192"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.514234" level="INFO">
+Collect Test Result skipped because posting to CodeBeamer is disabled.</msg>
+<arg>\nCollect Test Result skipped because posting to CodeBeamer is disabled.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.513596" elapsed="0.000803"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:44.513407" elapsed="0.001135"/>
+</branch>
+<status status="PASS" start="2026-09-17T09:40:44.464137" elapsed="0.050473"/>
+</if>
+<tag>teardown</tag>
+<status status="PASS" start="2026-09-17T09:40:44.463953" elapsed="0.050728"/>
+</kw>
+<kw name="Close NOVA" owner="Keyword_Application">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Window" owner="FlaUILibrary">
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Try to close window from element.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.515584" elapsed="0.017029"/>
+</kw>
+<arg>Close Window</arg>
+<arg>/Window[@Name='NOVA']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.515289" elapsed="0.017453"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Application" owner="FlaUILibrary">
+<msg time="2026-09-17T09:40:44.533546" level="FAIL">Keyword 'FlaUILibrary.Close Application' expected 1 to 2 arguments, got 0.</msg>
+<doc>Closes the attached application.</doc>
+<status status="FAIL" start="2026-09-17T09:40:44.533386" elapsed="0.000208">Keyword 'FlaUILibrary.Close Application' expected 1 to 2 arguments, got 0.</status>
+</kw>
+<arg>Close Application</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.532922" elapsed="0.000757"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-09-17T09:40:44.534051" level="INFO">${pid_to_close} = 14008</msg>
+<var>${pid_to_close}</var>
+<arg>${NOVA_PID}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.533802" elapsed="0.000271"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2026-09-17T09:40:44.549689" level="INFO">Running command 'taskkill /PID 14008 /F /T 2&gt;&amp;1'.</msg>
+<arg>taskkill /PID ${pid_to_close} /F /T</arg>
+<doc>_This keyword is considered deprecated. Use the
+[http://robotframework.org/robotframework/latest/libraries/Process.html|
+Process] library instead._</doc>
+<status status="PASS" start="2026-09-17T09:40:44.535514" elapsed="0.699873"/>
+</kw>
+<arg>'${pid_to_close}' != '${EMPTY}' and '${pid_to_close}' != 'None'</arg>
+<arg>Run</arg>
+<arg>taskkill /PID ${pid_to_close} /F /T</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.534852" elapsed="0.700871"/>
+</kw>
+<doc>Close the NOVA window explicitly and force-kill the process if it remains open.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.514974" elapsed="0.721950"/>
+</kw>
+<arg>Collect Test Result</arg>
+<arg>AND</arg>
+<arg>Close NOVA</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:44.463379" elapsed="0.773831"/>
+</kw>
+<doc>Verify the NOVA application launches successfully, the user can authenticate using SSO,
+navigate to the Offline Update page, verify the required controls,
+and continue to the Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;HashmadAli&gt;
+- *TCID:* [https://crdn.codebeamer.com/item/143698 | 143698]
+- *Verifies:* [https://crdn.codebeamer.com/issue/US_ID | US_ID]</doc>
+<tag>application</tag>
+<tag>pipeline</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<tag>ui_interface</tag>
+<status status="PASS" start="2026-09-17T09:40:41.440277" elapsed="3.797145"/>
+</test>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Create Test Run in Codebeamer" owner="Keyword_Codebeamer">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${SUITE_MESSAGE}</arg>
+<arg>Suite setup failed</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.246546" elapsed="0.001902"/>
+</kw>
+<msg time="2026-09-17T09:40:45.248638" level="INFO">${suiteSetupStatus} = True</msg>
+<var>${suiteSetupStatus}</var>
+<arg>Should Not Contain</arg>
+<arg>${SUITE_MESSAGE}</arg>
+<arg>Suite setup failed</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.246304" elapsed="0.002468"/>
+</kw>
+<if>
+<branch type="IF" condition="'${suiteSetupStatus}' == 'False'">
+<kw name="Log" owner="BuiltIn">
+<arg>\nALERT : SKIPPING CodeBeamer Test Run Creation as Suite Setup Failed.</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.249137" elapsed="0.000034"/>
+</kw>
+<kw name="Create Task for Suite Setup Failure" owner="Keyword_Codebeamer">
+<var>${taskID}</var>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<status status="NOT RUN" start="2026-09-17T09:40:45.249370" elapsed="0.000028"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<arg>${taskID}</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="NOT RUN" start="2026-09-17T09:40:45.249597" elapsed="0.000024"/>
+</kw>
+<return>
+<status status="NOT RUN" start="2026-09-17T09:40:45.251496" elapsed="0.000037"/>
+</return>
+<status status="NOT RUN" start="2026-09-17T09:40:45.248936" elapsed="0.002634"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:45.251972" level="INFO">
+STARTING CodeBeamer Test Run Creation... 
+
+</msg>
+<arg>\nSTARTING CodeBeamer Test Run Creation... \n\n</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.251706" elapsed="0.000358"/>
+</kw>
+<if>
+<branch type="IF" condition="'${cbEnabled}'.lower() == 'true'">
+<if>
+<branch type="IF" condition="&quot;${SuiteType}&quot; == &quot;datadriven&quot;">
+<kw name="Process Test Results for New DD" owner="Keyword_Codebeamer">
+<var>${testCaseResultDict}</var>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<status status="NOT RUN" start="2026-09-17T09:40:45.252574" elapsed="0.000034"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:45.252275" elapsed="0.000390"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${testCaseResultDict}</var>
+<arg>${testCaseResultDict}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.252785" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:45.252697" elapsed="0.000218"/>
+</branch>
+<status status="NOT RUN" start="2026-09-17T09:40:45.252262" elapsed="0.000683"/>
+</if>
+<kw name="Create CB Session" owner="Keyword_Codebeamer">
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create a session with CodeBeamer server.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.253104" elapsed="0.000029"/>
+</kw>
+<kw name="Create Test Run Payload" owner="Keyword_Codebeamer">
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to create payload for creating Test Run in CodeBeamer with test cases and their results.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.253928" elapsed="0.000085"/>
+</kw>
+<kw name="Create Master Test Run" owner="Keyword_Codebeamer">
+<var>${tmpTRResponse}</var>
+<var>${tmpTRID}</var>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<tag>teardown</tag>
+<doc>Keyword to create Test Run in codebeamer with list of Test Cases that are being executed. This is used as a Suite Teardown keyword to update the results for individual test cases and finally update the test run instance and close it.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.254874" elapsed="0.000072"/>
+</kw>
+<kw name="Identify Internal Test Run Instances" owner="Keyword_Codebeamer">
+<var>@{tmpHiddenRuns}</var>
+<arg>${tmpTRResponse}</arg>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to identify hidden test run instances created as children of the main test run instance in CodeBeamer.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.255480" elapsed="0.000068"/>
+</kw>
+<kw name="Update Test Step Results" owner="Keyword_Codebeamer">
+<arg>${tmpHiddenRuns}</arg>
+<arg>${testCaseResultDict}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<doc>Keyword to update individual test step results for a test case in CodeBeamer.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.258202" elapsed="0.000064"/>
+</kw>
+<kw name="Update Test Run with Test Case Results and Close" owner="Keyword_Codebeamer">
+<arg>${tmpTRID}</arg>
+<tag>codebeamer</tag>
+<tag>internal</tag>
+<tag>p1</tag>
+<tag>reporting</tag>
+<tag>teardown</tag>
+<doc>Keyword to update the Test Run instance created in CodeBeamer with results for individual test cases and close the Test Run instance.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.259699" elapsed="0.000029"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<arg>${tmpTRID}</arg>
+<arg>${bugList}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="NOT RUN" start="2026-09-17T09:40:45.261094" elapsed="0.000029"/>
+</kw>
+<status status="NOT RUN" start="2026-09-17T09:40:45.252146" elapsed="0.010298"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:45.262922" level="INFO">
+-------------
+
+POSTING TO CodeBeamer DISABLED FOR DEVELOPMENT / DEBUGING / ETC. 
+
+</msg>
+<arg>\n-------------\n\nPOSTING TO CodeBeamer DISABLED FOR DEVELOPMENT / DEBUGING / ETC. \n\n</arg>
+<arg>console=Yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.262610" elapsed="0.000444"/>
+</kw>
+<kw name="Create Result for Attachment" owner="Keyword_Codebeamer">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:45.264082" level="INFO"/>
+<arg>${bugList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.263878" elapsed="0.000245"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2026-09-17T09:40:45.264738" level="INFO">Length is 0.</msg>
+<arg>${bugList}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.264521" elapsed="0.000258"/>
+</kw>
+<msg time="2026-09-17T09:40:45.264907" level="INFO">${isBugListEmpty} = True</msg>
+<var>${isBugListEmpty}</var>
+<arg>Should Be Empty</arg>
+<arg>${bugList}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.264286" elapsed="0.000653"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-17T09:40:45.265593" level="INFO">${newBugList} = </msg>
+<var>${newBugList}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.265084" elapsed="0.000536"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${isBugListEmpty}&quot; == &quot;True&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-17T09:40:45.266746" level="INFO">Bug List Empty</msg>
+<arg>Bug List Empty</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.266563" elapsed="0.000224"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:45.266376" elapsed="0.000461"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Catenate" owner="BuiltIn">
+<var>${newBugList}</var>
+<arg>${newBugList}</arg>
+<arg>${key}:${value}|</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2026-09-17T09:40:45.267085" elapsed="0.000025"/>
+</kw>
+<var name="${key}"/>
+<var name="${value}"/>
+<status status="NOT RUN" start="2026-09-17T09:40:45.267000" elapsed="0.002347"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{bugList}</value>
+<status status="NOT RUN" start="2026-09-17T09:40:45.266920" elapsed="0.002511"/>
+</for>
+<status status="NOT RUN" start="2026-09-17T09:40:45.266871" elapsed="0.002619"/>
+</branch>
+<status status="PASS" start="2026-09-17T09:40:45.266348" elapsed="0.003171"/>
+</if>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.270355" elapsed="0.000558"/>
+</kw>
+<msg time="2026-09-17T09:40:45.271359" level="INFO">${fileContent} = 
+Application Navigation Offline,NotApplicable,PASS</msg>
+<var>${fileContent}</var>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "True"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}</arg>
+<arg>ELSE IF</arg>
+<arg>"${isBugListEmpty}" == "True" and "${SSFailure}" == "False"</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS}-SS</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>\n${SUITE_NAME},${tmpTRID},${SUITE_STATUS},${newBugList}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.269628" elapsed="0.001777"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2026-09-17T09:40:45.275291" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\resources\Reports\RF\results.txt"&gt;C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\resources\Reports\RF\results.txt&lt;/a&gt;'.</msg>
+<arg>path=C:\\Hashmad_ali\\medtronic-automation-flaui-POC\\CRAFT_NOVA\\resources\\keywords/../Reports/RF/results.txt</arg>
+<arg>content=${fileContent}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.272761" elapsed="0.002813"/>
+</kw>
+<arg>NotApplicable</arg>
+<arg>${EMPTY}</arg>
+<arg>${suiteSetupStatus}</arg>
+<status status="PASS" start="2026-09-17T09:40:45.263308" elapsed="0.012710"/>
+</kw>
+<status status="PASS" start="2026-09-17T09:40:45.262486" elapsed="0.014332"/>
+</branch>
+<status status="PASS" start="2026-09-17T09:40:45.252129" elapsed="0.024733"/>
+</if>
+<status status="PASS" start="2026-09-17T09:40:45.251604" elapsed="0.025289"/>
+</branch>
+<status status="PASS" start="2026-09-17T09:40:45.248911" elapsed="0.028008"/>
+</if>
+<tag>codebeamer</tag>
+<tag>high</tag>
+<doc>High-level keyword to update CodeBeamer with test results.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.246094" elapsed="0.030870"/>
+</kw>
+<arg>Create Test Run In Codebeamer</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-09-17T09:40:45.245438" elapsed="0.031592"/>
+</kw>
+<doc>NOVA application inspection test for verifying the application launch,
+SSO authentication, Offline Update navigation, and Update Device flow.
+- *Date of Implementation:* 2026-09-11
+- *Author:* &lt;HashmadAli&gt;
+- *User Story:* US_ID</doc>
+<status status="PASS" start="2026-09-17T09:40:40.529079" elapsed="4.747996"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">application</stat>
+<stat pass="1" fail="0" skip="0">pipeline</stat>
+<stat pass="1" fail="0" skip="0">positive</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">ui_interface</stat>
+</tag>
+<suite>
+<stat name="Application Navigation Offline" id="s1" pass="1" fail="0" skip="0">Application Navigation Offline</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

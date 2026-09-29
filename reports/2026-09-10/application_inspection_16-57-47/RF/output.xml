@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-09-10T16:57:47.571108" rpa="false" schemaversion="5">
+<suite id="s1" name="Application Inspection" source="C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\tests\smoke\application\application_inspection.robot">
+<test id="s1-t1" name="Inspect NOVA Controls" line="8">
+<kw name="Launch Application">
+<msg time="2026-09-10T16:57:47.619888" level="FAIL">No keyword with name 'Launch Application' found.</msg>
+<var>${pid}</var>
+<arg>${NOVA_APPLICATION}</arg>
+<status status="FAIL" start="2026-09-10T16:57:47.619828" elapsed="0.000129">No keyword with name 'Launch Application' found.</status>
+</kw>
+<kw name="Wait For Application Handle By PID">
+<arg>${pid}</arg>
+<arg>10000</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.620180" elapsed="0.000021"/>
+</kw>
+<kw name="Element Should Exist">
+<arg>/Window[@Name='NOVA']</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.620913" elapsed="0.000016"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${auth}</var>
+<arg>/Window[@Name='NOVA']//*[@Name='Authenticate in browser via single sign-on (SSO).']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-10T16:57:47.621005" elapsed="0.000018"/>
+</kw>
+<kw name="Wait Until Element Exist">
+<arg>${auth}</arg>
+<arg>10000</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.621092" elapsed="0.000014"/>
+</kw>
+<kw name="Click">
+<arg>${auth}</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.621690" elapsed="0.000015"/>
+</kw>
+<kw name="Wait Until Element Exist">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<arg>15000</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.622284" elapsed="0.000013"/>
+</kw>
+<kw name="Click">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='SoftwareUpdaterOffline']</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.622355" elapsed="0.000013"/>
+</kw>
+<kw name="Wait Until Element Exist">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<arg>15000</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.622422" elapsed="0.000011"/>
+</kw>
+<kw name="Click">
+<arg>/Window[@Name='NOVA']//*[@AutomationId='UpdateDevice']</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.622489" elapsed="0.000011"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${device_path}</var>
+<arg>/Window[@Name='NOVA']//*[@AutomationId='DevicePath']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-10T16:57:47.622565" elapsed="0.000015"/>
+</kw>
+<kw name="Element Should Exist">
+<arg>${device_path}</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.622642" elapsed="0.000013"/>
+</kw>
+<kw name="Get All Names From Combobox">
+<var>${items}</var>
+<arg>${device_path}</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.623327" elapsed="0.000016"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>DOWNLOAD PATH OPTIONS: ${items}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-10T16:57:47.624008" elapsed="0.000015"/>
+</kw>
+<kw name="Select Combobox Item By Index">
+<arg>${device_path}</arg>
+<arg>0</arg>
+<status status="NOT RUN" start="2026-09-10T16:57:47.624727" elapsed="0.000014"/>
+</kw>
+<status status="FAIL" start="2026-09-10T16:57:47.617697" elapsed="0.007749">No keyword with name 'Launch Application' found.</status>
+</test>
+<status status="FAIL" start="2026-09-10T16:57:47.591847" elapsed="0.044128"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Application Inspection" id="s1" pass="0" fail="1" skip="0">Application Inspection</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-09-10T16:57:47.613646" level="ERROR">Error in file 'C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\tests\smoke\application\application_inspection.robot' on line 2: Importing library 'FlaUILibrary' failed: ModuleNotFoundError: No module named 'FlaUILibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA
+  C:\Hashmad_ali\medtronic-automation-flaui-POC\CRAFT_NOVA\tools
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\python313.zip
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\DLLs
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\Lib
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\Lib\site-packages
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\Lib\site-packages\win32
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\Lib\site-packages\win32\lib
+  C:\Users\hashmadali.hassanali\AppData\Local\anaconda3\Lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>
